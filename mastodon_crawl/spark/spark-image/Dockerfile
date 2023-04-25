@@ -1,5 +1,0 @@
-ARG SPARK_VERSION
-
-FROM bitnami/spark:${SPARK_VERSION}
-
-USER root
