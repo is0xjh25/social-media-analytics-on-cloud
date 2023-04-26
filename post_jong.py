@@ -79,7 +79,7 @@ def print_formatted(posts) -> None:
             }
         )
         if os.path.exists(path):
-            df.to_csv(path, mode="a", index=False)
+            df.to_csv(path, mode="a", index=False, header=False)
         else:
             df.to_csv(path, index=False)
     return None
