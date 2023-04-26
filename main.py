@@ -24,7 +24,7 @@ def main():
 	# post.streaming_mastodon()
 	keyword = "cat"
 	mastodons = post.retrieve_mastodon(keyword)
-	# post.txt_formatted(keyword, mastodons)
+	post.txt_formatted(keyword, mastodons)
 
 if __name__ == "__main__":
 	main()
