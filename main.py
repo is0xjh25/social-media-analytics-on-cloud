@@ -21,9 +21,10 @@ def main():
 	# 	post.print_formatted(res)
 		
 	# Mastodon
-	post.streaming_mastodon()
-	mastodons = post.retrieve_mastodon("cat")
-	post.print_formatted(mastodons)
+	# post.streaming_mastodon()
+	keyword = "cat"
+	mastodons = post.retrieve_mastodon(keyword)
+	# post.txt_formatted(keyword, mastodons)
 
 if __name__ == "__main__":
 	main()

@@ -54,6 +54,16 @@ def print_formatted(posts) -> None:
 		print(divide_line)
 	return None
 
+def txt_formatted(keyword, posts) -> None:
+	f = open("mastodon-{}.txt".format(keyword), "w")
+	for post in posts:
+		f.write(json.dumps(post, indent=2))
+		f.write('\n')
+		f.write(divide_line)
+		f.write('\n')
+	f.close()
+	return None
+
 class Listener(StreamListener):
 	def on_update(self, status):
 		if 'content' in status:
