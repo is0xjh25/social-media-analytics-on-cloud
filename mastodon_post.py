@@ -1,32 +1,7 @@
 from mastodon import Mastodon, StreamListener
 import csv, os, time, ijson, json, requests
 
-divide_line = "________________________________________"
-
-def format_tweet(tweet) -> {}:
-	temp = {}
-	temp['post_id'] = tweet['id'] 
-	temp['author_id'] = tweet['doc']['data']['author_id']
-	temp['created_at'] = tweet['doc']['data']['created_at']
-	temp['content'] = tweet['doc']['data']['text']
-	# waiting for update
-	temp['location'] = tweet['doc']['data']['geo']
-	temp['language'] = tweet['doc']['data'].get('lang', 'unknown')
-	temp['sentiment'] = float(tweet['doc']['data']['sentiment'])
-	temp['tags'] = string_split(tweet['value']['tags'])
-	temp['tokens'] = string_split(tweet['value']['tokens'])
-	return temp
-
-def string_split(text) -> []:
-	if len(text) == 0: return []
-	return text.split('|')
-
-def streaming_mastodon() -> None:
-	m = Mastodon(api_base_url=f'https://mastodon.au', access_token=os.environ['MASTODON_ACCESS_TOKEN'])
-	m.stream_public(Listener())
-	return None
-
-def retrieve_mastodon(keyword) -> []:
+def retrieve(keyword) -> []:
 	url = 'https://mastodon.au/api/v2/search'
 	headers = {
 		'Authorization': f'Bearer {os.environ["MASTODON_ACCESS_TOKEN"]}',
@@ -48,20 +23,9 @@ def retrieve_mastodon(keyword) -> []:
 		mastodons.append(temp)
 	return mastodons
 
-def print_formatted(posts) -> None:
-	for post in posts:
-		print(post)
-		print(divide_line)
-	return None
-
-def txt_formatted(keyword, posts) -> None:
-	f = open("mastodon-{}.txt".format(keyword), "w")
-	for post in posts:
-		f.write(json.dumps(post, indent=2))
-		f.write('\n')
-		f.write(divide_line)
-		f.write('\n')
-	f.close()
+def streaming() -> None:
+	m = Mastodon(api_base_url=f'https://mastodon.au', access_token=os.environ['MASTODON_ACCESS_TOKEN'])
+	m.stream_public(Listener())
 	return None
 
 class Listener(StreamListener):
