@@ -1,9 +1,13 @@
-import json, ijson
+import json, ijson, configparser
 
 # Configuration !!!
-data_url = '../twitter.json'
-sal_url = './sal.json'
-max_row = 1000
+# Change the env, check config.ini
+env = 'JIM'
+config = configparser.ConfigParser()
+config.read('config.ini')
+data_url = config[env]['DATA_URL']
+sal_url = config[env]['SAL_URL']
+max_row = int(config[env]['MAX_ROW'])
 
 def analyse() -> {}:
 	res = []

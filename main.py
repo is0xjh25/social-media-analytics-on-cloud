@@ -7,12 +7,12 @@ import utilities as util
 
 def main():
 	# Twitter
-	tweets = tt.analyse()
-	util.print_formatted(tweets)
+	# tweets = tt.analyse()
+	# util.print_formatted(tweets)
 	# util.txt_formatted("Twitter", "No Idea", tweets)
 
 	# Mastodon
-	# mp.streaming()
+	mp.streaming()
 	# mastodon_keyword = "cat"
 	# mastodons = mp.retrieve(mastodon_keyword)
 	# util.print_formatted(mastodons)

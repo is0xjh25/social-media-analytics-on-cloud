@@ -1,10 +1,18 @@
 from mastodon import Mastodon, StreamListener
-import csv, os, time, ijson, json, requests
+import csv, os, time, ijson, json, requests, configparser
+import utilities as util
+
+# Configuration !!!
+# Change the env, check config.ini
+env = 'JIM'
+config = configparser.ConfigParser()
+config.read('config.ini')
+access_token = config[env]['MASTODON_ACCESS_TOKEN']
 
 def retrieve(keyword) -> []:
 	url = 'https://mastodon.au/api/v2/search'
 	headers = {
-		'Authorization': f'Bearer {os.environ["MASTODON_ACCESS_TOKEN"]}',
+		'Authorization': f'Bearer {access_token}',
 		'Content-Type': 'application/json'
 	}
 	params = {
@@ -24,7 +32,7 @@ def retrieve(keyword) -> []:
 	return mastodons
 
 def streaming() -> None:
-	m = Mastodon(api_base_url=f'https://mastodon.au', access_token=os.environ['MASTODON_ACCESS_TOKEN'])
+	m = Mastodon(api_base_url=f'https://mastodon.au', access_token=access_token)
 	m.stream_public(Listener())
 	return None
 
@@ -46,4 +54,4 @@ class Listener(StreamListener):
 			# Only include necessary keys in the JSON output
 			keys_to_include = ['account_id', 'content', 'created_at', 'language', 'hashtags']
 			filtered_data = {k: v for k, v in data.items() if k in keys_to_include}
-			print_formatted([json.dumps(filtered_data, indent=2, sort_keys=True, default=str)])
+			util.print_formatted([json.dumps(filtered_data, indent=2, sort_keys=True, default=str)])
