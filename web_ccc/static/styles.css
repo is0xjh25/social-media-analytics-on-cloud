@@ -211,3 +211,12 @@ hr.dotted {
   background-color:gainsboro;
 }
 
+
+.shadow {
+  -webkit-box-shadow:0px 1px 1px #de1dde;
+  -moz-box-shadow:0px 1px 1px #de1dde;
+  box-shadow:0px 1px 1px #de1dde;
+  font-size: medium;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
