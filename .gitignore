@@ -161,3 +161,4 @@ cython_debug/
 # DS store file
 **/.DS_Store
 
+.DS_Store
