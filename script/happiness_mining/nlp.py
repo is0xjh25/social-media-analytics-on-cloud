@@ -5,6 +5,7 @@ from nltk.stem import PorterStemmer
 from bs4 import BeautifulSoup
 import re
 
+
 nltk.download("stopwords")
 stemmer = PorterStemmer()
 
@@ -29,7 +30,7 @@ filter_words = stop_words + [
 def create_tokens(text):
     if type(text) == str:
         # process sentence
-        tmp = BeautifulSoup(text, "html.parser").text
+        tmp = BeautifulSoup(text, features="html.parser").text
         tmp = re.sub(r"https?:\/\/[\S]*", "", tmp, flags=re.MULTILINE)
 
         # process words

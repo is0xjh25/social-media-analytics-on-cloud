@@ -1,21 +1,50 @@
+import labMIT1
+
+
 class happiness_score:
-    def __init__(self, h_dict, whole_words):
-        self.words = whole_words
-        self.h_dict = {}
-        self.total_count = 0
-        for w in self.words:
-            if w in h_dict:
-                self.total_count += 1
-                if w not in self.h_dict:
-                    self.h_dict[w] = {}
-                    self.h_dict[w]["score"] = h_dict[w]
-                    self.h_dict[w]["count"] = 1
-                else:
-                    self.h_dict[w]["count"] += 1
+    def __init__(self):
+        self.h_dict = labMIT1.info().to_dict()
+        self.counted_dict = {}
 
-    def scoring(self):
+    def set_whole_words(self, whole_words):
+        # Couting
+        self.counted_dict = self.counting_words(whole_words)
+
+    def scoring_in_whole(self, tokens):
+        if len(self.counted_dict.keys()) > 0:
+            # Scoring
+            score = 0
+            total_count = 0
+            for t in tokens:
+                if t in self.counted_dict:
+                    score += (
+                        self.counted_dict[t]["score"] * self.counted_dict[t]["count"]
+                    )
+                    total_count += self.counted_dict[t]["count"]
+
+            return score / total_count
+        return None
+
+    def scoring_by_text(self, tokens):
         score = 0
-        for w in self.h_dict:
-            score += self.h_dict[w]["score"] * self.h_dict[w]["count"]
+        length = 0
+        for t in tokens:
+            if t in self.h_dict:
+                score += self.h_dict[t]
+                length += 1
+        if length != 0:
+            return score / length
+        return 0
 
-        return score / self.total_count
+    def counting_words(self, whole_words):
+        tmp_dict = {}
+        for w in whole_words:
+            if w in self.h_dict:
+                if w not in tmp_dict:
+                    tmp_dict[w] = {}
+                    tmp_dict[w]["score"] = self.h_dict[w]
+                    tmp_dict[w]["count"] = 1
+                else:
+                    tmp_dict[w]["count"] += 1
+
+        return tmp_dict
