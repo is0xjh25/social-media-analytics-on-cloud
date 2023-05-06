@@ -1,0 +1,2 @@
+npm install --save @fortawesome/react-fontawesome
+npm install --save @fortawesome/free-regular-svg-icons
