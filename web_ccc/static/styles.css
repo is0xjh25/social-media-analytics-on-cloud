@@ -183,8 +183,8 @@ background: linear-gradient(rgba(255,0,0,0),antiquewhite);
 .texts {
 position: relative;
 padding-top: 2em;
-padding-left: 15em;
-padding-right: 15em;
+padding-left: 2em;
+padding-right: 2em;
 padding-bottom: 1em}
 
 .header {
@@ -208,7 +208,7 @@ hr.dotted {
 }
 
 .texts a:hover {
-  background-color:gainsboro;
+  text-decoration: underline;
 }
 
 
@@ -220,3 +220,21 @@ hr.dotted {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid-item {
+  background-color: #eee;
+  padding: 20px;
+}
+
+
+
+
+.nav-colored { background-color:#000; }
+.nav-transparent { background-color:transparent;}
