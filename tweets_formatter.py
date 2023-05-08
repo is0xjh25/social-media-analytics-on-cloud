@@ -2,7 +2,7 @@ import json, ijson, configparser
 
 # Configuration !!!
 # Change the env, check config.ini
-env = "JIM"
+env = "grace"
 config = configparser.ConfigParser()
 config.read("config.ini")
 data_url = config[env]["DATA_URL"]
