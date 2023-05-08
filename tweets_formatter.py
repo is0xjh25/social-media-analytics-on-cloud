@@ -26,16 +26,15 @@ def extract(out_path, input_path=data_url):
     start = True
     with open(input_path, "rb") as f:
         with open(out_path, "w") as o:
-            o.write('[\n')
+            o.write("[\n")
             for tweet in ijson.items(f, "rows.item", multiple_values=True):
-                if not start:
-                    o.write(',\n')
-                item = formatted(tweet)
-                print(item)
                 if item["location"]["full_name"] is not None:
+                    if not start:
+                        o.write(",\n")
+                    item = formatted(tweet)
                     json.dump(item, o, indent=2)
-                start = False
-            o.write('\n]')
+                    start = False
+            o.write("\n]")
 
 
 def formatted(tweet):
