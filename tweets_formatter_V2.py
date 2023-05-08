@@ -49,6 +49,7 @@ def formatted(tweet):
     temp["location"]["gcc"] = None
     temp["location"]["suburb"] = None
     if tweet["doc"]["data"]["geo"]:
+        # check the data format
         if (
             "includes" in tweet["doc"]
             and "places" in tweet["doc"]["includes"]
