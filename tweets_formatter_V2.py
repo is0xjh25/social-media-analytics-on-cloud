@@ -52,8 +52,6 @@ def formatted(tweet):
         # check the data format
         if (
             "includes" in tweet["doc"]
-            and "places" in tweet["doc"]["includes"]
-            and "full_name" in tweet["doc"]["includes"]["places"][0]
             and tweet["doc"]["includes"]["places"][0]["full_name"]
         ):
             temp["location"] = read_loc(
