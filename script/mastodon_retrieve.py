@@ -3,8 +3,8 @@ import csv, os, time, ijson, json, requests
 import pandas as pd
 import yaml
 import pandas as pd
-from script.happiness_mining import scoring as hs
-from script.happiness_mining import nlp
+from happiness_mining import scoring as hs
+from happiness_mining import nlp
 
 divide_line = "________________________________________"
 
@@ -68,23 +68,35 @@ def retrieve_mastodon(keyword):
 
 
 def print_formatted(posts) -> None:
-    path = "./mastodon.csv"
+    path = "../data/raw/mastodon.csv"
+    model = hs.happiness_score()
+    latest_scores = []
     for post in posts:
         post = json.loads(post)
-        print(post)
-        print(divide_line)
+        score = model.scoring_by_text(post["content"])
         df = pd.DataFrame(
             {
                 "content": [post["content"]],
                 "created_at": [post["created_at"]],
                 "hashtags": [post["hashtags"]],
                 "language": [post["language"]],
+                "t_score": [score],
             }
         )
+        latest_scores.append(score)
         if os.path.exists(path):
             df.to_csv(path, mode="a", index=False, header=False)
         else:
             df.to_csv(path, index=False)
+
+    print(latest_scores)
+    if len(latest_scores) > 0:
+        avg = sum(latest_scores) / len(latest_scores)
+        if avg < 5.5:
+            print("😭 (Below 5.5)")
+        else:
+            print("😆 (Above 5.5)")
+        latest_scores = latest_scores[-9:]
     return None
 
 
