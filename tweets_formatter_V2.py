@@ -48,19 +48,22 @@ def formatted(tweet):
     temp["location"]["full_name"] = None
     temp["location"]["gcc"] = None
     temp["location"]["suburb"] = None
-    if tweet["doc"]["data"]["geo"]:
-        # check the data format
-        if (
-            "includes" in tweet["doc"]
-            and tweet["doc"]["includes"]["places"][0]["full_name"]
-        ):
-            temp["location"] = read_loc(
-                tweet["doc"]["includes"]["places"][0]["full_name"], temp["location"]
-            )
-    temp["language"] = tweet["doc"]["data"].get("lang", "unknown")
-    temp["sentiment"] = float(tweet["doc"]["data"]["sentiment"])
-    temp["tags"] = string_split(tweet["value"]["tags"])
-    temp["tokens"] = string_split(tweet["value"]["tokens"])
+    try:
+        if tweet["doc"]["data"]["geo"]:
+            # check the data format
+            if (
+                "includes" in tweet["doc"]
+                and tweet["doc"]["includes"]["places"][0]["full_name"]
+            ):
+                temp["location"] = read_loc(
+                    tweet["doc"]["includes"]["places"][0]["full_name"], temp["location"]
+                )
+        temp["language"] = tweet["doc"]["data"].get("lang", "unknown")
+        temp["sentiment"] = float(tweet["doc"]["data"]["sentiment"])
+        temp["tags"] = string_split(tweet["value"]["tags"])
+        temp["tokens"] = string_split(tweet["value"]["tokens"])
+    except Exception as e:
+        print(e)
     return temp
 
 
