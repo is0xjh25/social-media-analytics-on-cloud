@@ -93,9 +93,9 @@ def print_formatted(posts) -> None:
     if len(latest_scores) > 0:
         avg = sum(latest_scores) / len(latest_scores)
         if avg < 5.5:
-            print("😭 (Below 5.5)")
+            print("😭 (Below 5.5)", latest_scores)
         else:
-            print("😆 (Above 5.5)")
+            print("😆 (Above 5.5)", latest_scores)
         latest_scores = latest_scores[-9:]
     return None
 
