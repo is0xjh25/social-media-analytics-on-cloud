@@ -1,4 +1,4 @@
-import labMIT1
+from happiness_mining import labMIT1
 
 
 class happiness_score:
@@ -21,9 +21,9 @@ class happiness_score:
                         self.counted_dict[t]["score"] * self.counted_dict[t]["count"]
                     )
                     total_count += self.counted_dict[t]["count"]
-
-            return score / total_count
-        return None
+            if total_count != 0:
+                return score / total_count
+        return 0
 
     def scoring_by_text(self, tokens):
         score = 0

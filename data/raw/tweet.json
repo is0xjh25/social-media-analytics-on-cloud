@@ -1,0 +1,213 @@
+{
+
+    "id": "1491844343379992579",
+
+    "key": [2022,2,10,"1106746233773654016","62407961","1491844343379992579"],
+
+    "value”: {
+
+        "tags": "",
+
+        "tokens": "Down3r|hit|inspirational|song|retelling|his|experience|with|drugs|and|addiction|raps|for|those|who|have|endured|pain|unlike|any|other|and|the|pride|with|which|raps|sends|message|loud|and|clear"
+
+    },
+
+    "doc": {
+
+        "_id": "1491844343379992579",
+
+        "_rev": "1-d42ca83b16b1b00b4885c3d61941ba1d",
+
+        "data": {
+
+            "author_id": "62407961",
+
+            "context_annotations": [{
+
+                "domain": {
+
+                    "id": "139",
+
+                    "name": "Fan Community",
+
+                    "description": "A viral fan community like 'Lovatics' (fans of Demi Lovato)"
+
+                },
+
+                "entity": {
+
+                    "id": "1086308747654266880",
+
+                    "name": "BTS ARMY",
+
+                    "description": "BTS fan community ARMY"
+
+                }
+
+            }, {
+
+                "domain":  {
+
+                    "id": "10",
+
+                    "name": "Person",
+
+                    "description": "Named people in the world like Nelson Mandela"
+
+                },
+
+                "entity": {
+
+                    "id": "895369555937157120",
+
+                    "name": "SUGA",
+
+                    "description": "Suga (슈가) - member of BTS"
+
+                }
+
+            }, {
+
+                "domain": {
+
+                    "id": "54",
+
+                    "name": "Musician",
+
+                    "description": "A musician in the world, like Adele or Bob Dylan"
+
+                },
+
+                "entity": {
+
+                    "id": "895369555937157120",
+
+                    "name": "SUGA",
+
+                    "description": "Suga (슈가) - member of BTS"
+
+                }
+
+            }, {
+
+                "domain": {
+
+                    "id": "55",
+
+                    "name": "Music Genre",
+
+                    "description": "A category for a musical style, like Pop, Rock, or Rap"
+
+                },
+
+                "entity": {
+
+                    "id":"888105153038958593",
+
+                    "name": "K-pop",
+
+                    "description": "K-Pop"
+
+                }
+
+            }],
+
+            "conversation_id": "1106746233773654016",
+
+            "created_at": "2022-02-10T18:39:43.000Z",
+
+            "entities": {
+
+                "annotations":[{
+
+                    "start":45,
+
+                    "end": 58,
+
+                    "probability": 0.6233, 
+
+                    "type": "Other",
+
+                    "normalized_text": "Suga Boom Boom"
+
+                }, {
+
+                    "start": 124,
+
+                    "end": 129,
+
+                    "probability": 0.5073,
+
+                    "type": "Person",
+
+                    "normalized_text": "Down3r"
+
+                }],
+
+            "mentions": [{
+
+                "start": 0,
+
+                "end": 7,
+
+                "username": "jots_8",
+
+                "id": "941670393974108161"
+
+            }],
+
+            "urls": [{
+
+                "start": 251,
+
+                "end": 274,
+
+                “url": "https://t.co/S8PTSfph8q","expanded_url":"https://open.spotify.com/track/3r5tOcs1wDhk91bCPpduPg?si=3e9eec104ed6443d","display_url":"open.spotify.com/track/3r5tOcs1…",
+
+                "images"[{
+
+                    "url": "https://pbs.twimg.com/news_img/1491762806269509636/fGip0riM?format=jpg&name=orig","width":640,"height":640
+
+                }, {
+
+                    "url": "https://pbs.twimg.com/news_img/1491762806269509636/fGip0riM?format=jpg&name=150x150","width":150,"height":150
+
+                }],
+
+                "status": 200,
+                "title": "Suga Boom Boom",
+                "description": "DL Down3r · Song · 2018",
+                "unwound_url": "https://open.spotify.com/track/3r5tOcs1wDhk91bCPpduPg?si=3e9eec104ed6443d%22%7D%5D%7D 
+
+            }]
+
+            "geo": {},
+
+            "lang": "en",
+
+            "public_metrics": {
+
+                "retweet_count": 0,
+
+                "reply_count": 0,
+
+                "like_count": 0,
+
+                "quote_count": 0
+
+            },
+
+            "text": "@jots_8 DL Down3r´s hit inspirational song \" Suga Boom Boom \" is a retelling of his experience with drugs and addiction. DL Down3r raps for those who have endured pain unlike any other, and the pride with which he raps sends a message loud and clear.\nhttps://t.co/S8PTSfph8q","sentiment":0.02040816326530612},
+
+            "matching_rules": [{
+
+                "id": "1491447910617485312",
+
+                "tag":""
+
+            }]
+
+        }
+
+    }
+}
