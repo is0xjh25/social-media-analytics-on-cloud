@@ -1,6 +1,5 @@
 import couchdb
 import yaml
-import ijson
 from happiness_mining import scoring as hs
 from happiness_mining import nlp
 
@@ -19,10 +18,15 @@ else:
 
 model = hs.happiness_score()
 
+count = 0
 for i in db:
     doc = db[i]
     # Scoring
+    isUpdated = False
     if doc['language'] == 'en' and 'happiness_score' not in doc:
         tokens = nlp.create_tokens(doc['content'])
         doc['happiness_score'] =  model.scoring_by_text(tokens)
         db.save(doc)
+        isUpdated = True
+    count += 1
+    print(f"Looked up {count} row(s) [{isUpdated}]")
