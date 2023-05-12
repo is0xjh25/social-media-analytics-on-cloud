@@ -1,10 +1,22 @@
 from happiness_mining import scoring as hs
+import pandas as pd
 import json, ijson
+import pickle
+
 
 class tweets_formatter:
-    def __init__(self, config={}):
-        self.sal = config["SAL"]
+    """
+    Read raw tweets json.
+
+    Write json with GCC, happiness score and happiness behavious.
+    """
+
+    def __init__(self, config, en_filter=False):
+        self.sal = config["SAL_PATH"]
+        self.model = pickle.load(open(config["MODEL_PATH"], "rb"))
+        self.vectorizor = pickle.load(open(config["VECTORIZOR_PATH"], "rb"))
         self.scoring = hs.happiness_score()
+        self.en_filter = en_filter
 
     def extract(self, input_path, output_path):
         start = True
@@ -14,24 +26,39 @@ class tweets_formatter:
                 for tweet in ijson.items(f, "rows.item", multiple_values=True):
                     item = self.formatted(tweet)
                     if item is not None:
+                        item["happiness_score"] = self.scoring.scoring_by_text(
+                            item["tokens"]
+                        )
+                        item["happiness_behaviour"] = self.happiness_behavour(
+                            item["content"]
+                        )
                         if not start:
                             o.write(",\n")
                         json.dump(item, o, indent=2)
                         start = False
                 o.write("\n]")
 
+    def happiness_behavour(self, content):
+        try:
+            tf_idf_vectorized = self.vectorizor.transform(pd.Series([content]))
+            df_tfdf = pd.DataFrame(
+                tf_idf_vectorized.todense(),
+                columns=self.vectorizor.get_feature_names_out(),
+            )
+            prediction = self.model.predict(df_tfdf)
+            return prediction[0]
+        except Exception as e:
+            print(e)
+            return None
 
     def formatted(self, tweet):
         try:
             # check the data format
-            if ("doc" in tweet
-                and "data" in tweet["doc"]
-                and "geo" in tweet["doc"]["data"]
-                and tweet["doc"]["data"]["geo"]
+            if (
+                "doc" in tweet
                 and "includes" in tweet["doc"]
                 and "places" in tweet["doc"]["includes"]
                 and "full_name" in tweet["doc"]["includes"]["places"][0]
-                and tweet["doc"]["includes"]["places"][0]["full_name"]
             ):
                 # Fill location data
                 temp = {}
@@ -46,11 +73,13 @@ class tweets_formatter:
                     return None
 
                 # fill meta data
+                temp["language"] = tweet["doc"]["data"].get("lang", "unknown")
+                if self.en_filter and temp["language"] != "en":
+                    return None
                 temp["post_id"] = tweet["id"]
                 temp["author_id"] = tweet["doc"]["data"]["author_id"]
                 temp["created_at"] = tweet["doc"]["data"]["created_at"]
                 temp["content"] = tweet["doc"]["data"]["text"]
-                temp["language"] = tweet["doc"]["data"].get("lang", "unknown")
                 temp["sentiment"] = float(tweet["doc"]["data"]["sentiment"])
                 temp["tags"] = self.string_split(tweet["value"]["tags"])
                 temp["tokens"] = self.string_split(tweet["value"]["tokens"])
@@ -61,7 +90,6 @@ class tweets_formatter:
             return None
 
         return None
-
 
     # Read the location
     def read_loc(self, location, temp):
@@ -92,10 +120,12 @@ class tweets_formatter:
                     temp["suburb"] = sal_data[loc[0].lower()]["sal"]
                 elif loc[0] + " " + gcc[loc[1]][0].lower() in sal_data:
                     temp["gcc"] = sal_data[loc[0] + " " + gcc[loc[1]][0].lower()]["gcc"]
-                    temp["suburb"] = sal_data[loc[0] + " " + gcc[loc[1]][0].lower()]["sal"]
+                    temp["suburb"] = sal_data[loc[0] + " " + gcc[loc[1]][0].lower()][
+                        "sal"
+                    ]
         return temp
 
-    def string_split(text):
+    def string_split(self, text):
         """
         Split full name of gcc
         returns list of splited words
