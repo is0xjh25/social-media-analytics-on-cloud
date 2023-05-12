@@ -11,11 +11,12 @@ class tweets_formatter:
     Write json with GCC, happiness score and happiness behavious.
     """
 
-    def __init__(self, config):
+    def __init__(self, config, en_filter=False):
         self.sal = config["SAL_PATH"]
         self.model = pickle.load(open(config["MODEL_PATH"], "rb"))
         self.vectorizor = pickle.load(open(config["VECTORIZOR_PATH"], "rb"))
         self.scoring = hs.happiness_score()
+        self.en_filter = en_filter
 
     def extract(self, input_path, output_path):
         start = True
@@ -72,11 +73,13 @@ class tweets_formatter:
                     return None
 
                 # fill meta data
+                temp["language"] = tweet["doc"]["data"].get("lang", "unknown")
+                if self.en_filter and temp["language"] != "en":
+                    return None
                 temp["post_id"] = tweet["id"]
                 temp["author_id"] = tweet["doc"]["data"]["author_id"]
                 temp["created_at"] = tweet["doc"]["data"]["created_at"]
                 temp["content"] = tweet["doc"]["data"]["text"]
-                temp["language"] = tweet["doc"]["data"].get("lang", "unknown")
                 temp["sentiment"] = float(tweet["doc"]["data"]["sentiment"])
                 temp["tags"] = self.string_split(tweet["value"]["tags"])
                 temp["tokens"] = self.string_split(tweet["value"]["tokens"])
