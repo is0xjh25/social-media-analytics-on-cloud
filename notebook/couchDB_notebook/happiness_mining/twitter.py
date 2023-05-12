@@ -11,23 +11,11 @@ class tweets_formatter:
     Write json with GCC, happiness score and happiness behavious.
     """
 
-    def __init__(self, config={}):
+    def __init__(self, config):
         self.sal = config["SAL_PATH"]
         self.model = pickle.load(open(config["MODEL_PATH"], "rb"))
         self.vectorizor = pickle.load(open(config["VECTORIZOR_PATH"], "rb"))
         self.scoring = hs.happiness_score()
-
-    def happiness_behavour(self, tokens):
-        try:
-            tf_idf_vectorized = self.vectorizor.transform(tokens)
-            df_tfdf = pd.DataFrame(
-                tf_idf_vectorized.todense(), columns=self.vectorizer.get_feature_names()
-            )
-            prediction = self.model.predict(df_tfdf)
-            return prediction[0]
-        except Exception as e:
-            # print(e)
-            return None
 
     def extract(self, input_path, output_path):
         start = True
@@ -41,7 +29,7 @@ class tweets_formatter:
                             item["tokens"]
                         )
                         item["happiness_behaviour"] = self.happiness_behavour(
-                            item["tokens"]
+                            item["content"]
                         )
                         if not start:
                             o.write(",\n")
@@ -49,18 +37,27 @@ class tweets_formatter:
                         start = False
                 o.write("\n]")
 
+    def happiness_behavour(self, content):
+        try:
+            tf_idf_vectorized = self.vectorizor.transform(pd.Series([content]))
+            df_tfdf = pd.DataFrame(
+                tf_idf_vectorized.todense(),
+                columns=self.vectorizor.get_feature_names_out(),
+            )
+            prediction = self.model.predict(df_tfdf)
+            return prediction[0]
+        except Exception as e:
+            print(e)
+            return None
+
     def formatted(self, tweet):
         try:
             # check the data format
             if (
                 "doc" in tweet
-                and "data" in tweet["doc"]
-                and "geo" in tweet["doc"]["data"]
-                and tweet["doc"]["data"]["geo"]
                 and "includes" in tweet["doc"]
                 and "places" in tweet["doc"]["includes"]
                 and "full_name" in tweet["doc"]["includes"]["places"][0]
-                and tweet["doc"]["includes"]["places"][0]["full_name"]
             ):
                 # Fill location data
                 temp = {}
@@ -125,7 +122,7 @@ class tweets_formatter:
                     ]
         return temp
 
-    def string_split(text):
+    def string_split(self, text):
         """
         Split full name of gcc
         returns list of splited words
