@@ -1,10 +1,33 @@
 from happiness_mining import scoring as hs
+import pandas as pd
 import json, ijson
+import pickle
+
 
 class tweets_formatter:
+    """
+    Read raw tweets json.
+
+    Write json with GCC, happiness score and happiness behavious.
+    """
+
     def __init__(self, config={}):
-        self.sal = config["SAL"]
+        self.sal = config["SAL_PATH"]
+        self.model = pickle.load(open(config["MODEL_PATH"], "rb"))
+        self.vectorizor = pickle.load(open(config["VECTORIZOR_PATH"], "rb"))
         self.scoring = hs.happiness_score()
+
+    def happiness_behavour(self, tokens):
+        try:
+            tf_idf_vectorized = self.vectorizor.transform(tokens)
+            df_tfdf = pd.DataFrame(
+                tf_idf_vectorized.todense(), columns=self.vectorizer.get_feature_names()
+            )
+            prediction = self.model.predict(df_tfdf)
+            return prediction[0]
+        except Exception as e:
+            # print(e)
+            return None
 
     def extract(self, input_path, output_path):
         start = True
@@ -14,17 +37,23 @@ class tweets_formatter:
                 for tweet in ijson.items(f, "rows.item", multiple_values=True):
                     item = self.formatted(tweet)
                     if item is not None:
+                        item["happiness_score"] = self.scoring.scoring_by_text(
+                            item["tokens"]
+                        )
+                        item["happiness_behaviour"] = self.happiness_behavour(
+                            item["tokens"]
+                        )
                         if not start:
                             o.write(",\n")
                         json.dump(item, o, indent=2)
                         start = False
                 o.write("\n]")
 
-
     def formatted(self, tweet):
         try:
             # check the data format
-            if ("doc" in tweet
+            if (
+                "doc" in tweet
                 and "data" in tweet["doc"]
                 and "geo" in tweet["doc"]["data"]
                 and tweet["doc"]["data"]["geo"]
@@ -62,7 +91,6 @@ class tweets_formatter:
 
         return None
 
-
     # Read the location
     def read_loc(self, location, temp):
         """
@@ -92,7 +120,9 @@ class tweets_formatter:
                     temp["suburb"] = sal_data[loc[0].lower()]["sal"]
                 elif loc[0] + " " + gcc[loc[1]][0].lower() in sal_data:
                     temp["gcc"] = sal_data[loc[0] + " " + gcc[loc[1]][0].lower()]["gcc"]
-                    temp["suburb"] = sal_data[loc[0] + " " + gcc[loc[1]][0].lower()]["sal"]
+                    temp["suburb"] = sal_data[loc[0] + " " + gcc[loc[1]][0].lower()][
+                        "sal"
+                    ]
         return temp
 
     def string_split(text):
