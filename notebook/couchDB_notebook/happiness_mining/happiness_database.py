@@ -1,12 +1,11 @@
 import couchdb
-import yaml
-import ijson
+import json
 import requests
 
-SECRET_KEY = ""
-with open("./happiness_mining/couch_key.yaml", "r") as file:
-    key = yaml.safe_load(file)
-    SECRET_KEY = key["SECRET_KEY"]
+# SECRET_KEY = ""
+# with open("./happiness_mining/couch_key.yaml", "r") as file:
+#     key = yaml.safe_load(file)
+#     SECRET_KEY = key["SECRET_KEY"]
 
 # couch = couchdb.Server(f"http://{SECRET_KEY}@172.26.132.37:5984/")
 
@@ -74,5 +73,17 @@ class Couchdb:
         r = requests.get(
             f"{self.url}/{self.db_name}/_design/{design_doc_name}/_view/{view_name}?group=true&reduce=true"
             # params={"partitioned": "true"}
+        )
+        return r.json()
+
+    def bulk_update(self, dict_list):
+        headers = {
+            "Accept": "application/json",
+            "Content-type": "application/json",
+        }
+        r = requests.post(
+            f"{self.url}/{self.db_name}/_bulk_docs",
+            data=json.dumps({"docs": dict_list}),
+            headers=headers,
         )
         return r.json()
