@@ -55,18 +55,24 @@ class Couchdb:
         if self.db is not None:
             design_doc = {
                 "_id": f"_design/{design_name}",
-                "_rev": self.db[f"_design/{design_name}"]["_rev"],
                 "views": {
                     f"{view_name}": map,
                 },
                 "language": "javascript",
             }
+
+            # updating
+            if f"_design/{design_name}" in self.db:
+                design_doc["_rev"] = self.db[f"_design/{design_name}"]["_rev"]
+
+            # save design document
             self.db.save(design_doc)
         else:
             print("Database is not defined")
 
     def view_mapreduce(self, design_doc_name, view_name):
         r = requests.get(
-            f"{self.url}/{self.db_name}/_design/{design_doc_name}/_view/{view_name}"
+            f"{self.url}/{self.db_name}/_design/{design_doc_name}/_view/{view_name}?group=true&reduce=true"
+            # params={"partitioned": "true"}
         )
         return r.json()
