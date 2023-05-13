@@ -3,12 +3,16 @@
 from lib2to3.pgen2.pgen import DFAState
 import string
 import numpy as np
-from flask import Flask, request, render_template, json
+from flask import Flask, request, render_template, json, jsonify
 import pickle
 import os
 import pandas as pd
 import folium
 from markupsafe import escape
+from couchdb import Server
+server = Server()
+db = server.create('muocouch')
+
 
 #Create an app object using the Flask class. 
 app = Flask(__name__)
@@ -22,9 +26,23 @@ os.chdir(dname)
 print(dname)
 
 
+
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index2.html')
+
+@app.route('/', methods=['GET'])
+def register():
+    server = Server()
+    user = {
+        "username":"media site"}
+    db = server['muocouch']
+    map_func = '''function(doc) 
+    { emit(doc.doc_rev, doc); }'''
+    myQuery = User.query(db, map_func, reduce_fun=None, reverse=True)
+    q = [i['username'] for i in myQuery] 
+    print(q)
+    return "<h2>Your data is now in the database</h2>"
 
 #---------------------------s1--------------------------
 @app.route('/s1/')
