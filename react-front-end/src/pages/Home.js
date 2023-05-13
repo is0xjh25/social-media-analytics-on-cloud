@@ -1,5 +1,5 @@
 import React from 'react';
-import "./style/Home.css";
+import "../style/Home.css"
 import Typed from 'react-typed';
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
           <h1 className="ml11">
             <span className="text-wrapper" style={{ overflow: 'hidden', width: '100%', overflowWrap: 'break-word'}}>
           <Typed
-            strings={["I was able to go to a restaurant that I like."]}
+            strings={["I was so happy"]}
             typeSpeed={200}
             loop
           />
@@ -28,7 +28,7 @@ function Home() {
           <h1 className="ml7">
             <span className="text-wrapper" style={{ overflow: 'hidden', width: '100%' ,overflowWrap: 'break-word' }} >
                 <Typed
-              strings = {["Having a Great Day hahhahahahah!"]}     
+              strings = {["Having a Great Day!"]}     
                 typeSpeed={150} 
                 loop
                />

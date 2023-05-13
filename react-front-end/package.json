@@ -14,9 +14,12 @@
     "bootstrap": "^5.3.0-alpha3",
     "bootstrap-icons": "^1.10.5",
     "d3-geo": "^3.1.0",
+    "re-resizable": "^6.9.9",
     "react": "^18.2.0",
     "react-bootstrap-validation": "^0.1.11",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
+    "react-google-charts": "^4.0.0",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
     "react-simple-maps": "^3.0.0",
@@ -24,6 +27,7 @@
     "react-tooltip": "^5.11.1",
     "react-typed": "^1.2.0",
     "react-typing-effect": "^2.0.5",
+    "react-wordcloud": "^1.2.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
