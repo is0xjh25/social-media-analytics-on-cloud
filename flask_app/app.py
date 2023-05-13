@@ -9,9 +9,14 @@ import os
 import pandas as pd
 import folium
 from markupsafe import escape
-from couchdb import Server
-server = Server()
-db = server.create('muocouch')
+import couchdb
+import plotly.graph_objects as go
+from plotly.utils import PlotlyJSONEncoder
+import plotly.io as pio
+import plotly
+import plotly.express as px
+import json
+
 
 
 #Create an app object using the Flask class. 
@@ -25,26 +30,44 @@ dname = os.path.dirname(abspath)
 os.chdir(dname)
 print(dname)
 
+@app.route('/db/')
+def my_view_function():
+    # Connect to CouchDB
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['twitter']
+    
+    # Query the view
+    view_result = db.view('_design/agg/_view/ave-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    keys = [row['key'] for row in result]
+    ave = [row['value']['avg'] for row in result]
 
+    fig = go.Figure([go.Bar(x=keys, y=ave)])
+    fig.update_layout(yaxis_range=[5.6, 6.1])
+    chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
+    # Convert figure to JSON-serializable format
+    # chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
+    # Render the template with the result
+    return render_template('my_template.html', result = result, chart_data=chart_data)
 
 @app.route('/')
 def home():
     return render_template('index2.html')
 
-@app.route('/', methods=['GET'])
-def register():
-    server = Server()
-    user = {
-        "username":"media site"}
-    db = server['muocouch']
-    map_func = '''function(doc) 
-    { emit(doc.doc_rev, doc); }'''
-    myQuery = User.query(db, map_func, reduce_fun=None, reverse=True)
-    q = [i['username'] for i in myQuery] 
-    print(q)
-    return "<h2>Your data is now in the database</h2>"
+#---------------------------test--------------------------
+@app.route('/graph')
+def notdash():
+   df = pd.DataFrame({
+      'Fruit': ['Apples', 'Oranges', 'Bananas', 'Apples', 'Oranges', 'Bananas'],
+      'Amount': [4, 1, 2, 2, 4, 5],
+      'City': ['SF', 'SF', 'SF', 'Montreal', 'Montreal', 'Montreal']
+   })
+   fig = px.bar(df, x='Fruit', y='Amount', color='City',    barmode='group')
+   graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+   return render_template('notdash2.html', graphJSON=graphJSON)
 
 #---------------------------s1--------------------------
+
 @app.route('/s1/')
 def s1():
     return render_template('s1.html')
