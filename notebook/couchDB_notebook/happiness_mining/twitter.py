@@ -1,4 +1,5 @@
 from happiness_mining import scoring as hs
+from happiness_mining import happiness_database as hd
 import pandas as pd
 import json, ijson
 import pickle
@@ -11,12 +12,13 @@ class tweets_formatter:
     Write json with GCC, happiness score and happiness behavious.
     """
 
-    def __init__(self, config, en_filter=False):
+    def __init__(self, config, en_filter=True, outlier_filter=True):
         self.sal = config["SAL_PATH"]
         self.model = pickle.load(open(config["MODEL_PATH"], "rb"))
         self.vectorizor = pickle.load(open(config["VECTORIZOR_PATH"], "rb"))
         self.scoring = hs.happiness_score()
         self.en_filter = en_filter
+        self.outlier_filter = outlier_filter
 
     def extract(self, input_path, output_path):
         start = True
@@ -29,14 +31,41 @@ class tweets_formatter:
                         item["happiness_score"] = self.scoring.scoring_by_text(
                             item["tokens"]
                         )
+                        if not self.outlier_filter or (item["happiness_score"] != 0):
+                            item["happiness_behaviour"] = self.happiness_behavour(
+                                item["content"]
+                            )
+                            if not start:
+                                o.write(",\n")
+                            json.dump(item, o, indent=2)
+                            start = False
+                o.write("\n]")
+
+    def extract_to_couch(self, input_path, url_path, db_name, update_amount=2000):
+        happy_couch = hd.Couchdb(url_path)
+        happy_couch.set_db(db_name)
+
+        update_list = []
+        update_count = 0
+        with open(input_path, "rb") as f:
+            for tweet in ijson.items(f, "rows.item", multiple_values=True):
+                item = self.formatted(tweet)
+                if item is not None:
+                    item["happiness_score"] = self.scoring.scoring_by_text(
+                        item["tokens"]
+                    )
+                    if not self.outlier_filter or (item["happiness_score"] != 0):
                         item["happiness_behaviour"] = self.happiness_behavour(
                             item["content"]
                         )
-                        if not start:
-                            o.write(",\n")
-                        json.dump(item, o, indent=2)
-                        start = False
-                o.write("\n]")
+                        update_list.append(item)
+                        if update_count >= update_amount:
+                            happy_couch.bulk_update(update_list)
+                            update_count = 0
+                            update_list = []
+                        update_count += 1
+            if len(update_list) > 0:
+                happy_couch.bulk_update(update_list)
 
     def happiness_behavour(self, content):
         try:
