@@ -30,14 +30,13 @@ dname = os.path.dirname(abspath)
 os.chdir(dname)
 print(dname)
 
-@app.route('/db/')
+@app.route('/db/',methods=['GET'])
 def my_view_function():
     # Connect to CouchDB
     couch = couchdb.Server('http://admin:admin@localhost:5984')
     db = couch['twitter']
-    
     # Query the view
-    view_result = db.view('_design/agg/_view/ave-view', reduce=True, group=True)
+    view_result = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
     result = [{'key': row.key, 'value': row.value} for row in view_result]
     keys = [row['key'] for row in result]
     ave = [row['value']['avg'] for row in result]
