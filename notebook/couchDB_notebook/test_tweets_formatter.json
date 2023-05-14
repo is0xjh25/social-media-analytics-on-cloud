@@ -1,0 +1,52 @@
+[
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "unknown",
+  "post_id": "1491844343379992579",
+  "author_id": "62407961",
+  "created_at": "2022-02-10T18:39:43.000Z",
+  "content": "@jots_8 DL Down3r\u00b4s hit inspirational song \" Suga Boom Boom \" is a retelling of his experience with drugs and addiction. DL Down3r raps for those who have endured pain unlike any other, and the pride with which he raps sends a message loud and clear.\nhttps://t.co/S8PTSfph8q",
+  "sentiment": 0.02040816326530612,
+  "tags": [],
+  "tokens": [
+    "Down3r",
+    "hit",
+    "inspirational",
+    "song",
+    "retelling",
+    "his",
+    "experience",
+    "with",
+    "drugs",
+    "and",
+    "addiction",
+    "raps",
+    "for",
+    "those",
+    "who",
+    "have",
+    "endured",
+    "pain",
+    "unlike",
+    "any",
+    "other",
+    "and",
+    "the",
+    "pride",
+    "with",
+    "which",
+    "raps",
+    "sends",
+    "message",
+    "loud",
+    "and",
+    "clear"
+  ],
+  "happiness_score": 5.1626666666666665,
+  "happiness_behaviour": "affection"
+}
+]

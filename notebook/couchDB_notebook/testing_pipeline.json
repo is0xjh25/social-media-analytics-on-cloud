@@ -1,0 +1,3335 @@
+[
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491633223612317696",
+  "author_id": "1446643791956348932",
+  "created_at": "2022-02-10T04:40:48.000Z",
+  "content": "@rrrtttbbb8 Winks is overrated as we\u2019re Livermore &amp; Huddlestone. They found their level. The Championship #offUgoWinks",
+  "sentiment": 0.0,
+  "tags": [
+    "offUgoWinks"
+  ],
+  "tokens": [
+    "Winks",
+    "overrated",
+    "stone",
+    "They",
+    "found",
+    "their",
+    "level",
+    "The",
+    "Championship"
+  ],
+  "happiness_score": 6.07,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491582139154182145",
+  "author_id": "3339771273",
+  "created_at": "2022-02-10T01:17:48.000Z",
+  "content": "@nitaarin The bigger it is, the easier it is to kill. Only downside is cleaning after it\u2019s killed - that\u2019s actually the scary bit \ud83d\ude05",
+  "sentiment": -0.4,
+  "tags": [],
+  "tokens": [
+    "The",
+    "bigger",
+    "the",
+    "easier",
+    "kill",
+    "Only",
+    "downside",
+    "cleaning",
+    "after",
+    "killed",
+    "that",
+    "actually",
+    "the",
+    "scary",
+    "bit"
+  ],
+  "happiness_score": 4.206666666666667,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491683521500356613",
+  "author_id": "1446643791956348932",
+  "created_at": "2022-02-10T08:00:40.000Z",
+  "content": "@Kev_COYS_ Snowflakes will be crawling out from under their rocks soon. #FuckemIsay.",
+  "sentiment": 0.0,
+  "tags": [
+    "FuckemIsay"
+  ],
+  "tokens": [
+    "Snowflakes",
+    "will",
+    "crawling",
+    "out",
+    "from",
+    "under",
+    "their",
+    "rocks",
+    "soon"
+  ],
+  "happiness_score": 6.1066666666666665,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491583759086682112",
+  "author_id": "20122128",
+  "created_at": "2022-02-10T01:24:15.000Z",
+  "content": "@j1o1h1n I was sitting there with paper and pen trying to find a word that fitted. It took ages.\n\n I should have opened my scrabble set.",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "was",
+    "sitting",
+    "there",
+    "with",
+    "paper",
+    "and",
+    "pen",
+    "trying",
+    "find",
+    "word",
+    "that",
+    "fitted",
+    "took",
+    "ages",
+    "should",
+    "have",
+    "opened",
+    "scrabble",
+    "set"
+  ],
+  "happiness_score": 5.661666666666668,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Kaniva, Victoria",
+    "gcc": "2rvic",
+    "suburb": "21295"
+  },
+  "language": "en",
+  "post_id": "1491785172676902914",
+  "author_id": "2436788479",
+  "created_at": "2022-02-10T14:44:35.000Z",
+  "content": "@jfouse Crushed and burnt.",
+  "sentiment": -0.5,
+  "tags": [],
+  "tokens": [
+    "Crushed",
+    "and",
+    "burnt"
+  ],
+  "happiness_score": 3.34,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Bordertown, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40142"
+  },
+  "language": "en",
+  "post_id": "1491918103957372933",
+  "author_id": "2436788479",
+  "created_at": "2022-02-10T23:32:49.000Z",
+  "content": "@jfouse That's about where I am Joel. I'll be okay later, I'm just in the need for healing space now.\n\nI am not okay, but I am safe.\n\nThanks for your love.",
+  "sentiment": 0.1875,
+  "tags": [],
+  "tokens": [
+    "That",
+    "about",
+    "where",
+    "okay",
+    "later",
+    "just",
+    "the",
+    "need",
+    "for",
+    "healing",
+    "space",
+    "now",
+    "not",
+    "okay",
+    "but",
+    "safe",
+    "Thanks",
+    "for",
+    "your",
+    "love"
+  ],
+  "happiness_score": 6.074545454545455,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491592643406868481",
+  "author_id": "1465442351841640448",
+  "created_at": "2022-02-10T01:59:33.000Z",
+  "content": "@mskylawinter @Goddessphotosau @TrystAus @ivysociete @dakotadice1 This is a very pretty photo !\ud83d\udc95",
+  "sentiment": 0.3333333333333333,
+  "tags": [],
+  "tokens": [
+    "This",
+    "very",
+    "pretty",
+    "photo"
+  ],
+  "happiness_score": 6.773333333333333,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491827341017767958",
+  "author_id": "1476798400586674176",
+  "created_at": "2022-02-10T17:32:09.000Z",
+  "content": "@mrclloow Hi how old are you where you from",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "how",
+    "old",
+    "are",
+    "you",
+    "where",
+    "you",
+    "from"
+  ],
+  "happiness_score": 5.486666666666667,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Bathurst, New South Wales",
+    "gcc": "1rnsw",
+    "suburb": "10231"
+  },
+  "language": "en",
+  "post_id": "1491709410577911808",
+  "author_id": "51929606",
+  "created_at": "2022-02-10T09:43:32.000Z",
+  "content": "@carolduncan Had a good start,  got it in 3.\nWordle 236 3/6\n\n\u2b1c\ud83d\udfe9\u2b1c\ud83d\udfe9\ud83d\udfe9\n\u2b1c\ud83d\udfe9\u2b1c\ud83d\udfe9\ud83d\udfe9\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9",
+  "sentiment": 0.1875,
+  "tags": [],
+  "tokens": [
+    "Had",
+    "good",
+    "start",
+    "got",
+    "Wordle",
+    "236"
+  ],
+  "happiness_score": 6.3,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Canberra, Australian Capital Territory",
+    "gcc": "8acte",
+    "suburb": "80003"
+  },
+  "language": "en",
+  "post_id": "1491704281984307201",
+  "author_id": "41559208",
+  "created_at": "2022-02-10T09:23:10.000Z",
+  "content": "@rossalcroft Ah yes, well keep up the good work, always a delight. \ud83d\udc4f",
+  "sentiment": 0.6923076923076923,
+  "tags": [],
+  "tokens": [
+    "yes",
+    "well",
+    "keep",
+    "the",
+    "good",
+    "work",
+    "always",
+    "delight"
+  ],
+  "happiness_score": 6.79,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491595959851425792",
+  "author_id": "222760645",
+  "created_at": "2022-02-10T02:12:43.000Z",
+  "content": "@nowimcarol What sad, sick people they have in the Liberal Party.",
+  "sentiment": -0.36363636363636365,
+  "tags": [],
+  "tokens": [
+    "What",
+    "sad",
+    "sick",
+    "people",
+    "they",
+    "have",
+    "the"
+  ],
+  "happiness_score": 4.4,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491681092851867649",
+  "author_id": "1141506637779197952",
+  "created_at": "2022-02-10T07:51:01.000Z",
+  "content": "@the_shb Sarah batt\nWhat do you know about aged care\nWhat a crap woman you are.\nElection I look forward to tear you apart , Labor twit",
+  "sentiment": -0.037037037037037035,
+  "tags": [],
+  "tokens": [
+    "batt",
+    "What",
+    "you",
+    "know",
+    "about",
+    "aged",
+    "care",
+    "What",
+    "crap",
+    "woman",
+    "you",
+    "are",
+    "Election",
+    "look",
+    "forward",
+    "tear",
+    "you",
+    "apart",
+    "Labor",
+    "twit"
+  ],
+  "happiness_score": 5.244615384615385,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491675181932494849",
+  "author_id": "1438398116504346633",
+  "created_at": "2022-02-10T07:27:32.000Z",
+  "content": "@the_shb She is another dreamer hahaaaa",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "She",
+    "another",
+    "dreamer",
+    "hahaaaa"
+  ],
+  "happiness_score": 6.8,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Adelaide, South Australia",
+    "gcc": "4gade",
+    "suburb": "40002"
+  },
+  "language": "en",
+  "post_id": "1491578453061402625",
+  "author_id": "852874244597751808",
+  "created_at": "2022-02-10T01:03:10.000Z",
+  "content": "@newscomauHQ How dare she like the skin she's in \ud83e\udd23",
+  "sentiment": 0.2,
+  "tags": [],
+  "tokens": [
+    "How",
+    "dare",
+    "she",
+    "like",
+    "the",
+    "skin",
+    "she"
+  ],
+  "happiness_score": 6.27,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491585547617579011",
+  "author_id": "58746216",
+  "created_at": "2022-02-10T01:31:21.000Z",
+  "content": "@bry82 @covidbaseau @VicGovDH What makes you say that ate you getting from the actual source i.e here: https://t.co/4nOsiBjgRC",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "What",
+    "makes",
+    "you",
+    "say",
+    "that",
+    "ate",
+    "you",
+    "getting",
+    "from",
+    "the",
+    "actual",
+    "source",
+    "here"
+  ],
+  "happiness_score": 5.88,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491570409728143367",
+  "author_id": "14394796",
+  "created_at": "2022-02-10T00:31:12.000Z",
+  "content": "@DrGrinzi @TurningPointAU Yes indeed",
+  "sentiment": 0.25,
+  "tags": [],
+  "tokens": [
+    "Yes",
+    "indeed"
+  ],
+  "happiness_score": 6.0,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491568313821896706",
+  "author_id": "1903049988",
+  "created_at": "2022-02-10T00:22:52.000Z",
+  "content": "@96mitchclarke @heidimur @theheraldsun He is so rude. He wants equality for all but can't even address someone by their name. Didn't Ms Vaghela lose pre-selection for her seat?",
+  "sentiment": -0.07142857142857142,
+  "tags": [],
+  "tokens": [
+    "rude",
+    "wants",
+    "equality",
+    "for",
+    "all",
+    "but",
+    "can",
+    "even",
+    "address",
+    "someone",
+    "their",
+    "name",
+    "Didn",
+    "Vaghela",
+    "lose",
+    "pre",
+    "selection",
+    "for",
+    "her",
+    "seat"
+  ],
+  "happiness_score": 5.260000000000001,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Canberra, Australian Capital Territory",
+    "gcc": "8acte",
+    "suburb": "80003"
+  },
+  "language": "en",
+  "post_id": "1491746985220935680",
+  "author_id": "1087481",
+  "created_at": "2022-02-10T12:12:51.000Z",
+  "content": "@okjustesting You need drone coffee more than ever",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "You",
+    "need",
+    "drone",
+    "coffee",
+    "more",
+    "than",
+    "ever"
+  ],
+  "happiness_score": 6.71,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491619398586535937",
+  "author_id": "1466177366506549251",
+  "created_at": "2022-02-10T03:45:52.000Z",
+  "content": "@cate_jess12 @marquelawyers Hey @TimWilsonMP, what junk were you on yesterday in Parliament? #auspol @LiberalAus Druggo.",
+  "sentiment": 0.0,
+  "tags": [
+    "auspol"
+  ],
+  "tokens": [
+    "Hey",
+    "what",
+    "junk",
+    "were",
+    "you",
+    "yesterday",
+    "Parliament",
+    "Druggo"
+  ],
+  "happiness_score": 5.03,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491645042716733443",
+  "author_id": "96933151",
+  "created_at": "2022-02-10T05:27:46.000Z",
+  "content": "@carolduncan Loving this current wave of agonism",
+  "sentiment": 0.2857142857142857,
+  "tags": [],
+  "tokens": [
+    "Loving",
+    "this",
+    "current",
+    "wave",
+    "agonism"
+  ],
+  "happiness_score": 5.96,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Adelaide, South Australia",
+    "gcc": "4gade",
+    "suburb": "40002"
+  },
+  "language": "en",
+  "post_id": "1491563309471965189",
+  "author_id": "1428100391892176896",
+  "created_at": "2022-02-10T00:02:59.000Z",
+  "content": "@Michelle3180 Thanks, you too\ud83c\udf3a\ud83e\udd8b",
+  "sentiment": 0.5,
+  "tags": [],
+  "tokens": [
+    "Thanks",
+    "you",
+    "too"
+  ],
+  "happiness_score": 6.24,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491703018840260614",
+  "author_id": "961128374751125505",
+  "created_at": "2022-02-10T09:18:08.000Z",
+  "content": "@RichardYabsley It was a nice branding exercise for the moderates. That's about all it achieved.",
+  "sentiment": 0.2,
+  "tags": [],
+  "tokens": [
+    "was",
+    "nice",
+    "branding",
+    "exercise",
+    "for",
+    "the",
+    "moderates",
+    "That",
+    "about",
+    "all",
+    "achieved"
+  ],
+  "happiness_score": 6.864999999999999,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Perth, Western Australia",
+    "gcc": "5gper",
+    "suburb": "51230"
+  },
+  "language": "en",
+  "post_id": "1491711394202664961",
+  "author_id": "871317328482324480",
+  "created_at": "2022-02-10T09:51:25.000Z",
+  "content": "@Thewickedhunt Thanks mate, just a lil glitch \ud83d\ude4f\ud83c\udffd",
+  "sentiment": 0.25,
+  "tags": [],
+  "tokens": [
+    "Thanks",
+    "mate",
+    "just",
+    "lil",
+    "glitch"
+  ],
+  "happiness_score": 6.12,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Perth, Western Australia",
+    "gcc": "5gper",
+    "suburb": "51230"
+  },
+  "language": "en",
+  "post_id": "1491711488079560704",
+  "author_id": "871317328482324480",
+  "created_at": "2022-02-10T09:51:48.000Z",
+  "content": "@larkshots You know the coast too well \ud83d\ude4f\ud83c\udffd",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "You",
+    "know",
+    "the",
+    "coast",
+    "too",
+    "well"
+  ],
+  "happiness_score": 6.406666666666666,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Perth, Western Australia",
+    "gcc": "5gper",
+    "suburb": "51230"
+  },
+  "language": "en",
+  "post_id": "1491711697002074117",
+  "author_id": "871317328482324480",
+  "created_at": "2022-02-10T09:52:37.000Z",
+  "content": "@MerrWatson Thanks Merr, has massively settled today! \ud83d\ude4f\ud83c\udffd",
+  "sentiment": 0.25,
+  "tags": [],
+  "tokens": [
+    "Thanks",
+    "has",
+    "massively",
+    "settled",
+    "today"
+  ],
+  "happiness_score": 5.98,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Brisbane, Queensland",
+    "gcc": "3gbri",
+    "suburb": "30379"
+  },
+  "language": "en",
+  "post_id": "1491566756384571394",
+  "author_id": "138699680",
+  "created_at": "2022-02-10T00:16:41.000Z",
+  "content": "@RhyWil @Willbo__ I'm not going to go find it but there was a TikTok that explained that the last person to legitimately won the dark saber in combat (because after that the chain was broken) was Obi-wan\n\nSo Obi-Wan is the legit ruler of Mandalore",
+  "sentiment": 0.022222222222222223,
+  "tags": [],
+  "tokens": [
+    "not",
+    "going",
+    "find",
+    "but",
+    "there",
+    "was",
+    "TikTok",
+    "that",
+    "explained",
+    "that",
+    "the",
+    "last",
+    "person",
+    "legitimately",
+    "won",
+    "the",
+    "dark",
+    "saber",
+    "combat",
+    "because",
+    "after",
+    "that",
+    "the",
+    "chain",
+    "was",
+    "broken",
+    "was",
+    "the",
+    "legit",
+    "ruler",
+    "Mandalore"
+  ],
+  "happiness_score": 4.870909090909091,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Canberra, Australian Capital Territory",
+    "gcc": "8acte",
+    "suburb": "80003"
+  },
+  "language": "en",
+  "post_id": "1491564150866124810",
+  "author_id": "2227820730",
+  "created_at": "2022-02-10T00:06:20.000Z",
+  "content": "@KateEmerson88 It is just awful for her. Thanks for your message.",
+  "sentiment": -0.09090909090909091,
+  "tags": [],
+  "tokens": [
+    "just",
+    "awful",
+    "for",
+    "her",
+    "Thanks",
+    "for",
+    "your",
+    "message"
+  ],
+  "happiness_score": 5.239999999999999,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Suffolk Park, New South Wales",
+    "gcc": "1rnsw",
+    "suburb": "13699"
+  },
+  "language": "en",
+  "post_id": "1491860483451736068",
+  "author_id": "1391696742828019724",
+  "created_at": "2022-02-10T19:43:51.000Z",
+  "content": "@tomnoske_ Mornin champ",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "Mornin",
+    "champ"
+  ],
+  "happiness_score": 6.52,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491587372919975937",
+  "author_id": "19745365",
+  "created_at": "2022-02-10T01:38:36.000Z",
+  "content": "@tomnoske_ Gm Tom. Such an awesome shot. I remember watching this YouTube video of yours.",
+  "sentiment": 0.26666666666666666,
+  "tags": [],
+  "tokens": [
+    "Such",
+    "awesome",
+    "shot",
+    "remember",
+    "watching",
+    "this",
+    "video",
+    "yours"
+  ],
+  "happiness_score": 5.846666666666667,
+  "happiness_behaviour": "leisure"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491704393216888832",
+  "author_id": "1446643791956348932",
+  "created_at": "2022-02-10T09:23:36.000Z",
+  "content": "@chessspur Sadly he\u2019s never been in the discussion. F$cking ridiculous. Home grown, world\u2019s best free taker, can play &amp; kicks our arse every time he plays us. #LevyLewisFukoffNow",
+  "sentiment": -0.034482758620689655,
+  "tags": [
+    "LevyLewisFukoffNow"
+  ],
+  "tokens": [
+    "Sadly",
+    "never",
+    "been",
+    "the",
+    "discussion",
+    "cking",
+    "ridiculous",
+    "Home",
+    "grown",
+    "world",
+    "best",
+    "free",
+    "taker",
+    "can",
+    "play",
+    "amp",
+    "kicks",
+    "our",
+    "arse",
+    "every",
+    "time",
+    "plays"
+  ],
+  "happiness_score": 5.878571428571427,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Nambour, Queensland",
+    "gcc": "3rqld",
+    "suburb": "32099"
+  },
+  "language": "en",
+  "post_id": "1491659687854747652",
+  "author_id": "1034283494413721600",
+  "created_at": "2022-02-10T06:25:57.000Z",
+  "content": "@MarkHoltze Welcome to the dark side of the force Mark https://t.co/vX4Sht6pQ7",
+  "sentiment": 0.14285714285714285,
+  "tags": [],
+  "tokens": [
+    "Welcome",
+    "the",
+    "dark",
+    "side",
+    "the",
+    "force"
+  ],
+  "happiness_score": 3.91,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Alice Springs, Northern Territory",
+    "gcc": "7rnte",
+    "suburb": "70005"
+  },
+  "language": "en",
+  "post_id": "1491582110695833604",
+  "author_id": "28718494",
+  "created_at": "2022-02-10T01:17:42.000Z",
+  "content": "@JoMcDonald12 @PaulineGrierso1 Wordle 236 4/6\n\n\ud83d\udfe8\u2b1c\u2b1c\u2b1c\ud83d\udfe9\n\ud83d\udfe8\ud83d\udfe8\ud83d\udfe8\u2b1c\ud83d\udfe9\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe8\u2b1c\ud83d\udfe9\n\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\ud83d\udfe9\n\nAnd mine!",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "Wordle",
+    "236",
+    "And",
+    "mine"
+  ],
+  "happiness_score": 6.3,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491593663205756929",
+  "author_id": "591809997",
+  "created_at": "2022-02-10T02:03:36.000Z",
+  "content": "@osnapitzmaymay @MikeOlbinski @MikeOlbinski is this one also not legit?",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "this",
+    "one",
+    "also",
+    "not",
+    "legit"
+  ],
+  "happiness_score": 4.97,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Wodonga, Victoria",
+    "gcc": "2rvic",
+    "suburb": "22819"
+  },
+  "language": "en",
+  "post_id": "1491591271202574339",
+  "author_id": "364793293",
+  "created_at": "2022-02-10T01:54:06.000Z",
+  "content": "@itstilby New pax panel game?",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "New",
+    "pax",
+    "panel",
+    "game"
+  ],
+  "happiness_score": 6.23,
+  "happiness_behaviour": "leisure"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491632226941157376",
+  "author_id": "254645712",
+  "created_at": "2022-02-10T04:36:50.000Z",
+  "content": "@t3naciousgTTV Enjoy your shiz bro",
+  "sentiment": 0.4,
+  "tags": [],
+  "tokens": [
+    "Enjoy",
+    "your",
+    "shiz",
+    "bro"
+  ],
+  "happiness_score": 5.91,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491650662924361728",
+  "author_id": "820946482631098368",
+  "created_at": "2022-02-10T05:50:06.000Z",
+  "content": "@AmyRemeikis @Sue0606 You'll be workin nine to five",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "You",
+    "workin",
+    "nine",
+    "five"
+  ],
+  "happiness_score": 5.82,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491578241383297025",
+  "author_id": "334422757",
+  "created_at": "2022-02-10T01:02:19.000Z",
+  "content": "@dhepdep Thank you!",
+  "sentiment": 0.6666666666666666,
+  "tags": [],
+  "tokens": [
+    "Thank",
+    "you"
+  ],
+  "happiness_score": 6.24,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491578271242534914",
+  "author_id": "334422757",
+  "created_at": "2022-02-10T01:02:26.000Z",
+  "content": "@nyomenrobin @jhosephllorente Thank you!",
+  "sentiment": 0.5,
+  "tags": [],
+  "tokens": [
+    "Thank",
+    "you"
+  ],
+  "happiness_score": 6.24,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Perth, Western Australia",
+    "gcc": "5gper",
+    "suburb": "51230"
+  },
+  "language": "en",
+  "post_id": "1491568065951133698",
+  "author_id": "1101839907788546048",
+  "created_at": "2022-02-10T00:21:53.000Z",
+  "content": "@LewisAEA Oooh hell yea",
+  "sentiment": -1.0,
+  "tags": [],
+  "tokens": [
+    "Oooh",
+    "hell",
+    "yea"
+  ],
+  "happiness_score": 4.2,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491794731730309128",
+  "author_id": "1021300398659735553",
+  "created_at": "2022-02-10T15:22:34.000Z",
+  "content": "@timhollo Definitely got your finger on the pulse there \ud83d\ude0f",
+  "sentiment": 0.1,
+  "tags": [],
+  "tokens": [
+    "Definitely",
+    "got",
+    "your",
+    "finger",
+    "the",
+    "pulse",
+    "there"
+  ],
+  "happiness_score": 5.713333333333334,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Perth, Western Australia",
+    "gcc": "5gper",
+    "suburb": "51230"
+  },
+  "language": "en",
+  "post_id": "1491600669295648768",
+  "author_id": "1063652700116549634",
+  "created_at": "2022-02-10T02:31:26.000Z",
+  "content": "@Judith54Nunn @fitzroy777 @CoffeeMyOxygen @MrDenmore They need to be asked. How would they recognize Jesus?",
+  "sentiment": 0.07142857142857142,
+  "tags": [],
+  "tokens": [
+    "They",
+    "need",
+    "asked",
+    "How",
+    "would",
+    "they",
+    "recognize"
+  ],
+  "happiness_score": 5.85,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Brisbane, Queensland",
+    "gcc": "3gbri",
+    "suburb": "30379"
+  },
+  "language": "en",
+  "post_id": "1491775296571592709",
+  "author_id": "1183358993881681920",
+  "created_at": "2022-02-10T14:05:21.000Z",
+  "content": "@LornaMarkham1 @vanaalst @MrDenmore You may need to read up on your Stalin.",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "You",
+    "may",
+    "need",
+    "read",
+    "your"
+  ],
+  "happiness_score": 6.06,
+  "happiness_behaviour": "leisure"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491651484475289602",
+  "author_id": "903749950474903552",
+  "created_at": "2022-02-10T05:53:22.000Z",
+  "content": "@mollymcghee @HuxBear How lovely that you celebrate him. He can't have had an easy time of it",
+  "sentiment": 0.4117647058823529,
+  "tags": [],
+  "tokens": [
+    "How",
+    "lovely",
+    "that",
+    "you",
+    "celebrate",
+    "him",
+    "can",
+    "have",
+    "had",
+    "easy",
+    "time"
+  ],
+  "happiness_score": 6.3774999999999995,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491618402829737984",
+  "author_id": "820431428835885059",
+  "created_at": "2022-02-10T03:41:54.000Z",
+  "content": "@PRGuy17 @2hdor Yep.....sure did....but watch \ud83d\udca9hole Morrison try to claim the win for him",
+  "sentiment": 0.25,
+  "tags": [],
+  "tokens": [
+    "Yep",
+    "sure",
+    "did",
+    "but",
+    "watch",
+    "hole",
+    "try",
+    "claim",
+    "the",
+    "win",
+    "for",
+    "him"
+  ],
+  "happiness_score": 5.931428571428571,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491590010646437890",
+  "author_id": "820431428835885059",
+  "created_at": "2022-02-10T01:49:05.000Z",
+  "content": "@Senator_Patrick @wayout1 @ScottMorrisonMP Hope it dies there \ud83d\ude20\ud83d\ude21\ud83d\udc4e\ud83c\udfff\ud83d\udc4e\ud83c\udffd\ud83d\udc4e\ud83c\udffb",
+  "sentiment": 0.2222222222222222,
+  "tags": [],
+  "tokens": [
+    "Hope",
+    "dies",
+    "there"
+  ],
+  "happiness_score": 2.08,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491628973323096064",
+  "author_id": "755903325497798657",
+  "created_at": "2022-02-10T04:23:55.000Z",
+  "content": "@philmupp1 So if he loses it's all on Jenny \u201cI don't win elections mate\u201d. he\u2019s always happy to throw Jen &amp; kids under the bus, the trip to Hawaii during the bushfires:he said Jenny &amp; the kids wanted a holiday.Anyone would think Jenny is his \u201cempathy\u201d coach \ud83d\ude02 #stepfordwife #ScottyMustGo",
+  "sentiment": 0.0,
+  "tags": [
+    "stepfordwife",
+    "ScottyMustGo"
+  ],
+  "tokens": [
+    "loses",
+    "all",
+    "don",
+    "win",
+    "elections",
+    "mate",
+    "always",
+    "happy",
+    "throw",
+    "amp",
+    "kids",
+    "under",
+    "the",
+    "bus",
+    "the",
+    "trip",
+    "awaii",
+    "during",
+    "the",
+    "bushfires",
+    "Jenny",
+    "amp",
+    "the",
+    "kids",
+    "wanted",
+    "holiday",
+    "Anyone",
+    "woul",
+    "ink",
+    "Jenny",
+    "his",
+    "empathy",
+    "coach"
+  ],
+  "happiness_score": 6.367142857142857,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Adelaide, South Australia",
+    "gcc": "4gade",
+    "suburb": "40002"
+  },
+  "language": "en",
+  "post_id": "1491595526860845056",
+  "author_id": "1376253259",
+  "created_at": "2022-02-10T02:11:00.000Z",
+  "content": "@greg16676935420 Do you think it may hit 45999.99 first?",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "you",
+    "think",
+    "may",
+    "hit",
+    "45999",
+    "first"
+  ],
+  "happiness_score": 6.420000000000001,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491580384978812928",
+  "author_id": "1478854884707344385",
+  "created_at": "2022-02-10T01:10:50.000Z",
+  "content": "@LiAleExperience I thought only I liked doing this \ud83d\ude08",
+  "sentiment": 0.3333333333333333,
+  "tags": [],
+  "tokens": [
+    "thought",
+    "only",
+    "liked",
+    "doing",
+    "this"
+  ],
+  "happiness_score": 6.346666666666667,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Brisbane, Queensland",
+    "gcc": "3gbri",
+    "suburb": "30379"
+  },
+  "language": "en",
+  "post_id": "1491571074567344128",
+  "author_id": "5703342",
+  "created_at": "2022-02-10T00:33:50.000Z",
+  "content": "@bengreenfuz This is true. Interesting perspective!",
+  "sentiment": 0.6666666666666666,
+  "tags": [],
+  "tokens": [
+    "This",
+    "true",
+    "Interesting",
+    "perspective"
+  ],
+  "happiness_score": 6.04,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491602706062245894",
+  "author_id": "18721166",
+  "created_at": "2022-02-10T02:39:32.000Z",
+  "content": "@heidisapirate wait, ur a gurl?!",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "wait",
+    "gurl"
+  ],
+  "happiness_score": 3.74,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Hobart, Tasmania",
+    "gcc": "6ghob",
+    "suburb": "60276"
+  },
+  "language": "en",
+  "post_id": "1491670672031977477",
+  "author_id": "1107080300754960385",
+  "created_at": "2022-02-10T07:09:36.000Z",
+  "content": "@MacdonellFiona How sweet!",
+  "sentiment": 0.6666666666666666,
+  "tags": [],
+  "tokens": [
+    "How",
+    "sweet"
+  ],
+  "happiness_score": 7.64,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Newman, Western Australia",
+    "gcc": "5rwau",
+    "suburb": "51111"
+  },
+  "language": "en",
+  "post_id": "1491690065919361027",
+  "author_id": "2292597247",
+  "created_at": "2022-02-10T08:26:40.000Z",
+  "content": "@Zzzyax @CWLuland @softb0ykylo That right eye though",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "That",
+    "right",
+    "eye",
+    "though"
+  ],
+  "happiness_score": 6.34,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491602114694443010",
+  "author_id": "529762501",
+  "created_at": "2022-02-10T02:37:11.000Z",
+  "content": "@AlanGolotto @dan_huddy @rosehillgardens \ud83d\ude02 alright, alright",
+  "sentiment": 0.14285714285714285,
+  "tags": [],
+  "tokens": [
+    "alright",
+    "alright"
+  ],
+  "happiness_score": 6.08,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491576431801147392",
+  "author_id": "702837625",
+  "created_at": "2022-02-10T00:55:08.000Z",
+  "content": "@TByrne75 Wash your hands Geoffrey, with the Solvol Geoffrey",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "Wash",
+    "your",
+    "hands",
+    "with",
+    "the"
+  ],
+  "happiness_score": 5.773333333333333,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491582566721531905",
+  "author_id": "1444448215718252545",
+  "created_at": "2022-02-10T01:19:30.000Z",
+  "content": "@sunriseon7 if thats  they are tryng to pass, really is disgusting,, scomo  is really  a horrible person,,",
+  "sentiment": -0.35294117647058826,
+  "tags": [],
+  "tokens": [
+    "thats",
+    "they",
+    "are",
+    "tryng",
+    "pass",
+    "really",
+    "disgusting",
+    "scomo",
+    "really",
+    "horrible",
+    "person"
+  ],
+  "happiness_score": 4.794285714285714,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491658722174652421",
+  "author_id": "260742204",
+  "created_at": "2022-02-10T06:22:07.000Z",
+  "content": "@JessicaKirson That is so fucking funny",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "That",
+    "fucking",
+    "funny"
+  ],
+  "happiness_score": 7.92,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Canberra, Australian Capital Territory",
+    "gcc": "8acte",
+    "suburb": "80003"
+  },
+  "language": "en",
+  "post_id": "1491575160360427520",
+  "author_id": "577108399",
+  "created_at": "2022-02-10T00:50:05.000Z",
+  "content": "@samopic @AdamBandt Could have just voted it down. No is good. Whose votes would they lose? A few bigots who probably vote LNP anyhow as that's where the old DLP seems to have ended up.",
+  "sentiment": 0.05714285714285714,
+  "tags": [],
+  "tokens": [
+    "Could",
+    "have",
+    "just",
+    "voted",
+    "down",
+    "good",
+    "Whose",
+    "votes",
+    "would",
+    "they",
+    "lose",
+    "few",
+    "bigots",
+    "who",
+    "probably",
+    "vote",
+    "LNP",
+    "anyhow",
+    "that",
+    "where",
+    "the",
+    "old",
+    "DLP",
+    "seems",
+    "have",
+    "ended"
+  ],
+  "happiness_score": 5.185714285714285,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491622114125778946",
+  "author_id": "315454044",
+  "created_at": "2022-02-10T03:56:39.000Z",
+  "content": "@JesseDCaldera Before preseason I'm sitting like this:\nMacrae, Steele, Oliver, Walsh\nMcCluggage\nCogs\nNewcombe\nHorne-Francis",
+  "sentiment": 0.13333333333333333,
+  "tags": [],
+  "tokens": [
+    "Before",
+    "preseason",
+    "sitting",
+    "like",
+    "this",
+    "Macrae",
+    "Steele",
+    "Oliver",
+    "Walsh",
+    "McCluggage",
+    "Cogs",
+    "Newcombe",
+    "Horne",
+    "Francis"
+  ],
+  "happiness_score": 6.449999999999999,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491622513415122946",
+  "author_id": "315454044",
+  "created_at": "2022-02-10T03:58:14.000Z",
+  "content": "@JesseDCaldera Before preseason I'm sitting like this:\nMacrae, Steele, Oliver, Walsh\nMcCluggage\nCogs\nNewcombe\nHorne-Francis\n\nGresh F2\nBrodie F6",
+  "sentiment": 0.10526315789473684,
+  "tags": [],
+  "tokens": [
+    "Before",
+    "preseason",
+    "sitting",
+    "like",
+    "this",
+    "Macrae",
+    "Steele",
+    "Oliver",
+    "Walsh",
+    "McCluggage",
+    "Cogs",
+    "Newcombe",
+    "Horne",
+    "Francis",
+    "Gresh",
+    "Brodie"
+  ],
+  "happiness_score": 6.449999999999999,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Adelaide, South Australia",
+    "gcc": "4gade",
+    "suburb": "40002"
+  },
+  "language": "en",
+  "post_id": "1491581261521240066",
+  "author_id": "236787184",
+  "created_at": "2022-02-10T01:14:19.000Z",
+  "content": "@MoarToast Big yes from me... Air fryer roast chicken is the best.",
+  "sentiment": 0.4166666666666667,
+  "tags": [],
+  "tokens": [
+    "Big",
+    "yes",
+    "from",
+    "Air",
+    "fryer",
+    "roast",
+    "chicken",
+    "the",
+    "best"
+  ],
+  "happiness_score": 6.705,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491598518548832256",
+  "author_id": "130481653",
+  "created_at": "2022-02-10T02:22:54.000Z",
+  "content": "Rather hurling childish insults at the MLA in question perhaps the moronic #IStandWithDan crew could take a moment to consider how rotten things are under Andrews that a sitting Labor member would want to cross the floor. Maybe the real rat is the bloke in charge.",
+  "sentiment": -0.13043478260869565,
+  "tags": [
+    "IStandWithDan"
+  ],
+  "tokens": [
+    "Rather",
+    "hurling",
+    "childish",
+    "insults",
+    "the",
+    "MLA",
+    "question",
+    "perhaps",
+    "the",
+    "moronic",
+    "crew",
+    "could",
+    "take",
+    "moment",
+    "consider",
+    "how",
+    "rotten",
+    "things",
+    "are",
+    "under",
+    "that",
+    "sitting",
+    "Labor",
+    "member",
+    "would",
+    "want",
+    "cross",
+    "the",
+    "floor",
+    "Maybe",
+    "the",
+    "real",
+    "rat",
+    "the",
+    "bloke",
+    "charge"
+  ],
+  "happiness_score": 5.258181818181818,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Perth, Western Australia",
+    "gcc": "5gper",
+    "suburb": "51230"
+  },
+  "language": "en",
+  "post_id": "1491584496835391488",
+  "author_id": "1159996035818590208",
+  "created_at": "2022-02-10T01:27:11.000Z",
+  "content": "@cryptoG84 @ViscusGaming @benitakolovos dumbest tweet of that day and it\u2019s not even 10am here. \njesus wept\u2026",
+  "sentiment": 0.0625,
+  "tags": [],
+  "tokens": [
+    "dumbest",
+    "tweet",
+    "that",
+    "day",
+    "and",
+    "not",
+    "even",
+    "10am",
+    "here",
+    "jesus",
+    "wept"
+  ],
+  "happiness_score": 5.55,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491585873552773123",
+  "author_id": "17665712",
+  "created_at": "2022-02-10T01:32:39.000Z",
+  "content": "@edwardatport @IanHartley_ Maybe I spoke too soon and ALP have wedged Morrison into a corner? Not sure the facts will get through to everyday Australia though.",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "Maybe",
+    "spoke",
+    "too",
+    "soon",
+    "and",
+    "ALP",
+    "have",
+    "wedged",
+    "into",
+    "corner",
+    "Not",
+    "sure",
+    "the",
+    "facts",
+    "will",
+    "get",
+    "through",
+    "everyday",
+    "though"
+  ],
+  "happiness_score": 5.96,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491586242336944130",
+  "author_id": "17665712",
+  "created_at": "2022-02-10T01:34:07.000Z",
+  "content": "@usefulDesign @edwardatport @IanHartley_ Either way he has lost the benefit he wanted from it, exception being he has distracted everyone from his useless economic performance",
+  "sentiment": -0.2,
+  "tags": [],
+  "tokens": [
+    "Either",
+    "way",
+    "has",
+    "lost",
+    "the",
+    "benefit",
+    "wanted",
+    "from",
+    "exception",
+    "being",
+    "has",
+    "distracted",
+    "everyone",
+    "from",
+    "his",
+    "useless",
+    "economic",
+    "performance"
+  ],
+  "happiness_score": 5.214285714285714,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491587551207247873",
+  "author_id": "17665712",
+  "created_at": "2022-02-10T01:39:19.000Z",
+  "content": "@nilson_alison @edwardatport @IanHartley_ Yes possibly, the ability to get the nuance to the fairly stupid and disconnected Australian voter is crucial though.",
+  "sentiment": 0.043478260869565216,
+  "tags": [],
+  "tokens": [
+    "Yes",
+    "possibly",
+    "the",
+    "ability",
+    "get",
+    "the",
+    "nuance",
+    "the",
+    "fairly",
+    "stupid",
+    "and",
+    "disconnected",
+    "Australian",
+    "voter",
+    "crucial",
+    "though"
+  ],
+  "happiness_score": 5.468000000000001,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491586678129311744",
+  "author_id": "876685728352043008",
+  "created_at": "2022-02-10T01:35:51.000Z",
+  "content": "@gjfitzgerald @edwardatport @IanHartley_ I think you did speak to soon and good of you to acknowledge it. The nuance of politics is a somewhat difficult to follow, it seems to me.",
+  "sentiment": 0.06451612903225806,
+  "tags": [],
+  "tokens": [
+    "think",
+    "you",
+    "did",
+    "speak",
+    "soon",
+    "and",
+    "good",
+    "you",
+    "acknowledge",
+    "The",
+    "nuance",
+    "politics",
+    "somewhat",
+    "difficult",
+    "follow",
+    "seems"
+  ],
+  "happiness_score": 5.74909090909091,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Adelaide, South Australia",
+    "gcc": "4gade",
+    "suburb": "40002"
+  },
+  "language": "en",
+  "post_id": "1491721502453944322",
+  "author_id": "956554178",
+  "created_at": "2022-02-10T10:31:35.000Z",
+  "content": "@IanHartley_ @Bf99Floyd It's dreadful legislation. And they've  given it their stamp of approval. Their support.\nThey only have the numbers with the Greens and one independant.\nVoting no would have seen an unpalatable piece of legislation presented to the senate making it even easier to get rid of.",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "dreadful",
+    "legislation",
+    "And",
+    "they",
+    "given",
+    "their",
+    "stamp",
+    "approval",
+    "Their",
+    "support",
+    "They",
+    "only",
+    "have",
+    "the",
+    "numbers",
+    "with",
+    "the",
+    "Greens",
+    "and",
+    "one",
+    "independant",
+    "Voting",
+    "would",
+    "have",
+    "seen",
+    "unpalatable",
+    "piece",
+    "legislation",
+    "presented",
+    "the",
+    "senate",
+    "making",
+    "even",
+    "easier",
+    "get",
+    "rid"
+  ],
+  "happiness_score": 5.745,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Perth, Western Australia",
+    "gcc": "5gper",
+    "suburb": "51230"
+  },
+  "language": "en",
+  "post_id": "1491583875818336257",
+  "author_id": "1575285372",
+  "created_at": "2022-02-10T01:24:42.000Z",
+  "content": "@SP_10 \ud83d\udcaf agree",
+  "sentiment": 0.25,
+  "tags": [],
+  "tokens": [
+    "agree"
+  ],
+  "happiness_score": 6.7,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Wahgunyah, Victoria",
+    "gcc": "2rvic",
+    "suburb": "22644"
+  },
+  "language": "en",
+  "post_id": "1491662090527916038",
+  "author_id": "1361479816122273796",
+  "created_at": "2022-02-10T06:35:30.000Z",
+  "content": "@blakandblack @MadamEarth I hear you",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "hear",
+    "you"
+  ],
+  "happiness_score": 6.04,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Perth, Western Australia",
+    "gcc": "5gper",
+    "suburb": "51230"
+  },
+  "language": "en",
+  "post_id": "1491753780257640450",
+  "author_id": "871317328482324480",
+  "created_at": "2022-02-10T12:39:51.000Z",
+  "content": "@KristaMay108 @adfphotography2 Probably don\u2019t use this line in your marketing \ud83d\ude02\ud83d\ude02",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "Probably",
+    "don",
+    "use",
+    "this",
+    "line",
+    "your",
+    "marketing"
+  ],
+  "happiness_score": 5.619999999999999,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491636930944978946",
+  "author_id": "1423662808311287813",
+  "created_at": "2022-02-10T04:55:32.000Z",
+  "content": "@LuvEvelynClaire @Albert14365153 What a sad fuck he is!!!!!",
+  "sentiment": -0.75,
+  "tags": [],
+  "tokens": [
+    "What",
+    "sad",
+    "fuck"
+  ],
+  "happiness_score": 3.26,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491714788774191108",
+  "author_id": "1264385409754132480",
+  "created_at": "2022-02-10T10:04:55.000Z",
+  "content": "@minato_z09 Looking fantastic \u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f\u2764\ufe0f",
+  "sentiment": 0.8,
+  "tags": [],
+  "tokens": [
+    "Looking",
+    "fantastic"
+  ],
+  "happiness_score": 7.78,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Brisbane, Queensland",
+    "gcc": "3gbri",
+    "suburb": "30379"
+  },
+  "language": "en",
+  "post_id": "1491908970566410241",
+  "author_id": "1121999566289555456",
+  "created_at": "2022-02-10T22:56:31.000Z",
+  "content": "@skippy10748233 Toxic place really does need to cleaned starting with the toxic people!",
+  "sentiment": -0.46153846153846156,
+  "tags": [],
+  "tokens": [
+    "Toxic",
+    "place",
+    "really",
+    "does",
+    "need",
+    "cleaned",
+    "starting",
+    "with",
+    "the",
+    "toxic",
+    "people"
+  ],
+  "happiness_score": 6.053333333333332,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Geelong, Victoria",
+    "gcc": "2rvic",
+    "suburb": "20973"
+  },
+  "language": "en",
+  "post_id": "1491586525737340935",
+  "author_id": "51373362",
+  "created_at": "2022-02-10T01:35:14.000Z",
+  "content": "@MoarToast I\u2019m sure they\u2019ve got something wrong there. This advert is much more reasonable https://t.co/KyDXciSKmi",
+  "sentiment": -0.1111111111111111,
+  "tags": [],
+  "tokens": [
+    "sure",
+    "they",
+    "got",
+    "something",
+    "wrong",
+    "there",
+    "This",
+    "advert",
+    "much",
+    "more",
+    "reasonable"
+  ],
+  "happiness_score": 5.577142857142858,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491568015044976642",
+  "author_id": "1895644616",
+  "created_at": "2022-02-10T00:21:41.000Z",
+  "content": "@LoganPaul Legend has it that monkey is now: the monkey king \ud83d\udc51 \ud83d\udc12\ud83e\udd23\u270d\ud83c\udffc\ud83d\udcad\nPs- I drew this https://t.co/RxS96AaAa5",
+  "sentiment": 0.14285714285714285,
+  "tags": [],
+  "tokens": [
+    "Legend",
+    "has",
+    "that",
+    "monkey",
+    "now",
+    "the",
+    "monkey",
+    "king",
+    "drew",
+    "AaAa5"
+  ],
+  "happiness_score": 6.0600000000000005,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Canberra, Australian Capital Territory",
+    "gcc": "8acte",
+    "suburb": "80003"
+  },
+  "language": "en",
+  "post_id": "1491575491434020864",
+  "author_id": "36846738",
+  "created_at": "2022-02-10T00:51:23.000Z",
+  "content": "@DavidSligar Where I grew up was similar, but I'm also amazed at the number of people I grew up with who went flocking back to the church, with kids in tow, in their 30s.",
+  "sentiment": 0.058823529411764705,
+  "tags": [],
+  "tokens": [
+    "Where",
+    "grew",
+    "was",
+    "similar",
+    "but",
+    "also",
+    "amazed",
+    "the",
+    "number",
+    "people",
+    "grew",
+    "with",
+    "who",
+    "went",
+    "flocking",
+    "back",
+    "the",
+    "church",
+    "with",
+    "kids",
+    "tow",
+    "their",
+    "30s"
+  ],
+  "happiness_score": 6.022222222222222,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Brisbane, Queensland",
+    "gcc": "3gbri",
+    "suburb": "30379"
+  },
+  "language": "en",
+  "post_id": "1491788750065913856",
+  "author_id": "1183358993881681920",
+  "created_at": "2022-02-10T14:58:48.000Z",
+  "content": "@AOC @3CallFinagle Pls don't accuse Marjorie of being  Nazi . This would imply she has read a book.",
+  "sentiment": 0.11764705882352941,
+  "tags": [],
+  "tokens": [
+    "Pls",
+    "don",
+    "accuse",
+    "being",
+    "This",
+    "would",
+    "imply",
+    "she",
+    "has",
+    "read",
+    "book"
+  ],
+  "happiness_score": 6.445,
+  "happiness_behaviour": "leisure"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491879746917257221",
+  "author_id": "34851914",
+  "created_at": "2022-02-10T21:00:24.000Z",
+  "content": "@lucyallan Read the room.\nEveryone has had enough of the buffoon.",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "Read",
+    "the",
+    "room",
+    "Everyone",
+    "has",
+    "had",
+    "enough",
+    "the",
+    "buffoon"
+  ],
+  "happiness_score": 5.52,
+  "happiness_behaviour": "leisure"
+},
+{
+  "location": {
+    "full_name": "Dunwich, Queensland",
+    "gcc": "3gbri",
+    "suburb": "30904"
+  },
+  "language": "en",
+  "post_id": "1491765213632229379",
+  "author_id": "61160348",
+  "created_at": "2022-02-10T13:25:17.000Z",
+  "content": "@lucyallan @HonestDrJohn Every vote is equal under strict proportional representation.  Or a directly elected Presidency with one vote one value \n\nBritain has never had either.  It's a constituency based, parliamentary system.",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "Every",
+    "vote",
+    "equal",
+    "under",
+    "strict",
+    "proportional",
+    "representation",
+    "directly",
+    "elected",
+    "Presidency",
+    "with",
+    "one",
+    "vote",
+    "one",
+    "value",
+    "Britain",
+    "has",
+    "never",
+    "had",
+    "either",
+    "constituency",
+    "based",
+    "parliamentary",
+    "system"
+  ],
+  "happiness_score": 5.492999999999999,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491649543464636416",
+  "author_id": "16866109",
+  "created_at": "2022-02-10T05:45:39.000Z",
+  "content": "@discoball2000 @VictorianCHO Ratio of under 10s has increased alongside NSW school return, highest of under 20s rise. https://t.co/0k5su5i24P",
+  "sentiment": 0.09523809523809523,
+  "tags": [],
+  "tokens": [
+    "Ratio",
+    "under",
+    "10s",
+    "has",
+    "increased",
+    "alongside",
+    "NSW",
+    "school",
+    "return",
+    "highest",
+    "under",
+    "20s",
+    "rise"
+  ],
+  "happiness_score": 6.45,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491681277636132864",
+  "author_id": "47081549",
+  "created_at": "2022-02-10T07:51:45.000Z",
+  "content": "@mattgillard I\u2019ll tweet links when I have them!",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "tweet",
+    "links",
+    "when",
+    "have",
+    "them"
+  ],
+  "happiness_score": 5.71,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491634039308320776",
+  "author_id": "17181019",
+  "created_at": "2022-02-10T04:44:02.000Z",
+  "content": "@4RealTarver @TheDanCosta Haha thank you bro!",
+  "sentiment": 0.8333333333333334,
+  "tags": [],
+  "tokens": [
+    "Haha",
+    "thank",
+    "you",
+    "bro"
+  ],
+  "happiness_score": 6.62,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491589212378136577",
+  "author_id": "17665712",
+  "created_at": "2022-02-10T01:45:55.000Z",
+  "content": "@victorklineTNL @JohnnyLydon Even if they didn't they would've been able to in the upper house wouldn't they? The result isn't too bad I think the failure will come from communicating that to voters given Australia's media https://t.co/LfhObun50J",
+  "sentiment": -0.125,
+  "tags": [],
+  "tokens": [
+    "Even",
+    "they",
+    "didn",
+    "they",
+    "would",
+    "been",
+    "able",
+    "the",
+    "upper",
+    "house",
+    "wouldn",
+    "they",
+    "The",
+    "result",
+    "isn",
+    "too",
+    "bad",
+    "think",
+    "the",
+    "failure",
+    "will",
+    "come",
+    "from",
+    "communicating",
+    "that",
+    "voters",
+    "given",
+    "media"
+  ],
+  "happiness_score": 5.35375,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491585259317919745",
+  "author_id": "2868449346",
+  "created_at": "2022-02-10T01:30:12.000Z",
+  "content": "@colonelhogans @ScottMorrisonMP @AlboMP The ACL has now pulled their support for this bill, this speaks volumes for what their true agenda was.\nThey now should crawl back under the rock they came from!",
+  "sentiment": 0.12121212121212122,
+  "tags": [],
+  "tokens": [
+    "The",
+    "ACL",
+    "has",
+    "now",
+    "pulled",
+    "their",
+    "support",
+    "for",
+    "this",
+    "bill",
+    "this",
+    "speaks",
+    "volumes",
+    "for",
+    "what",
+    "their",
+    "true",
+    "agenda",
+    "was",
+    "They",
+    "now",
+    "should",
+    "crawl",
+    "back",
+    "under",
+    "the",
+    "rock",
+    "they",
+    "came",
+    "from"
+  ],
+  "happiness_score": 5.703749999999999,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491607332400537602",
+  "author_id": "2334306487",
+  "created_at": "2022-02-10T02:57:55.000Z",
+  "content": "@RockyColo Yes that\u2019s right, there is a story but I do not have any heirs,  I could give them when I died to a charity.",
+  "sentiment": -0.08,
+  "tags": [],
+  "tokens": [
+    "Yes",
+    "that",
+    "right",
+    "there",
+    "story",
+    "but",
+    "not",
+    "have",
+    "any",
+    "heirs",
+    "could",
+    "give",
+    "them",
+    "when",
+    "died",
+    "charity"
+  ],
+  "happiness_score": 5.217777777777777,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491822692856922114",
+  "author_id": "2334306487",
+  "created_at": "2022-02-10T17:13:41.000Z",
+  "content": "@MaireadSmith6 Yes they are",
+  "sentiment": 0.25,
+  "tags": [],
+  "tokens": [
+    "Yes",
+    "they",
+    "are"
+  ],
+  "happiness_score": 5.62,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491603662682001409",
+  "author_id": "1417016117566996485",
+  "created_at": "2022-02-10T02:43:20.000Z",
+  "content": "@iam_chrisduggan Stunner mate! Same spot \ud83d\ude1c but seems like the waterfall was a bit more enthusiastic when you were there! https://t.co/MdcXVJWsQL",
+  "sentiment": 0.28,
+  "tags": [],
+  "tokens": [
+    "Stunner",
+    "mate",
+    "Same",
+    "spot",
+    "but",
+    "seems",
+    "like",
+    "the",
+    "waterfall",
+    "was",
+    "bit",
+    "more",
+    "enthusiastic",
+    "when",
+    "you",
+    "were",
+    "there"
+  ],
+  "happiness_score": 6.0840000000000005,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491886839955099648",
+  "author_id": "1319403520097878016",
+  "created_at": "2022-02-10T21:28:35.000Z",
+  "content": "@DJDanMurphy He is not a president anyway",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "not",
+    "president",
+    "anyway"
+  ],
+  "happiness_score": 4.86,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491915968758841350",
+  "author_id": "1319403520097878016",
+  "created_at": "2022-02-10T23:24:20.000Z",
+  "content": "@DJDanMurphy Haha, my bad \ud83e\udd26\ud83c\udffb\u200d\u2642\ufe0f",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "Haha",
+    "bad"
+  ],
+  "happiness_score": 2.64,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491569412154920961",
+  "author_id": "65595944",
+  "created_at": "2022-02-10T00:27:14.000Z",
+  "content": "@gilly381 @patcummins30 He indeed has a humble and calm nature and he is happy to take fuming questions and still answer with great calmness, one of the best qualities any person can cherish forever I believe",
+  "sentiment": 0.3888888888888889,
+  "tags": [],
+  "tokens": [
+    "indeed",
+    "has",
+    "humble",
+    "and",
+    "calm",
+    "nature",
+    "and",
+    "happy",
+    "take",
+    "fuming",
+    "questions",
+    "and",
+    "still",
+    "answer",
+    "with",
+    "great",
+    "calmness",
+    "one",
+    "the",
+    "best",
+    "qualities",
+    "any",
+    "person",
+    "can",
+    "cherish",
+    "forever",
+    "believe"
+  ],
+  "happiness_score": 6.686666666666667,
+  "happiness_behaviour": "affection"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491609649640255494",
+  "author_id": "70946394",
+  "created_at": "2022-02-10T03:07:07.000Z",
+  "content": "@gilly381 @patcummins30 In your opinion, Gilly, who works for whom, Australian captains, Australian coaches?",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "your",
+    "opinion",
+    "who",
+    "works",
+    "for",
+    "whom",
+    "Australian",
+    "captains",
+    "Australian",
+    "coaches"
+  ],
+  "happiness_score": 5.61,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Perth, Western Australia",
+    "gcc": "5gper",
+    "suburb": "51230"
+  },
+  "language": "en",
+  "post_id": "1491574176632631299",
+  "author_id": "34172405",
+  "created_at": "2022-02-10T00:46:10.000Z",
+  "content": "@StillNotToast @HelenOE Round the World not meaning anywhere near me. \nJust sayin \ud83e\udd40",
+  "sentiment": 0.0,
+  "tags": [],
+  "tokens": [
+    "Round",
+    "the",
+    "World",
+    "not",
+    "meaning",
+    "anywhere",
+    "near",
+    "Just",
+    "sayin"
+  ],
+  "happiness_score": 5.1933333333333325,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491661846595932161",
+  "author_id": "1353763546446741504",
+  "created_at": "2022-02-10T06:34:32.000Z",
+  "content": "@Ronja70422745 @ccone312 Agree.  I watched a little bit but not a lot as I feel guilty watching it, but then happy when Aussies get a medal.  We don't get many as we're a warm country so the summer Olympics is where we do well.",
+  "sentiment": 0.11363636363636363,
+  "tags": [],
+  "tokens": [
+    "Agree",
+    "watched",
+    "little",
+    "bit",
+    "but",
+    "not",
+    "lot",
+    "feel",
+    "guilty",
+    "watching",
+    "but",
+    "then",
+    "happy",
+    "when",
+    "Aussies",
+    "get",
+    "medal",
+    "don",
+    "get",
+    "many",
+    "warm",
+    "country",
+    "the",
+    "summer",
+    "Olympics",
+    "where",
+    "well"
+  ],
+  "happiness_score": 5.707500000000001,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491573480910778370",
+  "author_id": "823694870640345088",
+  "created_at": "2022-02-10T00:43:24.000Z",
+  "content": "@TMFScottP @elyobo @forager_gareth Policymakers, whether intentionally or by neglect, decided housing is more politically expedient being treated as an asset with rising capital  values to be cheered. And as a consequence affordability has suffered, FHB grants a popular stop gap, that\u2019s really a slap in the face",
+  "sentiment": 0.0625,
+  "tags": [],
+  "tokens": [
+    "Policymakers",
+    "whether",
+    "intentionally",
+    "neglect",
+    "decided",
+    "housing",
+    "more",
+    "politically",
+    "expedient",
+    "being",
+    "treated",
+    "asset",
+    "with",
+    "rising",
+    "capital",
+    "values",
+    "cheered",
+    "And",
+    "consequence",
+    "affordability",
+    "has",
+    "suffered",
+    "FHB",
+    "grants",
+    "popular",
+    "stop",
+    "gap",
+    "that",
+    "really",
+    "slap",
+    "the",
+    "face"
+  ],
+  "happiness_score": 5.315,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Sydney, New South Wales",
+    "gcc": "1gsyd",
+    "suburb": "13730"
+  },
+  "language": "en",
+  "post_id": "1491851047370899468",
+  "author_id": "7678792",
+  "created_at": "2022-02-10T19:06:21.000Z",
+  "content": "@philmorle That's a really good read and really good summary of what makes a venture investible company. The thing is: you don't know at the start of it will turn out to be that, even as a founder. All you can do is set the conditions up for it as much as possible.",
+  "sentiment": 0.11320754716981132,
+  "tags": [],
+  "tokens": [
+    "That",
+    "really",
+    "good",
+    "read",
+    "and",
+    "really",
+    "good",
+    "summary",
+    "what",
+    "makes",
+    "venture",
+    "investible",
+    "company",
+    "The",
+    "thing",
+    "you",
+    "don",
+    "know",
+    "the",
+    "start",
+    "will",
+    "turn",
+    "out",
+    "that",
+    "even",
+    "founder",
+    "All",
+    "you",
+    "can",
+    "set",
+    "the",
+    "conditions",
+    "for",
+    "much",
+    "possible"
+  ],
+  "happiness_score": 6.0139999999999985,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Melbourne, Victoria",
+    "gcc": "2gmel",
+    "suburb": "21640"
+  },
+  "language": "en",
+  "post_id": "1491631016389214208",
+  "author_id": "1447832490",
+  "created_at": "2022-02-10T04:32:02.000Z",
+  "content": "@Mon4Kooyong Sadly, @JoshFrydenberg has a disappointing, reckless voting record esp. as it relates to the climate crisis\ud83d\udc47\ud83c\udffc\ud83e\udd26\u200d\u2642\ufe0f\ud83c\udd98\n\nVote for @Mon4Kooyong in Kooyong if you want climate action this decade \ud83c\udf0f\n\nAnd vote Josh out \ud83d\udc4e https://t.co/OnipmImci3",
+  "sentiment": -0.1282051282051282,
+  "tags": [],
+  "tokens": [
+    "Sadly",
+    "has",
+    "disappointing",
+    "reckless",
+    "voting",
+    "record",
+    "esp",
+    "relates",
+    "the",
+    "climate",
+    "crisis",
+    "Vote",
+    "yong",
+    "Kooyong",
+    "you",
+    "want",
+    "climate",
+    "action",
+    "this",
+    "decade",
+    "And",
+    "vote",
+    "Josh",
+    "mImci3"
+  ],
+  "happiness_score": 5.3340000000000005,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Brisbane, Queensland",
+    "gcc": "3gbri",
+    "suburb": "30379"
+  },
+  "language": "en",
+  "post_id": "1491889542512918529",
+  "author_id": "1372897204168400901",
+  "created_at": "2022-02-10T21:39:19.000Z",
+  "content": "@tommychong @ThoseAMAs &amp; @ada_apocalypse - Both amazing communities with great long term focus https://t.co/Fth5cFxQlJ",
+  "sentiment": 0.3888888888888889,
+  "tags": [],
+  "tokens": [
+    "amp",
+    "Both",
+    "amazing",
+    "communities",
+    "with",
+    "great",
+    "long",
+    "term",
+    "focus"
+  ],
+  "happiness_score": 6.672,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Brisbane, Queensland",
+    "gcc": "3gbri",
+    "suburb": "30379"
+  },
+  "language": "en",
+  "post_id": "1491762881213657088",
+  "author_id": "519983370",
+  "created_at": "2022-02-10T13:16:01.000Z",
+  "content": "@tommychong Definitely @BoredApeTeen !! Check out their artwork! And their community is so much better than your typical bot/spam joining just to make up invite WL requirements! @RademachMark #BATC @TrxboyMAKCBATC @sighclogs",
+  "sentiment": 0.03225806451612903,
+  "tags": [
+    "BATC"
+  ],
+  "tokens": [
+    "Definitely",
+    "Check",
+    "out",
+    "their",
+    "artwork",
+    "And",
+    "their",
+    "community",
+    "much",
+    "better",
+    "than",
+    "your",
+    "typical",
+    "bot",
+    "spam",
+    "joining",
+    "just",
+    "make",
+    "invite",
+    "requirements"
+  ],
+  "happiness_score": 5.768888888888888,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491563106899677185",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T00:02:11.000Z",
+  "content": "\"Philanthropy is not the long-term answer. Philanthropy is there to fill the gap.\" -@negleton #WalkleysRegional",
+  "sentiment": 0.26666666666666666,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "Philanthropy",
+    "not",
+    "the",
+    "long",
+    "term",
+    "answer",
+    "Philanthropy",
+    "there",
+    "fill",
+    "the",
+    "gap"
+  ],
+  "happiness_score": 5.266666666666667,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491572099076530177",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T00:37:55.000Z",
+  "content": "\"People are longing to have something to trust ... Print actually can help with that. Local publishers use print to create a physical connection with people.\" -Jonathan Heawood #WalkleysRegional",
+  "sentiment": 0.07142857142857142,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "People",
+    "are",
+    "longing",
+    "have",
+    "something",
+    "trust",
+    "Print",
+    "actually",
+    "can",
+    "help",
+    "with",
+    "that",
+    "Local",
+    "publishers",
+    "use",
+    "print",
+    "create",
+    "physical",
+    "connection",
+    "with",
+    "people",
+    "Jonathan",
+    "Heawood"
+  ],
+  "happiness_score": 5.893076923076923,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491572725323685890",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T00:40:24.000Z",
+  "content": "Allowing a News Media Bargaining Code to prop up the existing publishers, at the expense of new ones, would be \"worse than a sticking-plaster\", Jon Heawood says. #WalkleysRegional",
+  "sentiment": -0.10714285714285714,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "Allowing",
+    "News",
+    "Media",
+    "Bargaining",
+    "Code",
+    "prop",
+    "the",
+    "existing",
+    "publishers",
+    "the",
+    "expense",
+    "new",
+    "ones",
+    "would",
+    "worse",
+    "than",
+    "sticking",
+    "plaster",
+    "Jon",
+    "Heawood",
+    "says"
+  ],
+  "happiness_score": 4.79,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491578538470047744",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T01:03:30.000Z",
+  "content": "In a survey, @simoncrerar found 29% of people would be willing to support a new local online news outlet in their area. At present, 14% are paying. \"This is exciting.\" #WalkleysRegional",
+  "sentiment": 0.16129032258064516,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "survey",
+    "found",
+    "people",
+    "would",
+    "willing",
+    "support",
+    "new",
+    "local",
+    "online",
+    "news",
+    "outlet",
+    "their",
+    "area",
+    "present",
+    "are",
+    "paying",
+    "This",
+    "exciting"
+  ],
+  "happiness_score": 6.540000000000001,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491580120272089092",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T01:09:47.000Z",
+  "content": "\"People are increasingly looking for free (news) over paid ... People are very frustrated about hitting paywalls.\" -@simoncrerar #WalkleysRegional",
+  "sentiment": -0.05555555555555555,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "People",
+    "are",
+    "increasingly",
+    "looking",
+    "for",
+    "free",
+    "news",
+    "over",
+    "paid",
+    "People",
+    "are",
+    "very",
+    "frustrated",
+    "about",
+    "hitting",
+    "paywalls"
+  ],
+  "happiness_score": 5.68,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491583745681666048",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T01:24:11.000Z",
+  "content": "\"People are saying 'hang on, (digital) is not how I want to access my news'. That's being increasingly reflected in international media: the passion for print.\" -Kristy Hess #WalkleysRegional",
+  "sentiment": 0.06896551724137931,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "People",
+    "are",
+    "saying",
+    "hang",
+    "digital",
+    "not",
+    "how",
+    "want",
+    "access",
+    "news",
+    "That",
+    "being",
+    "increasingly",
+    "reflected",
+    "international",
+    "media",
+    "the",
+    "passion",
+    "for",
+    "print"
+  ],
+  "happiness_score": 5.658461538461538,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491619383034396672",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T03:45:48.000Z",
+  "content": "\"The main function of a local paper to local people is it serves as a local hub, connects them to local people and gives them that sense of place.\" -Kristy Hess #WalkleysRegional",
+  "sentiment": 0.0,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "The",
+    "main",
+    "function",
+    "local",
+    "paper",
+    "local",
+    "people",
+    "serves",
+    "local",
+    "hub",
+    "connects",
+    "them",
+    "local",
+    "people",
+    "and",
+    "gives",
+    "them",
+    "that",
+    "sense",
+    "place"
+  ],
+  "happiness_score": 5.977499999999999,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491619715244257282",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T03:47:07.000Z",
+  "content": "\"We often use phrases like 'it's a great stepping stone' ... but I also think we need to celebrate regional journalism careers as wonderful, fulfilling, exciting careers.\" -Krist Hess #WalkleysRegional",
+  "sentiment": 0.5172413793103449,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "often",
+    "use",
+    "phrases",
+    "like",
+    "great",
+    "stepping",
+    "stone",
+    "but",
+    "also",
+    "think",
+    "need",
+    "celebrate",
+    "regional",
+    "journalism",
+    "careers",
+    "wonderful",
+    "fulfilling",
+    "exciting",
+    "careers"
+  ],
+  "happiness_score": 6.4781818181818185,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491620705351659520",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T03:51:03.000Z",
+  "content": "\"We often use phrases like 'it's a great stepping stone' ... but I also think we need to celebrate regional journalism careers as wonderful, fulfilling, exciting careers.\" -Kristy Hess #WalkleysRegional",
+  "sentiment": 0.5172413793103449,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "often",
+    "use",
+    "phrases",
+    "like",
+    "great",
+    "stepping",
+    "stone",
+    "but",
+    "also",
+    "think",
+    "need",
+    "celebrate",
+    "regional",
+    "journalism",
+    "careers",
+    "wonderful",
+    "fulfilling",
+    "exciting",
+    "careers"
+  ],
+  "happiness_score": 6.4781818181818185,
+  "happiness_behaviour": "achievement"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491621171519168513",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T03:52:54.000Z",
+  "content": "Facebook/Meta's @Huntzie says there were 95 applications to the recent Public Interest Journalism Fund. About half of the funding will go to regional outlets. Announcement to come in March. #WalkleysRegional",
+  "sentiment": 0.03225806451612903,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "Meta",
+    "says",
+    "there",
+    "were",
+    "applications",
+    "the",
+    "recent",
+    "About",
+    "half",
+    "the",
+    "funding",
+    "will",
+    "regional",
+    "outlets",
+    "Announcement",
+    "come",
+    "March"
+  ],
+  "happiness_score": 5.868,
+  "happiness_behaviour": "enjoy_the_moment"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491622337116274688",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T03:57:32.000Z",
+  "content": "\"Inevitably we're going to see some rationalisation of (newspaper) titles ... Without some sort of (government) support, there has to be.\" -@RoderickQuinn #WalkleysRegional",
+  "sentiment": 0.09090909090909091,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "Inevitably",
+    "going",
+    "see",
+    "some",
+    "rationalisation",
+    "newspaper",
+    "titles",
+    "Without",
+    "some",
+    "sort",
+    "government",
+    "support",
+    "there",
+    "has"
+  ],
+  "happiness_score": 6.095,
+  "happiness_behaviour": "bonding"
+},
+{
+  "location": {
+    "full_name": "Murray Bridge, South Australia",
+    "gcc": "4rsau",
+    "suburb": "40987"
+  },
+  "language": "en",
+  "post_id": "1491638339736567809",
+  "author_id": "196392938",
+  "created_at": "2022-02-10T05:01:08.000Z",
+  "content": "\"Many ... hyperlocal start-ups lose their ability to keep themselves going. There's lots of focus on the journalism &amp; less on the business models.\" -@simoncrerar\n\nI feel seen. #WalkleysRegional",
+  "sentiment": 0.07142857142857142,
+  "tags": [
+    "WalkleysRegional"
+  ],
+  "tokens": [
+    "Many",
+    "hyperlocal",
+    "start",
+    "ups",
+    "lose",
+    "their",
+    "ability",
+    "keep",
+    "themselves",
+    "going",
+    "There",
+    "lots",
+    "focus",
+    "the",
+    "journalism",
+    "amp",
+    "less",
+    "the",
+    "business",
+    "models",
+    "feel",
+    "seen"
+  ],
+  "happiness_score": 5.623333333333332,
+  "happiness_behaviour": "enjoy_the_moment"
+}
