@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     
 
@@ -118,7 +118,6 @@
     </ul>
   </div>
 
-  <div id="grad1"  style="overflow: auto;">
   <div class="container" style="overflow: auto;">
 
 
@@ -144,7 +143,8 @@
         <a name="s2.1"></a>
           <h1>Scenario 2.1</h1>
         </a>
-        <p>.</p>
+
+        <p>The average happiness score of Australia is 5.91526.</p>
       </section>
 
       <hr class="dotted"> <!---------------------------s1.1------------------------------------------------>
@@ -160,6 +160,12 @@
       <section class = "texts"> 
         <a name="s2.3"></a>
         <h1>Scenario 2.3</h1>
+        <h1>My Chart</h1>
+        <div id="chart"></div>
+        <script>
+          var chart_data = {{ chart_data|safe }};
+          Plotly.plot('chart', chart_data);
+        </script>
         <p>.</p>
       </section>
 
@@ -173,7 +179,6 @@
     </div>
     
 
-    </div>
   </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
