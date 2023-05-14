@@ -48,6 +48,7 @@ def my_view_function():
     # Render the template with the result
     return render_template('my_template.html', result = result, chart_data=chart_data)
 
+
 @app.route('/')
 def home():
     return render_template('index2.html')
@@ -81,8 +82,17 @@ def s1():
     fig = go.Figure([go.Bar(x=keys, y=ave)])
     fig.update_layout(yaxis_range=[5.8, 6])
     chart_data2 = json.dumps(fig, cls=PlotlyJSONEncoder)
+    # ---------------------------------------------------------------------------
+    view_result = db.view('_design/agg/_view/dow-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    keys = [row['key'] for row in result]
+    ave = [row['value']['avg'] for row in result]
 
-    return render_template('s1.html', chart_data=chart_data, chart_data2=chart_data2)
+    fig = go.Figure([go.Bar(x=keys, y=ave)])
+    fig.update_layout(yaxis_range=[5.8, 6])
+    chart_data3 = json.dumps(fig, cls=PlotlyJSONEncoder)
+
+    return render_template('s1.html', chart_data=chart_data, chart_data2=chart_data2, chart_data3 = chart_data3)
 @app.route('/s1/#s1.1')
 def s1_1():
     return render_template('s1.html')
@@ -148,6 +158,10 @@ def s3_3():
 def s3_4():
     return render_template('s3.html')
 
+#---------------------------s4--------------------------
+@app.route('/s4/')
+def s4():
+    return render_template('s4.html')
 
 
 if __name__ == '__main__':
