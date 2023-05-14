@@ -22,7 +22,6 @@ import json
 #Create an app object using the Flask class. 
 app = Flask(__name__)
 
-
 #Load the trained model. (Pickle file)
 
 abspath = os.path.abspath(__file__)
@@ -53,24 +52,37 @@ def my_view_function():
 def home():
     return render_template('index2.html')
 
-#---------------------------test--------------------------
-@app.route('/graph')
-def notdash():
-   df = pd.DataFrame({
-      'Fruit': ['Apples', 'Oranges', 'Bananas', 'Apples', 'Oranges', 'Bananas'],
-      'Amount': [4, 1, 2, 2, 4, 5],
-      'City': ['SF', 'SF', 'SF', 'Montreal', 'Montreal', 'Montreal']
-   })
-   fig = px.bar(df, x='Fruit', y='Amount', color='City',    barmode='group')
-   graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-   return render_template('notdash2.html', graphJSON=graphJSON)
 
 #---------------------------s1--------------------------
 
-@app.route('/s1/')
+@app.route('/s1/',methods=['GET'])
 def s1():
-    return render_template('s1.html')
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['twitter']
+    # Query the view
+    view_result = db.view('_design/agg/_view/month-agg-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    keys = [row['key'] for row in result]
+    ave = [row['value']['avg'] for row in result]
 
+    fig = go.Figure([go.Bar(x=keys, y=ave)])
+    fig.update_layout(yaxis_range=[5.8, 6])
+    chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
+    # Convert figure to JSON-serializable format
+    # chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
+    # Render the template with the result
+
+    # ---------------------------------------------------------------------------
+    view_result = db.view('_design/agg/_view/hour-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    keys = [row['key'] for row in result]
+    ave = [row['value']['avg'] for row in result]
+
+    fig = go.Figure([go.Bar(x=keys, y=ave)])
+    fig.update_layout(yaxis_range=[5.8, 6])
+    chart_data2 = json.dumps(fig, cls=PlotlyJSONEncoder)
+
+    return render_template('s1.html', chart_data=chart_data, chart_data2=chart_data2)
 @app.route('/s1/#s1.1')
 def s1_1():
     return render_template('s1.html')
@@ -87,7 +99,23 @@ def s1_4():
 #---------------------------s2--------------------------
 @app.route('/s2/')
 def s2():
-    return render_template('s2.html')
+        # Connect to CouchDB
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['twitter']
+    # Query the view
+    view_result = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    keys = [row['key'] for row in result]
+    ave = [row['value']['avg'] for row in result]
+
+    fig = go.Figure([go.Bar(x=keys, y=ave)])
+    fig.update_layout(yaxis_range=[5.6, 6.1])
+    chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
+    # Convert figure to JSON-serializable format
+    # chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
+    # Render the template with the result
+    return render_template('s2.html', result = result, chart_data=chart_data)
+
 @app.route('/s2/#s2.1')
 def s2_1():
     return render_template('s2.html')
@@ -119,6 +147,8 @@ def s3_3():
 @app.route('/s3/#s3.4')
 def s3_4():
     return render_template('s3.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
