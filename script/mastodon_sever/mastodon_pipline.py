@@ -4,7 +4,7 @@ import time
 import yaml
 
 url_couch = "http://admin:admin@localhost:5984"
-db_name = "mastodon_streaming_testing1"
+db_name = "mastodon"
 config = {
     "COUCHDB_URL": url_couch,
     "DB_NAME": db_name,
