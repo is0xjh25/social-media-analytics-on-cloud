@@ -152,7 +152,9 @@
       <section class = "texts">
         <a name="s2.2"></a>
         <h1>Scenario 2.2</h1>
-        <p>.</p>
+        <div style = "margin: 10%">
+          <p>{{ map | safe }}</p>
+        </div>
       </section>
 
       <hr class="dotted"> <!---------------------------s1.3------------------------------------------------>
@@ -160,7 +162,9 @@
       <section class = "texts"> 
         <a name="s2.3"></a>
         <h1>Scenario 2.3</h1>
-        <h1>My Chart</h1>
+        <div style = "margin: 10%">
+          <p>{{ map2 | safe }}</p>
+        </div>
         <div id="chart"></div>
         <script>
           var chart_data = {{ chart_data|safe }};
