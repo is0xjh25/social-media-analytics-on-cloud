@@ -18,11 +18,15 @@ import plotly.express as px
 import json
 import geopandas as gpd
 from flask_caching import Cache
+from flask_cors import CORS
+
+
 
 
 
 #Create an app object using the Flask class. 
 app = Flask(__name__)
+CORS(app)
 cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 #Load the trained model. (Pickle file)
@@ -156,9 +160,22 @@ def s1():
     chart_data3 = json.dumps(fig, cls=PlotlyJSONEncoder)
 
     return render_template('s1.html', chart_data=chart_data, chart_data2=chart_data2, chart_data3 = chart_data3)
+
 @app.route('/s1/#s1.1')
 def s1_1():
     return render_template('s1.html')
+
+
+# test
+@app.route('/test1')
+def first_test():
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['twitter']
+    view_result = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    return jsonify(result)
+
+    
 
 @app.route('/s1/#s1.2')
 def s1_2():
