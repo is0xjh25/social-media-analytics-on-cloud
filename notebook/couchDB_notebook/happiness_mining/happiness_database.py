@@ -33,7 +33,7 @@ class Couchdb:
 
     def set_db(self, db_name):
         self.db_name = db_name
-        if db_name not in self.couch:
+        if self.db_name not in self.couch:
             # self.db = couch.create(db_name)
             r = requests.put(
                 f"{self.url}/{db_name}"  # ,
