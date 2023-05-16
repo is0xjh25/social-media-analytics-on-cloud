@@ -133,7 +133,7 @@
           <li> <a href="#s2.1">Scenario 2.1:</a> What's the average happiness score of Australia as a baseline?</li>
           <li> <a href="#s2.2">Scenario 2.2:</a> What's the happiness score of each states?</li>
           <li> <a href="#s2.3">Scenario 2.3:</a> What's the happiness score of greater-capital-city-statistical-areas & the rest area?</li>
-          <li> <a href="#s2.4">Scenario 2.4:</a> What's the happiness socre of suburbs and locations?</li>
+          <li> <a href="#s2.4">Scenario 2.4:</a> What's the happiness score of suburbs and locations?</li>
           
         </p>
       </section>
@@ -142,19 +142,34 @@
       <section class = "texts">
         <a name="s2.1"></a>
           <h1>Scenario 2.1</h1>
-        </a>
-
-        <p>The average happiness score of Australia is 5.91526.</p>
+        <div style="background-color: #F6F6F6; padding: 20px; text-align: center;">
+          <h2 style="font-family: 'Arial Black', sans-serif; font-size: 24px; color: #c57b57; margin-bottom: 10px;">Unlocking the Australian Happiness: Average Score</h2>
+          <p style="font-size: 18px; margin-bottom: 20px; color: #333333;">The average happiness score of Australia is <span style="font-weight: bold; font-size: 24px;">5.91526</span>.</p>
+          <img src="{{ url_for('static', filename="australia.png")}}" style="width: 150px; height: 150px; margin-bottom: 20px;">
+        </div>
       </section>
 
+
       <hr class="dotted"> <!---------------------------s1.1------------------------------------------------>
-      
       <section class = "texts">
         <a name="s2.2"></a>
         <h1>Scenario 2.2</h1>
-        <div style = "margin: 10%">
-          <p>{{ map | safe }}</p>
+        <div style="background-color: #F6F6F6; padding: 20px; text-align: center;">
+          <h2 style="font-family: 'Arial Black', sans-serif; font-size: 24px; color: #c57b57; margin-bottom: 10px;">Unveiling State's Happiness Across Australia</h2>
+          <p style="font-size: 18px; margin-bottom: 20px; color: #333333;">What's the happiness score of each states?</p>
+          <hr style="border-color: #c57b57; border-width: 2px; margin-bottom: 20px;">
+          <h3 style="font-family: 'Verdana', sans-serif; font-size: 20px; color: #c57b57; margin-bottom: 10px;">Key Findings:</h3>
+          <p>Tasmania is <span style="font-weight: bold;">the happiest state</span>, while WA is <span style="font-weight: bold;">the least happy state</span>.</p>
+          <p><span style="font-weight: bold;">Victoria</span>, <span style="font-weight: bold;">Queensland</span>, and <span style="font-weight: bold;">Western Australia</span> have below-average happiness scores.</p>
         </div>
+    
+        <div id="chart2"></div>
+        <script>
+          var chart_data2 = {{ chart_data2|safe }};
+          Plotly.plot('chart2', chart_data2);
+        </script>
+
+
       </section>
 
       <hr class="dotted"> <!---------------------------s1.3------------------------------------------------>
@@ -162,6 +177,24 @@
       <section class = "texts"> 
         <a name="s2.3"></a>
         <h1>Scenario 2.3</h1>
+
+        <div style="background-color: #F6F6F6; padding: 20px; text-align: center;">
+          <h2 style="font-family: 'Arial Black', sans-serif; font-size: 24px; color: #c57b57; margin-bottom: 10px;">Unveiling GCC's Happiness Across Australia</h2>
+          <p style="font-size: 18px; margin-bottom: 20px; color: #333333;">What's the happiness score of Greater Capital City Statistical Areas and the rest of the areas?</p>
+          
+          <hr style="border-color: #c57b57; border-width: 2px; margin-bottom: 20px;">
+          <h3 style="font-family: 'Verdana', sans-serif; font-size: 20px; color: #c57b57; margin-bottom: 10px;">Key Findings:</h3>
+          <ul style="color: #333333;">
+            <li><strong style="font-weight: bold;">Northern West</strong> part of Australia is <span style="color: orange;"><b>happier</b></span> than the <b>Southern East</b> part.</li>
+            <li>Apart from Greater Darwin, for each state, the <b>Greater Capital Cities</b> are <span style="color: orange;"><b>happier</b></span> than the <b>Rest Areas</b>.</li>
+            <li>Places <span style="color: orange;"><b>above</b></span> the Australia average happiness include: Greater Sydney, Rest of NSW, Greater Adelaide, Greater Hobart, Rest of Northern Territory, Australian Capital Territory.</li>
+          </ul>
+        </div>
+    
+    
+        <div style = "margin: 10%">
+          <p>{{ map | safe }}</p>
+        </div>
         <div style = "margin: 10%">
           <p>{{ map2 | safe }}</p>
         </div>
@@ -170,7 +203,7 @@
           var chart_data = {{ chart_data|safe }};
           Plotly.plot('chart', chart_data);
         </script>
-        <p>.</p>
+
       </section>
 
       <hr class="dotted"> <!---------------------------s1.4------------------------------------------------>
@@ -178,7 +211,7 @@
       <section class = "texts">
         <a name="s2.4"></a>
         <h1>Scenario 2.4</h1>
-        <p>.</p>
+        
       </section>
     </div>
     

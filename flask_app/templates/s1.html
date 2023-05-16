@@ -121,7 +121,7 @@
       <section class = "texts">
         <br>
         <h1>Happiness & Time</h1> 
-        <h4><i>Non-geo Analysis with Twitter Data</i></h4>
+        <h4><i>Temporal Analysis with Twitter Data</i></h4>
         
         <p>This scenario involves non-geo-related analysis, as we investigated people's happiness score across different time period.
           <br>In this scenario, our study mainly focused on answering the following questions: <br>
@@ -139,7 +139,11 @@
         <a name="s1.1"></a>
           <h1>Scenario 1.1</h1>
         </a>
-        <h4>From 2022-03 to 2022-06, happiness score of Austrlia indicated an increasing trend.</h4>
+        <div style="background-color: #F6F6F6; padding: 20px; text-align: center;">
+          <h2 style="font-family: 'Arial Black', sans-serif; font-size: 24px; color: #c57b57; margin-bottom: 10px;">Unveiling the Rising Happiness in Australia           <img src="{{ url_for('static', filename='upward_arrow.png')}}" style="width: 50px; height: 50px; margin-bottom: 20px;"></p>
+          </h2>
+          <p style="font-size: 18px; margin-bottom: 20px; color: #333333;">From March 2022 to June 2022, the happiness score of Australia exhibited an <span style="color: orange;"><b>increasing</b></span> trend.
+        </div>
         <div id="chart">
           <script>
             var chart_data = {{ chart_data|safe }};
@@ -153,8 +157,17 @@
       <section class = "texts">
         <a name="s1.2"></a>
         <h1>Scenario 1.2</h1>
-        <h4>Happiness score peaked at early morning, and gradually decreases during in the day. <br>
-          At around 6 PM, the happiness score rose again to a small peak.
+        <div style="background-color: #F6F6F6; padding: 20px; text-align: center;">
+          <h2 style="font-family: 'Arial Black', sans-serif; font-size: 24px; color: #c57b57; margin-bottom: 10px;">Journey of Happiness Throughout the Day
+            <img src="{{ url_for('static', filename="sunrise_sunset_sunny_morning_hot_weather_icon_194376.png")}}"  style="width: 100px; height: 100px">
+            <img src="{{ url_for('static', filename="sunset_sunrise_beach_sun_sea_weather_icon_194359.png")}}"  style="width: 100px; height: 100px">
+          </h2>
+          <p style="font-size: 18px; margin-bottom: 20px; color: #333333;">The happiness score peaked in the early morning and gradually <span style="color: green;"><b>decreased</b></span> during the day.
+            <br>However, at around 6 PM, the happiness <span style="color: orange;"><b>rose</b></span> again, reaching a small peak.
+
+          </p>
+          </div>
+        
         </h4>
         <div id="chart2">
           <script>
@@ -170,7 +183,14 @@
       <section class = "texts"> 
         <a name="s1.3"></a>
         <h1>Scenario 1.3</h1>
-        <h4>Higher happiness score during the weekends.</he4>
+        <div style="background-color: #F6F6F6; padding: 20px; text-align: center;">
+          <h2 style="font-family: 'Arial Black', sans-serif; font-size: 24px; color: #c57b57; margin-bottom: 10px;">Weekend Bliss: Higher Happiness Scores
+            <img src="{{ url_for('static', filename="weekend.png")}}" style="width: 100px; height: 100px; ">
+
+          </h2>
+          <p style="font-size: 18px; margin-bottom: 20px; color: #333333;">During the weekends, the happiness scores reach higher levels, creating a blissful experience.</p>
+        </div>
+        
         <div id="chart3">
           <script>
             var chart_data3 = {{ chart_data3|safe }};

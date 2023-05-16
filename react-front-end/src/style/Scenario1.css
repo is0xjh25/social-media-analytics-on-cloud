@@ -1,0 +1,23 @@
+.container{
+    width: 1000px;
+    margin-left: 20%;
+}
+
+a {
+    text-decoration: none;
+    color:black
+  }
+
+  a:hover {
+    font-size: 1.1em; 
+  }
+
+  .histogram{
+    width: auto;
+    height: auto;
+  }
+
+  .Line{
+    width: auto;
+    height: auto;
+  }
