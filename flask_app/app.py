@@ -23,7 +23,6 @@ from flask_cors import CORS
 
 
 
-
 #Create an app object using the Flask class. 
 app = Flask(__name__)
 CORS(app)
@@ -172,6 +171,23 @@ def first_test():
     couch = couchdb.Server('http://admin:admin@localhost:5984')
     db = couch['twitter']
     view_result = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    return jsonify(result)
+
+@app.route('/gccWeekend')
+def gccWeekend():
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['twitter']
+    view_result = db.view('_design/agg/_view/dow-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    # print(result)
+    return jsonify(result)
+
+@app.route('/gccMonth')
+def gccMonth():
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['twitter']
+    view_result = db.view('_design/agg/_view/month-agg-view', reduce=True, group=True)
     result = [{'key': row.key, 'value': row.value} for row in view_result]
     return jsonify(result)
 
