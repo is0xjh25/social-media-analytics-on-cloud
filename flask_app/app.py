@@ -189,6 +189,10 @@ def s1_4():
 #---------------------------s2--------------------------
 @app.route('/s2/')
 @cache.cached(timeout=3600)
+
+
+
+
 def s2():
     # Connect to CouchDB
     couch = couchdb.Server('http://admin:admin@localhost:5984')
@@ -198,6 +202,7 @@ def s2():
     result = [{'key': row.key, 'value': row.value} for row in view_result]
     keys = [row['key'] for row in result]
     ave = [row['value']['avg'] for row in result]
+
     ave_color = ['#f4a582' if a >= 5.91526 else '#fddbc7' for a in ave]
     fig = go.Figure([go.Bar(x=keys, y=ave,marker_color=ave_color)])
     fig.update_layout(yaxis_range=[5.6, 6.1],
@@ -211,6 +216,8 @@ def s2():
                 annotation_position="bottom right")    
 
     chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
+
+
     # Convert figure to JSON-serializable format
     # chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
     # Render the template with the result
@@ -237,6 +244,7 @@ def s2():
     # Simplify the geometry column
     #gdf.geometry = gdf.geometry.simplify(tolerance=0.01, preserve_topology=True)
     # Save the simplified GeoDataFrame to a new file
+
     #gdf.to_file("../data/processed/simplified_GCCSA_2021_AUST_GDA2020.shp")
     gdf = gpd.read_file("../data/curated/GCCSA_2021_AUST_SHP_GDA2020/GCCSA_2021_AUST_GDA2020.shp")
     geoJSON = gpd.read_file("../data/curated/gcc_geojson.geojson")
@@ -285,22 +293,31 @@ def s2():
     )
     c.add_to(m2)
 
+    # -------------------------state-------------------------------------
+
+    view_result = db.view('_design/agg/_view/state-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    ave = [row['value']['avg'] for row in result]
+    keys = ['NSW', 'VIC', 'QLD', 'SA', 'WA','TAS', 'NT', 'ACT']
+    ave_color = ['#f4a582' if a >= 5.91526 else '#fddbc7' for a in ave]
+    fig = go.Figure([go.Bar(x=keys, y=ave,marker_color=ave_color)])
+    fig.update_layout(yaxis_range=[5.6, 6.1],
+        xaxis_title='States',
+        yaxis_title='Happiness Score',
+        yaxis_showgrid=True,
+        yaxis_gridcolor='lightgrey',
+        plot_bgcolor='white')
+    fig.add_hline(y=5.91526, line_dash="dot",
+                annotation_text="AU baseline (5.91526)", 
+                annotation_position="bottom right")    
+    chart_data2 = json.dumps(fig, cls=PlotlyJSONEncoder)
+
     #state_locations = {'nsw': (-32.0, 146.0), 'vic': (-37.0, 145.0), 'qld': (-20.0, 143.0), 'sa': (-30.0, 135.0), 'wa': (-27.0, 121.0), 'tas': (-42.0, 146.0), 'nt': (-20.0, 133.0), 'act': (-35.0, 149.0)}
     #averages_by_state = {'nsw': 5.939376343261581, 'vic': 5.900216282200858, 'qld': 5.894326677380478, 'sa': 5.924167045178846, 'wa': 5.889941445951669, 'tas': 5.954870757559762, 'nt': 5.929317511101778, 'act': 5.936749708020824}
-    return render_template('s2.html', result = result, chart_data=chart_data, map=m._repr_html_(), map2=m2._repr_html_())
+    return render_template('s2.html', result = result, chart_data=chart_data, chart_data2=chart_data2, map=m._repr_html_(), map2=m2._repr_html_())
 
 @app.route('/s2/#s2.1')
 def s2_1():
-    couch = couchdb.Server('http://admin:admin@localhost:5984')
-    db = couch['twitter']
-    # Query the view
-    view_result = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
-    result = [{'key': row.key, 'value': row.value} for row in view_result]
-    keys = [row['key'] for row in result]
-    ave = [row['value']['avg'] for row in result]
-
-
-
     return render_template('s2.html')
 
 @app.route('/s2/#s2.2')
