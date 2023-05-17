@@ -2,11 +2,9 @@ import React from 'react';
 import "../style/Home.css"
 import Typed from 'react-typed';
 import logo4 from '../image/logo4.png';
-import logo5 from '../image/logo5.png';
 import logo6 from '../image/logo6.png';
 import logo7 from '../image/logo7.png';
 import logo8 from '../image/logo8.png';
-import logo9 from '../image/logo9.png';
 
 function Home() {
   return (

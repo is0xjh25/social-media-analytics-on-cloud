@@ -195,7 +195,6 @@ padding-right: 2em;
 padding-bottom: 2em;
 overflow: hidden;
 }
-
 .ml11 .letter {
 display: inline-block;
 line-height: 1em;
@@ -249,6 +248,12 @@ hr.dotted {
 li{
   padding-top: 1%;
 }
+
+.letter_2{
+  padding-top: 20%;
+}
+
+
 
 
 .shadow {

@@ -397,7 +397,7 @@ function Scenario2() {
       <h2 id="s2_1head">Unlocking the Australian Happiness: Average Score</h2>
       <h4>
       The average happiness score of Australia is{' '}
-      <span id="bigNum">5.91526</span>
+      <span id="key_yellow">5.91526</span>
     </h4>
     < img id="au" src={au}/>
       <div className="Line">
