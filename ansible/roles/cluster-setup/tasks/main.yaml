@@ -1,0 +1,4 @@
+- name: Build CouchDB Cluster
+  script: ./cluster-setup.sh 172.26.130.194 172.26.134.50 172.26.128.215
+  register: outCouchDB
+# - debug: var=outCouchDB.stdout_lines

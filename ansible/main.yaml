@@ -1,7 +1,0 @@
-- hosts: instance
-  vars_files:
-    - host-vars/main.yaml
-  gather_facts: true
-
-  roles:
-    - role: couchdb-setup

@@ -1,10 +1,8 @@
 echo "***** Start CouchDB Deployment *****"
-sudo service docker restart
-
-export node=(172.26.128.203)
+export node="$1"
 export size=1
-export user='admin'
-export pass='admin'
+export user='jim'
+export pass='jimistired'
 export VERSION='3.2.1'
 export cookie='timtam'
 
@@ -25,6 +23,7 @@ docker create\
     -p 4369:4369\
     -p 9100-9200:9100-9200\
     -p 5986:5986\
+	-v /volume/couchdb:/opt/couchdb/data\
     --name couchdb${node}\
     --env COUCHDB_USER=${user}\
     --env COUCHDB_PASSWORD=${pass}\
@@ -35,7 +34,3 @@ docker create\
 # Start container of couchdb
 echo "Start couchDB container......"
 sudo docker start couchdb${node}
-
-# Restart docker
-echo "Restart couchDB container......"
-sudo docker restart couchdb${node}

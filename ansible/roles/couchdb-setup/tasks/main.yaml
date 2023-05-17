@@ -1,4 +1,3 @@
-- name: Build CouchDB Cluster
-  script: ./couchdb-setup.sh 172.26.128.203
-  # script: ./couchdb-setup.sh 172.26.130.150 172.26.132.7 172.26.131.183
-  # register: outCouchDB
+- name: Build CouchDB Nodes
+  script: ./couchdb-setup.sh '{{ ansible_default_ipv4.address }}'
+  register: outCouchDB
