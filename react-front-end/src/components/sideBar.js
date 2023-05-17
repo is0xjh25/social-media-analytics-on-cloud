@@ -84,17 +84,17 @@ const Sidebar = () => {
       </button>
       {showScenario1Subbuttons && (
       <div>
-        <Link to="/Scenario1#s1.1">
-        <button className="sub-buttons" onClick={() => handleLinkClick('s1.1')}>Scenario 1.1</button>
+        <Link to="/Scenario1#s1_1">
+        <button className="sub-buttons" onClick={() => handleLinkClick('s1_1')}>Scenario 1.1</button>
         </Link>
-        <Link to="/Scenario1#s1.2">
-        <button className="sub-buttons" onClick={() => handleLinkClick('s1.2')}>Scenario 1.2</button>
+        <Link to="/Scenario1#s1_2">
+        <button className="sub-buttons" onClick={() => handleLinkClick('s1_2')}>Scenario 1.2</button>
         </Link>
-        <Link to="/Scenario1#s1.3">
-        <button className="sub-buttons" onClick={() => handleLinkClick('s1.3')}>Scenario 1.3</button>
+        <Link to="/Scenario1#s1_3">
+        <button className="sub-buttons" onClick={() => handleLinkClick('s1_3')}>Scenario 1.3</button>
         </Link>
-        <Link to="/Scenario1#s1.4">
-        <button className="sub-buttons" onClick={() => handleLinkClick('s1.4')}>Scenario 1.4</button>
+        <Link to="/Scenario1#s1_4">
+        <button className="sub-buttons" onClick={() => handleLinkClick('s1_4')}>Scenario 1.4</button>
         </Link>
       </div>
       )}
@@ -104,17 +104,17 @@ const Sidebar = () => {
       </button>
       {showScenario2Subbuttons && (
       <div>
-        <Link to="/Scenario2#s2.1">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s2.1')}>Scenario 2.1</button>
+        <Link to="/Scenario2#s2_1">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s2_1')}>Scenario 2.1</button>
       </Link>
-      <Link to="/Scenario2#s2.2">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s2.2')}>Scenario 2.2</button>
+      <Link to="/Scenario2#s2_2">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s2_2')}>Scenario 2.2</button>
       </Link>
-      <Link to="/Scenario2#s2.3">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s2.3')}>Scenario 2.3</button>
+      <Link to="/Scenario2#s2_3">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s2_3')}>Scenario 2.3</button>
       </Link>
-      <Link to="/Scenario2#s2.4">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s2.4')}>Scenario 2.4</button>
+      <Link to="/Scenario2#s2_4">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s2_4')}>Scenario 2.4</button>
       </Link>
     </div>
       )}
@@ -124,17 +124,17 @@ const Sidebar = () => {
       </button>
       {showScenario3Subbuttons && (
       <div>
-      <Link to="/Scenario3#s3.1">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s3.1')}>Scenario 3.1</button>
+      <Link to="/Scenario3#s3_1">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s3_1')}>Scenario 3.1</button>
       </Link>
-      <Link to="/Scenario3#s3.2">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s3.2')}>Scenario 3.2</button>
+      <Link to="/Scenario3#s3_2">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s3_2')}>Scenario 3.2</button>
       </Link>
-      <Link to="/Scenario3#s3.3">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s3.3')}>Scenario 3.3</button>
+      <Link to="/Scenario3#s3_3">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s3_3')}>Scenario 3.3</button>
       </Link>
-      <Link to="/Scenario3#s3.4">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s3.4')}>Scenario 3.4</button>
+      <Link to="/Scenario3#s3_4">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s3_4')}>Scenario 3.4</button>
       </Link>
     </div>
       )}
@@ -144,14 +144,14 @@ const Sidebar = () => {
       </button>
       {showScenario4Subbuttons && (
       <div>
-      <Link to="/Scenario4#s4.1">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s4.1')}>Scenario 4.1</button>
+      <Link to="/Scenario4#s4_1">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s4_1')}>Scenario 4.1</button>
       </Link>
-      <Link to="/Scenario4#s4.2">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s4.2')}>Scenario 4.2</button>
+      <Link to="/Scenario4#s4_2">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s4_2')}>Scenario 4.2</button>
       </Link>
-      <Link to="/Scenario4#s4.3">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s4.3')}>Scenario 4.3</button>
+      <Link to="/Scenario4#s4_3">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s4_3')}>Scenario 4.3</button>
       </Link>
       {/* <button className="sub-buttons" onClick={() => handleLinkClick('s4.4')}>Scenario 4.4</button> */}
     </div>

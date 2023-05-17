@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import "../style/Scenario1.css";
 import { mean } from "lodash"
 import { Bar } from "react-chartjs-2";
+import up from '../image/upward_arrow.png';
+import upSun from '../image/sunup.png';
+import downSun from '../image/sundown.png';
+import week from '../image/weekend.png';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -445,21 +449,26 @@ function Scenario1() {
   return (
     <div class="container">
     <section class = "topic">
-        <h1>Happiness & Time</h1> 
+        <h1 id="head">Happiness & Time</h1> 
         <h2><i>Non-geo Analysis with Twitter Data</i></h2>
         
         <p>This scenario involves non-geo-related analysis, as we investigated people's happiness score across different time period.</p >
         <h2>In this scenario, our study mainly focused on answering the following questions: </h2>
-        <li> <a href=" ">Scenario 1.1:</a > What's the happiness trend from 2022.2 to 2022.8?</li>
-        <li> <a href="#s1.2">Scenario 1.2:</a > What's the happiness trend by hour of a day?</li>
-        <li> <a href="#s1.3">Scenario 1.3:</a > What's the happiness trend by day of week?</li>
-        <li> <a href="#s1.4">Scenario 1.4:</a > What's the most frequent words related to happiness?</li>
+        <li> <a href="#s1_1">Scenario 1.1:</a > What's the happiness trend from 2022.2 to 2022.8?</li>
+        <li> <a href="#s1_2">Scenario 1.2:</a > What's the happiness trend by hour of a day?</li>
+        <li> <a href="#s1_3">Scenario 1.3:</a > What's the happiness trend by day of week?</li>
+        <li> <a href="#s1_4">Scenario 1.4:</a > What's the most frequent words related to happiness?</li>
     </section>
 
-
-    <section class = "s1.1">
-        <h1 id="s1.1">Scenario 1.1</h1>
-      <h4>From 2022-03 to 2022-06, happiness score of Austrlia indicated an increasing trend.</h4>
+    <h1>Scenario 1.1</h1>
+    <section class = "s1_1">
+        <div id="s1_1">
+          <h2>Unveiling the Rising Happiness in Australia< img id="up" src={up}/></h2>
+          <p>From March 2022 to June 2022, the happiness score of Australia exhibited an {""}
+          <span id="key_yellow"> increasing </span>
+          trend. </p>
+        </div>
+        </section>
       <div className="Line">
       <Line
           options={options_line}
@@ -477,13 +486,20 @@ function Scenario1() {
           }}
         />
         </div>
-    </section>
-    <section id = "s1.2">
-    <h1 id="s1.2">Scenario 1.2</h1>
-    <h4>Happiness score peaked at early morning, and gradually decreases during in the day.
-        At around 6 PM, the happiness score rose again to a small peak.</h4>
+
+    <h1 id="s1_2">Scenario 1.2</h1>
+    <section class = "s1_2">
+    <h2 >< img id="sun" src={upSun}/>Journey of Happiness Throughout the Day < img id="sun" src={downSun}/></h2>
+    <h4>Happiness score peaked at early morning, and gradually {" "}
+      <span id="key_green">decreases </span>
+      during in the day.
+        At around 6 PM, the happiness score {""}
+        <span id="key_yellow">rose </span>
+        again to a small peak.</h4>
     <div className="histogram">
-    <Bar
+    </div>
+  </section>
+  <Bar
       options={options_his}
       data={{
         labels: data_his.map((data_his) => data_his.name),
@@ -498,14 +514,16 @@ function Scenario1() {
         ],
       }}
     />
-    </div>
-  </section>
 );
-    <section class = "s1.3">
-        <h1 id="s1.3">Scenario 1.3</h1>
-      <h4>Higher happiness score during the weekends.</h4>
-          <div className="histogram">
-          <Bar
+
+<h1 id="s1_3">Scenario 1.3</h1>
+    <section class = "s1_3">
+        <div>
+          <h2>Weekend Bliss: Higher Happiness Scores < img id="week" src={week}/></h2>
+          <p>During the weekends, the happiness scores reach higher levels, creating a blissful experience.</p>
+        </div>
+    </section>
+    <Bar
       options={options_weekend}
       data={{
         labels: data_week.map((data_week) => data_week.name),
@@ -520,10 +538,8 @@ function Scenario1() {
         ],
       }}
     />
-        </div>
-    </section>
-    <section class = "s1.4">
-        <h1 id="s1.4">Scenario 1.4</h1>
+    <section class = "s1_4">
+        <h1 id="s1_4">Scenario 1.4</h1>
       <h4>babababababababa</h4>
     </section>
     </div>

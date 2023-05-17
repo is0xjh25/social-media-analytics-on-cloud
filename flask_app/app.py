@@ -191,7 +191,24 @@ def gccMonth():
     result = [{'key': row.key, 'value': row.value} for row in view_result]
     return jsonify(result)
 
-    
+@app.route('/gccCount')
+def gccCount():
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['twitter']
+    view_result = db.view('_design/agg/_view/state-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    return jsonify(result)
+
+
+@app.route('/gccCount2')
+def gccCount_2():
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['twitter']
+    view_result = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    print(result)
+    return jsonify(result)
+
 
 @app.route('/s1/#s1.2')
 def s1_2():

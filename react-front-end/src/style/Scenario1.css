@@ -21,3 +21,43 @@ a {
     width: auto;
     height: auto;
   }
+
+.s1_1{
+  background-color: #F6F6F6; 
+  padding: 20px; 
+  text-align: center;
+  margin-top: 2%
+}
+
+#up{
+  height: 50px;
+  width: 50px;
+}
+
+
+.s1_2{
+  background-color: #F6F6F6; 
+  padding: 20px; 
+  text-align: center;
+  margin-top: 2%
+}
+
+#sun{
+  height: 80px;
+  width: 80px;
+}
+
+#key_green{
+  color:green
+}
+.s1_3{
+  background-color: #F6F6F6; 
+  padding: 20px; 
+  text-align: center;
+  margin-top: 2%
+}
+
+#week{
+  height: 80px;
+  width: 80px;
+}
