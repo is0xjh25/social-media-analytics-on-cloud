@@ -176,7 +176,7 @@ def first_test():
 
 @app.route('/gccWeekend')
 def gccWeekend():
-    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    couch = couchdb.Server('http://admin:admin@172.26.131.83:5984')
     db = couch['twitter']
     view_result = db.view('_design/agg/_view/dow-view', reduce=True, group=True)
     result = [{'key': row.key, 'value': row.value} for row in view_result]
