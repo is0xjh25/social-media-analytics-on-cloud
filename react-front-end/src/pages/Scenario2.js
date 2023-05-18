@@ -314,35 +314,58 @@ export const options_his = {
 
 function Scenario2() {
 
-  const [data, setData] = useState(initialData);
-  useEffect(() => {
-      fetch(process.env.REACT_APP_BACKEND_URL + 'gccCount')
-          .then(response => response.json())
-          .then(fetchedData => {
-              let newData = [...initialData];
-              for(let i = 0; i < fetchedData.length; i++) {
-                  // 这里我们假设 fetchedData 的顺序和 initialData 的顺序是一致的
-                  let avgValue = parseFloat(fetchedData[i].value.avg);
-                  // 更新对应的 Popularity 值
-                  newData[i + 1][2] = avgValue;
-              }
-              setData(newData);
-              console.log(newData)
+const [data, setData] = useState(initialData);
+const [data_hist, setDataHis] = useState([]);
+
+useEffect(() => {
+  fetch(process.env.REACT_APP_BACKEND_URL + 's2_data')
+  .then(response => {
+      if (!response.ok) { throw new Error('Network response was not ok') };
+      return response.json();
+  })
+  .then(allData => {
+      if (!allData.state) {  
+          let newData = [...initialData];
+          for(let i = 0; i < allData.stateData.length; i++) {
+              let avgValue = parseFloat(allData.stateData[i].value.avg);
+              newData[i + 1][2] = avgValue;
+          }
+          setData(newData);
+          console.log(newData)
+
+          setDataHis(allData.scoreData);
+      } else {  
+          fetch(process.env.REACT_APP_BACKEND_URL_2 + 's2_data')
+          .then(response2 => {
+              if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
+              return response2.json();
           })
-          .catch(error => console.log('Error:', error));
+          .then(allData2 => {
+              let newData2 = [...initialData];
+              for(let j = 0; j < allData2.stateData.length; j++) {
+                  let avgValue2 = parseFloat(allData2.stateData[j].value.avg);
+                  newData2[j + 1][2] = avgValue2;
+              }
+              setData(newData2);
+              console.log(newData2)
 
-  }, []);
+              setDataHis(allData2.scoreData);
+          })
+          .catch(error2 => {
+              console.error('There has been a problem with your fetch operation from the second backend:', error2);
+              window.alert("Connection to the second backend is broken");
+          });
+      }
+  })
+  .catch(error => {
+      console.error('There has been a problem with your fetch operation:', error);
+      window.alert("Connection is broken");
+  });
+}, []);
 
 
-  const [data_hist, setDataHis] = useState([]);
-    useEffect(() => {
-        fetch(process.env.REACT_APP_BACKEND_URL + 'gccCount2')
-        .then(response => response.json())
-        .then(data_hist => {
-            setDataHis(data_hist);
 
-        });
-    }, []);
+
 
     const data_histg = data_hist.map(item => ({
         name: item.key,

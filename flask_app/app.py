@@ -3,7 +3,7 @@
 from lib2to3.pgen2.pgen import DFAState
 import string
 import numpy as np
-from flask import Flask, request, render_template, json, jsonify
+from flask import Flask, request, render_template, json, jsonify,make_response
 import pickle
 import os
 import pandas as pd
@@ -19,6 +19,7 @@ import json
 import geopandas as gpd
 from flask_caching import Cache
 from flask_cors import CORS
+from flask_cors import cross_origin
 
 
 
@@ -28,12 +29,21 @@ app = Flask(__name__)
 CORS(app)
 cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
+
 #Load the trained model. (Pickle file)
 
 abspath = os.path.abspath(__file__)
 dname = os.path.dirname(abspath)
 os.chdir(dname)
 print(dname)
+
+
+GLOBAL_STATE = False
+
+@app.route('/status')
+def status():
+    return jsonify({'status': GLOBAL_STATE})
+
 
 @app.route('/db/',methods=['GET'])
 def my_view_function():
@@ -167,6 +177,7 @@ def s1_1():
 
 # test
 @app.route('/test1')
+@cross_origin()
 def first_test():
     couch = couchdb.Server('http://admin:admin@localhost:5984')
     db = couch['twitter']
@@ -175,6 +186,7 @@ def first_test():
     return jsonify(result)
 
 @app.route('/gccWeekend')
+@cross_origin()
 def gccWeekend():
     couch = couchdb.Server('http://admin:admin@172.26.131.83:5984')
     db = couch['twitter']
@@ -184,6 +196,7 @@ def gccWeekend():
     return jsonify(result)
 
 @app.route('/gccMonth')
+@cross_origin()
 def gccMonth():
     couch = couchdb.Server('http://admin:admin@localhost:5984')
     db = couch['twitter']
@@ -192,6 +205,7 @@ def gccMonth():
     return jsonify(result)
 
 @app.route('/gccCount')
+@cross_origin()
 def gccCount():
     couch = couchdb.Server('http://admin:admin@localhost:5984')
     db = couch['twitter']
@@ -201,6 +215,7 @@ def gccCount():
 
 
 @app.route('/gccCount2')
+@cross_origin()
 def gccCount_2():
     couch = couchdb.Server('http://admin:admin@localhost:5984')
     db = couch['twitter']
@@ -208,6 +223,70 @@ def gccCount_2():
     result = [{'key': row.key, 'value': row.value} for row in view_result]
     print(result)
     return jsonify(result)
+
+
+
+
+
+
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+# 全局变量
+GLOBAL_STATE = False
+
+@app.route('/s1_data')
+@cross_origin()
+def combinedData():
+    # global state value
+
+    if GLOBAL_STATE:
+        return jsonify({'state': True, 'result_1': None, 'result_2': None, 'result_3': None})
+    else:
+        try:
+            couch = couchdb.Server('http://admin:admin@localhost:5984')
+            db = couch['twitter']
+
+            # 1st view result
+            view_result_1 = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
+            result_1 = [{'key': row.key, 'value': row.value} for row in view_result_1]
+
+            # 2nd view result
+            view_result_2 = db.view('_design/agg/_view/month-agg-view', reduce=True, group=True)
+            result_2 = [{'key': row.key, 'value': row.value} for row in view_result_2]
+
+            # 3rd view result
+            view_result_3 = db.view('_design/agg/_view/dow-view', reduce=True, group=True)
+            result_3 = [{'key': row.key, 'value': row.value} for row in view_result_3]
+
+            return jsonify({'state': False, 'result_1': result_1, 'result_2': result_2, 'result_3': result_3})
+
+        except Exception as e:
+            return make_response(jsonify(error=str(e)), 500)
+
+
+
+@app.route('/s2_data')
+@cross_origin()
+def gcc_all_data():
+    if GLOBAL_STATE:
+        return jsonify({'state': True, 'result_1': None, 'result_2': None, 'result_3': None})
+    else:
+        try:
+            couch = couchdb.Server('http://admin:admin@localhost:5984')
+            db = couch['twitter']
+
+            state_view_result_1 = db.view('_design/agg/_view/state-view', reduce=True, group=True)
+            state_result_1 = [{'key': row.key, 'value': row.value} for row in state_view_result_1]
+
+            score_view_result_2 = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
+            state_result_1 = [{'key': row.key, 'value': row.value} for row in score_view_result_2]
+
+            return jsonify({'state': False, 'result_1': state_result_1, 'result_2': state_result_1})
+
+        except Exception as e:
+            return make_response(jsonify(error=str(e)), 500)
 
 
 @app.route('/s1/#s1.2')

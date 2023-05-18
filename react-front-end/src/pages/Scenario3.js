@@ -21,9 +21,9 @@ function Scenario3() {
     
 
 
-    <h1 id="s3.1">Scenario 3.1 Social Factors</h1>
+    <h1 id="s3_1">Scenario 3.1 Social Factors</h1>
     <section class = "s3_1">
-    <a name="s3.1"></a>
+    <a name="s3_1"></a>
             <h2>Exploring the Social Factors to Happiness</h2>
             <p>Do population, age, marriage, household size, and education impact our happiness?</p>
             <h3 id="key">Key Findings:</h3>

@@ -323,7 +323,7 @@ export const options_weekend = {
     x: {
       title: {
         display: true,
-        text: "Day",
+        text: "",
         font: {
           size: 15,
         },
@@ -364,15 +364,48 @@ export const options_weekend = {
 
 
 function Scenario1() {
-    const [data, setData] = useState([]);
-    useEffect(() => {
-        fetch(process.env.REACT_APP_BACKEND_URL + 'test1')
-        .then(response => response.json())
-        .then(data => {
-            setData(data);
 
-        });
-    }, []);
+const [data, setData] = useState([]);
+const [data_weekend, setData_weekend] = useState([]);
+const [data_month, setDataMoth] = useState([]);
+
+
+useEffect(() => {
+  fetch(process.env.REACT_APP_BACKEND_URL + 's1_data')
+  .then(response => {
+      if (!response.ok) { throw new Error('Network response was not ok') };
+      return response.json();
+  })
+  .then(data => {
+      if (!data.state) { 
+          setData(data.result_1);
+          setData_weekend(data.result_2);
+          setDataMoth(data.result_3);
+      } else {  
+          fetch(process.env.REACT_APP_BACKEND_URL_2 + 's1_data')
+          .then(response2 => {
+              if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
+              return response2.json();
+          })
+          .then(data2 => {
+              setData(data2.result_1);
+              setData_weekend(data2.result_2);
+              setDataMoth(data2.result_3);
+          })
+          .catch(error2 => {
+              console.error('There has been a problem with your fetch operation from the second backend:', error2);
+              window.alert("Connection to the second backend is broken");
+          });
+      }
+  })
+  .catch(error => {
+      console.error('There has been a problem with your fetch operation:', error);
+      window.alert("Connection is broken");
+  });
+}, []);
+
+
+
 
     const data_his = data.map(item => ({
         name: item.key,
@@ -380,39 +413,32 @@ function Scenario1() {
     }));
     console.log(data_his)
 
-    const averageScore = mean(data_his.map(item =>item.score))
+    const averageScore_1 = mean(data_his.map(item =>item.score))
 
     const belowAvgColor = "#fddbc7"
     const aboveAvgColor = "#f4a582"
 
     // create a new dataset for the average line
-    const averageLineDataset = {
+    const averageLineDataset_1 = {
     label: "Average Score",
-    data: Array(data_his.length).fill(averageScore), // an array of the same length as the original data, all filled with the average score
+    data: Array(data_his.length).fill(averageScore_1), // an array of the same length as the original data, all filled with the average score
     type: 'line', // this will be a line chart
     borderColor: "#808080", // line color
     borderWidth: 2, // line width
     fill: false, // don't fill under the line
   };
 
-  const [data_weekend, setData_weekend] = useState([]);
-    useEffect(() => {
-        fetch(process.env.REACT_APP_BACKEND_URL + 'gccWeekend')
-        .then(response => response.json())
-        .then(data_weekend => {
-          setData_weekend(data_weekend);
 
-        });
-    }, []);
+  const weekDays = [null, null, 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-    const data_week = data_weekend.map(item => ({
-         name: item.key + 1,
-         score: item.value.avg
-     }));
-     console.log(data_week)
+  const data_week = data_weekend.map(item => ({
+      name: weekDays[item.key],  // 将 key 直接作为索引
+      score: item.value.avg
+  }));
+  console.log(data_week);
 
-    const averageScoreWeek = mean(data_week.map(item =>item.score))
-
+  const averageScoreWeek = mean(data_week.map(item =>item.score))
+  
 
     // create a new dataset for the average line
     const averageLineDatasetWeek = {
@@ -425,20 +451,14 @@ function Scenario1() {
   };
 
 
-  const [data_month, setDataMoth] = useState([]);
-    useEffect(() => {
-        fetch(process.env.REACT_APP_BACKEND_URL + 'gccMonth')
-        .then(response => response.json())
-        .then(data_month => {
-          setDataMoth(data_month);
-        });
-    }, []);
+  const months = ['February', 'March', 'April', 'May', 'June', 'July', 'August'];
 
-    const data_mon = data_month.map(item => ({
-      name: item.key,
+  const data_mon = data_month.map(item => ({
+      name: months[item.key],  
       score: item.value.avg
   }));
-  console.log(data_mon)
+  console.log(data_mon);
+  
     
   
   
@@ -504,11 +524,11 @@ function Scenario1() {
       data={{
         labels: data_his.map((data_his) => data_his.name),
         datasets: [
-            averageLineDataset,
+            averageLineDataset_1,
           {
             label: "Frequency",
             data: data_his.map((data_his) => data_his.score),
-            backgroundColor: data_his.map((data_his) => data_his.score > averageScore ? aboveAvgColor : belowAvgColor),
+            backgroundColor: data_his.map((data_his) => data_his.score > averageScore_1 ? aboveAvgColor : belowAvgColor),
             borderWidth: 0.8,
           },
         ],
