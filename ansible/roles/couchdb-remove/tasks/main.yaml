@@ -1,0 +1,4 @@
+- name: Remove CouchDB Setting
+  script: ./couchdb-remove.sh
+  register: outCouchDB
+- debug: var=outCouchDB.stdout_lines

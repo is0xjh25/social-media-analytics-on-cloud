@@ -1,0 +1,4 @@
+# Deploy Docker on every vm
+- hosts: all
+  roles:
+    - role: deploy-docker
