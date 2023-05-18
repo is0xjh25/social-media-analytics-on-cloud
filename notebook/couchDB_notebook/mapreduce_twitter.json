@@ -34,7 +34,7 @@
         },
         "score-gcc-dow-view": {
             "reduce": "function(key, values, rereduce) {  \n  var result = {total: 0, count: 0};  \n  for(i=0; i < values.length; i++) {  \n    if(rereduce) {  \n        result.total = result.total + values[i].total;  \n        result.count = result.count + values[i].count;  \n    } else {  \n        result.total = sum(values);  \n        result.count = values.length;  \n    }  \n  }  \n  result.avg = result.total / result.count  \n  return(result);  \n}",
-            "map": "function(doc) {\n  var d = new Date(doc.created_at);\n  var dayOfWeek = d.getDay(); // 0 - 6 (Sunday - Saturday)\n  var happinessScore = doc.happiness_score;\n  if (happinessScore) {\n    emit([doc.location.gcc, dayOfWeek], doc.score);\n  }\n}"
+            "map": "function(doc) {\n  var d = new Date(doc.created_at);\n  var dayOfWeek = d.getDay(); // 0 - 6 (Sunday - Saturday)\n  var happinessScore = doc.happiness_score;\n  if (happinessScore) {\n    emit([doc.location.gcc, dayOfWeek], doc.happiness_score);\n  }\n}"
         },
         "score-gcc-hour-view": {
             "reduce": "function(key, values, rereduce) {  \n  var result = {total: 0, count: 0};  \n  for(i=0; i < values.length; i++) {  \n    if(rereduce) {  \n        result.total = result.total + values[i].total;  \n        result.count = result.count + values[i].count;  \n    } else {  \n        result.total = sum(values);  \n        result.count = values.length;  \n    }  \n  }  \n  result.avg = result.total / result.count  \n  return(result);  \n}",
@@ -55,6 +55,14 @@
         "behaviour-gcc-month-view": {
             "reduce": "_count",
             "map": "function(doc) {\n  var d = new Date(doc.created_at);\n  var month = d.getMonth() + 1; // 1 - 12\n  var happiness_behaviour = doc.happines_behaviour;\n  if (happiness_behaviour) {\n    emit([doc.loaction.gcc, month, happiness_behaviour], 1);\n  }\n}"
+        },
+        "behaviour-gcc-hour-view": {
+            "reduce": "_count",
+            "map": "function(doc) {\n  var d = new Date(doc.created_at);\n  var hour = d.getHours(); // 0 - 23\n  var happiness_behaviour = doc.happiness_behaviour;\n  if (happiness_behaviour) {\n    emit([doc.location.gcc, hour, happiness_behaviour], 1);\n  }\n}"
+        },
+        "behaviour-gcc-dow-view": {
+            "map": "function(doc) {\n  var d = new Date(doc.created_at);\n  var dayOfWeek = d.getDay(); // 0 - 6 (Sunday - Saturday)\n  var happiness_behaviour = doc.happiness_behaviour;\n  if (happiness_behaviour) {\n    emit([doc.location.gcc, dayOfWeek, happiness_behaviour], 1);\n  }\n}",
+            "reduce": "_count"
         }
     },
     "language": "javascript"
