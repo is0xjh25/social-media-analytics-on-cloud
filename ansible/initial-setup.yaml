@@ -1,0 +1,34 @@
+# Attach volumes to every vm
+- hosts: all
+  roles:
+    - role: volume-setup
+
+# Preparing couchdb container
+- hosts: database
+  roles:
+    - role: couchdb-setup
+
+# Set up each couchdb cluster
+- hosts: masterDB
+  roles:
+    - role: cluster-setup
+
+# Set up each couchdb cluster
+- hosts: master
+  roles:
+    - role: deploy-mastodon-harvester
+
+# Deploy twitter processor
+- hosts: nodeTwo
+  roles:
+    - role: deploy-twitter-processor
+
+# Deploy web server for backend
+- hosts: webServer
+  roles:
+    - role: deploy-web-backend
+
+# Deploy web server for frontend
+- hosts: webServer
+  roles:
+    - role: deploy-web-frontend

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# Variables
 export declare -a nodes=($1 $2 $3)
 export masternode="$1"
 export declare -a othernodes=`echo ${nodes[@]} | sed s/${masternode}//`
@@ -8,6 +9,7 @@ export user='jim'
 export pass='jimistired'
 export cookie='timtam'
 
+# Set up cluster
 for node in ${othernodes} 
 do
     curl -XPOST "http://${user}:${pass}@${masternode}:5984/_cluster_setup" \

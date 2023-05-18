@@ -1,4 +1,6 @@
-echo "***** Start CouchDB Deployment *****"
+#!/usr/bin/env bash
+
+# Variables
 export node="$1"
 export size=1
 export user='jim'
@@ -6,7 +8,7 @@ export pass='jimistired'
 export VERSION='3.2.1'
 export cookie='timtam'
 
-echo "Pull couchDB......"
+# Pull couchdb image
 sudo docker pull ibmcom/couchdb3:${VERSION}
 
 echo "Create Docker containers......"
@@ -17,7 +19,6 @@ if [ ! -z $(docker ps --all --filter "name=couchdb${node}" --quiet) ]
 fi
 
 # Create Docker
-echo "Create couchDB......"
 docker create\
     -p 5984:5984\
     -p 4369:4369\
@@ -32,5 +33,4 @@ docker create\
     ibmcom/couchdb3:${VERSION}
 
 # Start container of couchdb
-echo "Start couchDB container......"
 sudo docker start couchdb${node}

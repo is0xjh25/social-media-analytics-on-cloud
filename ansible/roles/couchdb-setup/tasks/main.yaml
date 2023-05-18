@@ -1,3 +1,4 @@
 - name: Build CouchDB Nodes
   script: ./couchdb-setup.sh '{{ ansible_default_ipv4.address }}'
   register: outCouchDB
+- debug: var=outCouchDB.stdout_lines

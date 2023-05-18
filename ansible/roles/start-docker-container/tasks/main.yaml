@@ -1,0 +1,4 @@
+- name: Start Docker Container
+  script: ./start-docker-container.sh '{{ ansible_default_ipv4.address }}'
+  register: outCouchDB
+#- debug: var=outCouchDB.stdout_lines

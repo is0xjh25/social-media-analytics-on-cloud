@@ -1,0 +1,6 @@
+# Stop docker container on node three
+# send the req to backend server
+# if else
+- hosts: nodeThree
+  roles:
+    - role: start-docker-container

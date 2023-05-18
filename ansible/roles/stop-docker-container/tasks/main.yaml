@@ -1,0 +1,4 @@
+- name: Stop Docker Container
+  script: ./stop-docker-container.sh '{{ ansible_default_ipv4.address }}'
+  register: outCouchDB
+#- debug: var=outCouchDB.stdout_lines
