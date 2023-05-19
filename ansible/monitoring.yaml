@@ -6,18 +6,32 @@
       url: http://172.26.131.83:5000/status
       method: GET
       return_content: yes
-    register: results
+    register: results.json
   - debug:
-      var: results
+      var: results.json
  
-# - hosts: nodeThree
+# Scaling up
+# - hosts: twitter
 #   roles:
-#     - role: server-scaling-up
+#     - role: deploy-frontend
 #   rules:
 #     - if: '${return-from-front-end} == "TRUE"'
 
-# - hosts: nodeThree
+# - hosts: couchdb
 #   roles:
-#     - role: server-scaling-down
+#     - role: deploy-backend
+#   rules:
+#     - if: '${return-from-front-end} == "TRUE"'
+
+# # Scaling down
+# - hosts: twitter
+#   roles:
+#     - role: remove-backend
+#   rules:
+#     - if: '${return-from-front-end} == "FALSE"'
+
+# - hosts: twitter
+#   roles:
+#     - role: remove-backend
 #   rules:
 #     - if: '${return-from-front-end} == "FALSE"'

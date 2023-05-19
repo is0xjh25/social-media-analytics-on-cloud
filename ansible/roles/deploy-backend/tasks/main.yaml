@@ -1,0 +1,4 @@
+- name: Deploy Backend
+  script: ./deploy-backend.sh
+  register: outBackend
+- debug: var=outBackend.stdout_lines

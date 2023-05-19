@@ -1,2 +1,0 @@
-- name: Deploy Docker
-  script: ./deploy-docker.sh

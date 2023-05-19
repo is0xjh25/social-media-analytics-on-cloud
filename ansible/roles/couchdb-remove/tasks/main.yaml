@@ -1,4 +1,4 @@
 - name: Remove CouchDB Setting
-  script: ./couchdb-remove.sh
+  script: ./couchdb-remove.sh '{{ ansible_default_ipv4.address }}'
   register: outCouchDB
 - debug: var=outCouchDB.stdout_lines

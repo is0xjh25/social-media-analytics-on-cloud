@@ -1,0 +1,5 @@
+---
+- name: Remove Backend
+  script: ./remove-backend.sh
+  register: outBackend
+- debug: var=outBackend.stdout_lines

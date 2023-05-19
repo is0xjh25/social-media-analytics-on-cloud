@@ -1,0 +1,5 @@
+---
+- name: Remove Frontend
+  script: ./remove-frontend.sh
+  register: outFrontend
+- debug: var=outFrontend.stdout_lines
