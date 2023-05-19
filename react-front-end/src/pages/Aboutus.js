@@ -50,14 +50,17 @@ const Aboutus = () => {
         <h1>Classify Reasons for Happiness</h1>
         <h2>A Classification Machine Learning Model - Logistic Regression </h2>
         <p>
-        Additionally, an NLP study classified happiness into 7 categories: achievement, affection, bonding, enjoy the moment, exercises, leisure, and nature. HappyDB project 
-        crowdsourced 100,000 happy moments and labelled each moments with the proposed categories.
-        <div style={{ display: 'flex', justifyContent: 'center',padding: '20px' }}>
+        Additionally, an NLP study classified happiness into 7 categories: achievement, affection, bonding, enjoy the moment, exercises, leisure, and nature.
+        <div style={{ display: 'flex', justifyContent: 'center',padding: '20px' ,background: "rgb(0,0,0,0.1)"}}>
         <div>
             <a href="https://megagon.ai/happydb-a-happiness-database-of-100000-happy-moments/" target="_blank">
-              <img src={happydb} alt="study" style={{ width: '700px'}} />
+              <img src={happydb} alt="study" style={{ width: '1300px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)' }} />
             </a>
           </div>
+          <div  style={{ margin: '20px', }}>
+          <h2>Happiness Labelled by Crowdsourcing</h2>
+          HappyDB project crowdsourced 100,000 happy moments and labelled each moments with the proposed categories.
+            </div>
           </div>
         </p>
     </div>
