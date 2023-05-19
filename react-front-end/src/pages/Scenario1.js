@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../style/Scenario1.css";
 import { mean } from "lodash"
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import up from '../image/upward_arrow.png';
 import upSun from '../image/sunup.png';
 import downSun from '../image/sundown.png';
 import week from '../image/weekend.png';
+import { Bar } from 'react-chartjs-2';
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -16,7 +18,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -29,18 +30,7 @@ ChartJS.register(
 );
 
 const data_line = []
-// const data_line = [
-//   { score: "0", freq: 10 },
-//   { score: "1", freq: 5 },
-//   { score: "2", freq: 5 },
-//   { score: "3", freq: 10 },
-//   { score: "4", freq: 15 },
-//   { score: "5", freq: 3 },
-//   { score: "6", freq: 15 },
-//   { score: "7", freq: 17 },
-//   { score: "8", freq: 8 },
-//   { score: "9", freq: 12 },
-// ];
+
 
 const totalDuration = 1500;
 const delayBetweenPoints = totalDuration / data_line.length;
@@ -105,7 +95,7 @@ export const options_line = {
     },
     title: {
       display: true,
-      text: "Frequency of Happiness Score",
+      text: "Happiness Score by Month",
       font: {
         size: 24,
       },
@@ -124,7 +114,7 @@ export const options_line = {
     x: {
       title: {
         display: true,
-        text: "Happiness Score",
+        text: "Month",
         font: {
           size: 20,
         },
@@ -138,7 +128,7 @@ export const options_line = {
     y: {
       title: {
         display: true,
-        text: "Frequency",
+        text: "Happiness Score",
         font: {
           size: 20,
         },
@@ -255,7 +245,7 @@ export const options_his = {
     x: {
       title: {
         display: true,
-        text: "Gcc Names",
+        text: "Hours",
         font: {
           size: 15,
         },
@@ -274,8 +264,8 @@ export const options_his = {
           size: 15,
         },
       },
-      min:5.75,
-      max:6.1,
+      min:5,
+      max:7,
       ticks: {
         font: {
           size: 15,
@@ -304,7 +294,7 @@ export const options_weekend = {
     },
     title: {
       display: true,
-      text: "Happiness Score of day of week",
+      text: "Happiness Score by Hour (Twitter)",
       font: {
         size: 24,
       },
@@ -323,7 +313,207 @@ export const options_weekend = {
     x: {
       title: {
         display: true,
-        text: "",
+        text: "Hour",
+        font: {
+          size: 15,
+        },
+      },
+      ticks: {
+        font: {
+          size: 15,
+        },
+      },
+    },
+    y: {
+      title: {
+        display: true,
+        text: "Happiness Score",
+        font: {
+          size: 15,
+        },
+      },
+      min:5.85,
+      max:5.98,
+      ticks: {
+        font: {
+          size: 15,
+        },
+        
+      },
+    },
+  },
+};
+
+export const options_weekend_m = {
+  responsive: true,
+  animation_his,
+  plugins: {
+    legend: {
+      display: true,
+      labels: {
+        // usePointStyle: true,
+        font: {
+          size: 10,
+        },
+      },
+      // position: "right",
+    },
+    title: {
+      display: true,
+      text: "Happiness Score by Hour (Mastodon)",
+      font: {
+        size: 24,
+      },
+    },
+    tooltip: {
+      bodyFont: {
+        size: 15,
+      },
+      titleFont: {
+        size: 15,
+      },
+    },
+  },
+
+  scales: {
+    x: {
+      title: {
+        display: true,
+        text: "Hour",
+        font: {
+          size: 15,
+        },
+      },
+      ticks: {
+        font: {
+          size: 15,
+        },
+      },
+    },
+    y: {
+      title: {
+        display: true,
+        text: "Happiness Score",
+        font: {
+          size: 15,
+        },
+      },
+      min:5,
+      max:6,
+      ticks: {
+        font: {
+          size: 15,
+        },
+        
+      },
+    },
+  },
+};
+
+
+export const options_his_2 = {
+  responsive: true,
+  animation_his,
+  plugins: {
+    legend: {
+      display: true,
+      labels: {
+        // usePointStyle: true,
+        font: {
+          size: 10,
+        },
+      },
+      // position: "right",
+    },
+    title: {
+      display: true,
+      text: "Happiness Score by day of week (Mastodon)",
+      font: {
+        size: 24,
+      },
+    },
+    tooltip: {
+      bodyFont: {
+        size: 15,
+      },
+      titleFont: {
+        size: 15,
+      },
+    },
+  },
+
+  scales: {
+    x: {
+      title: {
+        display: true,
+        text: "Day of Week",
+        font: {
+          size: 15,
+        },
+      },
+      ticks: {
+        font: {
+          size: 15,
+        },
+      },
+    },
+    y: {
+      title: {
+        display: true,
+        text: "Happiness Score",
+        font: {
+          size: 15,
+        },
+      },
+      min:5.65,
+      max:5.8,
+      ticks: {
+        font: {
+          size: 15,
+        },
+        
+      },
+    },
+  },
+};
+
+
+export const options_his_twitter = {
+  responsive: true,
+  animation_his,
+  plugins: {
+    legend: {
+      display: true,
+      labels: {
+        // usePointStyle: true,
+        font: {
+          size: 10,
+        },
+      },
+      // position: "right",
+    },
+    title: {
+      display: true,
+      text: "Happiness Score by day of week (Twitter)",
+      font: {
+        size: 24,
+      },
+    },
+    tooltip: {
+      bodyFont: {
+        size: 15,
+      },
+      titleFont: {
+        size: 15,
+      },
+    },
+  },
+
+  scales: {
+    x: {
+      title: {
+        display: true,
+        text: "Day of Week",
         font: {
           size: 15,
         },
@@ -368,6 +558,76 @@ function Scenario1() {
 const [data, setData] = useState([]);
 const [data_weekend, setData_weekend] = useState([]);
 const [data_month, setDataMoth] = useState([]);
+const [data_mostdon, setDataMostodn] = useState([]);
+const [data_mostdon_week, setDataMostodnWeek] = useState([]);
+
+useEffect(() => {
+  fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon')
+  .then(response => {
+    if (!response.ok) { throw new Error('Network response was not ok') };
+    return response.json();
+})
+  .then(data_mostdon => {
+    setDataMostodn(data_mostdon);
+});
+}, []);
+console.log(data_mostdon)
+
+
+const weekDays = [null, null, 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+const data_mostdonH = data_mostdon.map(item => ({
+  name: item.key,
+  score: item.value.avg
+}));
+console.log(data_mostdonH)
+
+const averageScore_M = mean(data_mostdonH.map(item =>item.score))
+
+const averageLineDataset_M = {
+  label: "Average Score from Mastodon",
+  data: Array(data_mostdonH.length).fill(averageScore_M), // an array of the same length as the original data, all filled with the average score
+  type: 'line', // this will be a line chart
+  borderColor: "#808080", // line color
+  borderWidth: 2, // line width
+  fill: false, // don't fill under the line
+};
+
+
+useEffect(() => {
+  fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_w')
+  .then(response => {
+    if (!response.ok) { throw new Error('Network response was not ok') };
+    return response.json();
+})
+  .then(data_mostdon_week => {
+    setDataMostodnWeek(data_mostdon_week);
+});
+}, []);
+console.log(data_mostdon_week)
+
+const weekDays_m = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+const data_mostdon_week_a = data_mostdon_week.map(item => ({
+  name: weekDays_m[item.key],  
+  score: item.value.avg
+}));
+
+const averageScore_M_w = mean(data_mostdon_week_a.map(item =>item.score))
+
+const averageLineDataset_M_w = {
+  label: "Average Score from Mastodon",
+  data: Array(data_mostdonH.length).fill(averageScore_M_w), // an array of the same length as the original data, all filled with the average score
+  type: 'line', // this will be a line chart
+  borderColor: "#808080", // line color
+  borderWidth: 2, // line width
+  fill: false, // don't fill under the line
+};
+
+
+
+
+
 
 
 useEffect(() => {
@@ -382,7 +642,7 @@ useEffect(() => {
           setData_weekend(data.result_2);
           setDataMoth(data.result_3);
       } else {  
-          fetch(process.env.REACT_APP_BACKEND_URL_2 + 's1_data')
+          fetch(process.env.REACT_APP_BACKEND_URL + 's1_data')
           .then(response2 => {
               if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
               return response2.json();
@@ -418,6 +678,9 @@ useEffect(() => {
     const belowAvgColor = "#fddbc7"
     const aboveAvgColor = "#f4a582"
 
+    const aboveAvgColor_m = "#34a8f7"
+    const belowAvgColor_m = "#7bbdeb"
+
     // create a new dataset for the average line
     const averageLineDataset_1 = {
     label: "Average Score",
@@ -429,10 +692,9 @@ useEffect(() => {
   };
 
 
-  const weekDays = [null, null, 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
   const data_week = data_weekend.map(item => ({
-      name: weekDays[item.key],  // 将 key 直接作为索引
+      name: weekDays[item.key],  
       score: item.value.avg
   }));
   console.log(data_week);
@@ -470,14 +732,13 @@ useEffect(() => {
     <div class="container">
     <section class = "topic">
         <h1 id="head">Happiness & Time</h1> 
-        <h2><i>Non-geo Analysis with Twitter Data</i></h2>
+        <h2><i>Temporal Analysis with Twitter Data</i></h2>
         
-        <p>This scenario involves non-geo-related analysis, as we investigated people's happiness score across different time period.</p >
+        <p>This scenario involves temporal analysis, as we investigated people's happiness score across different time period.</p >
         <h2>In this scenario, our study mainly focused on answering the following questions: </h2>
-        <li> <a href="#s1_1">Scenario 1.1:</a > What's the happiness trend from 2022.2 to 2022.8?</li>
-        <li> <a href="#s1_2">Scenario 1.2:</a > What's the happiness trend by hour of a day?</li>
-        <li> <a href="#s1_3">Scenario 1.3:</a > What's the happiness trend by day of week?</li>
-        <li> <a href="#s1_4">Scenario 1.4:</a > What's the most frequent words related to happiness?</li>
+        <li> <a href="#s1_1">Scenario 1.1:</a > What's the happiness trend from 2022.2 to 2022.8 in Australia?</li>
+        <li> <a href="#s1_2">Scenario 1.2:</a > What's the happiness trend by hour of a day in Australia and globally?</li>
+        <li> <a href="#s1_3">Scenario 1.3:</a > What's the happiness trend by day of week in Australia and globally?</li>
     </section>
 
     <h1>Scenario 1.1</h1>
@@ -520,13 +781,13 @@ useEffect(() => {
     </div>
   </section>
   <Bar
-      options={options_his}
+      options={options_his_twitter}
       data={{
         labels: data_his.map((data_his) => data_his.name),
         datasets: [
             averageLineDataset_1,
           {
-            label: "Frequency",
+            label: "Score from Twitter",
             data: data_his.map((data_his) => data_his.score),
             backgroundColor: data_his.map((data_his) => data_his.score > averageScore_1 ? aboveAvgColor : belowAvgColor),
             borderWidth: 0.8,
@@ -534,7 +795,21 @@ useEffect(() => {
         ],
       }}
     />
-);
+    <Bar
+      options={options_his_2}
+      data={{
+        labels: data_his.map((data_his) => data_his.name),
+        datasets: [
+          averageLineDataset_M,
+          {
+            label: "Score from Mastodon",
+            data: data_mostdonH.map((data_mostdonH) => data_mostdonH.score), // data_week_2 是第二个数据集的数据
+            backgroundColor: data_mostdonH.map((data_mostdonH) => data_mostdonH.score > averageScore_M ? aboveAvgColor_m : belowAvgColor_m),
+            borderWidth: 0.8,
+          },
+        ],
+      }}
+    />
 
 <h1 id="s1_3">Scenario 1.3</h1>
     <section class = "s1_3">
@@ -550,7 +825,7 @@ useEffect(() => {
         datasets: [
             averageLineDatasetWeek,
           {
-            label: "Frequency",
+            label: "Score from Twitter",
             data: data_week.map((data_week) => data_week.score),
             backgroundColor: data_week.map((data_week) => data_week.score > averageScoreWeek ? aboveAvgColor : belowAvgColor),
             borderWidth: 0.8,
@@ -558,12 +833,22 @@ useEffect(() => {
         ],
       }}
     />
-    <section class = "s1_4">
-        <h1 id="s1_4">Scenario 1.4</h1>
-      <h4>babababababababa</h4>
-    </section>
+<Bar
+      options={options_weekend_m}
+      data={{
+        labels: data_mostdon_week_a.map((data_mostdon_week_a) => data_mostdon_week_a.name),
+        datasets: [
+          averageLineDataset_M_w,
+          {
+            label: "Score from Mastodon",
+            data: data_mostdon_week_a.map((data_mostdon_week_a) => data_mostdon_week_a.score),
+            backgroundColor: data_mostdon_week_a.map((data_mostdon_week_a) => data_mostdon_week_a.score > averageScore_M_w ? aboveAvgColor_m : belowAvgColor_m),
+            borderWidth: 0.8,
+          },
+        ],
+      }}
+    />
     </div>
-
   );
 }
 

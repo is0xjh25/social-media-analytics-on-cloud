@@ -14,7 +14,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Line } from "react-chartjs-2";
 
 ChartJS.register(
   CategoryScale,
@@ -43,11 +42,11 @@ const data_line = [
 let initialData = [
   ["Code", "Name", "Happiness Score"],
   ["AU-NSW", "New South Wales", 0],
+  ["AU-VIC", "Victoria", 0],
   ["AU-QLD", "Queensland", 0],
   ["AU-SA", "South Australia", 0],
   ["AU-WA", "Western Australia", 0],
   ["AU-TAS", "Tasmania", 0],
-  ["AU-VIC", "Victoria", 0],
   ["AU-NT", "Northern Territory", 0],
   ["AU-ACT", "Australian Capital Territory", 0],
 ];
@@ -56,11 +55,11 @@ let initialData = [
   export const data_geo = [
     ["Code", "Name", "Happiness Score"],
     ["AU-NSW", "New South Wales", 0],
+    ["AU-VIC", "Victoria", 0],
     ["AU-QLD", "Queensland", 0],
     ["AU-SA", "South Australia", 0],
     ["AU-WA", "Western Australia", 0],
     ["AU-TAS", "Tasmania", 0],
-    ["AU-VIC", "Victoria", 0],
     ["AU-NT", "Northern Territory", 0],
     ["AU-ACT", "Australian Capital Territory", 0],
   ];
@@ -313,64 +312,61 @@ export const options_his = {
 
 
 function Scenario2() {
-
-const [data, setData] = useState(initialData);
-const [data_hist, setDataHis] = useState([]);
-
-useEffect(() => {
-  fetch(process.env.REACT_APP_BACKEND_URL + 's2_data')
-  .then(response => {
-      if (!response.ok) { throw new Error('Network response was not ok') };
-      return response.json();
-  })
-  .then(allData => {
-      if (!allData.state) {  
-          let newData = [...initialData];
-          for(let i = 0; i < allData.stateData.length; i++) {
-              let avgValue = parseFloat(allData.stateData[i].value.avg);
-              newData[i + 1][2] = avgValue;
-          }
-          setData(newData);
-          console.log(newData)
-
-          setDataHis(allData.scoreData);
-      } else {  
-          fetch(process.env.REACT_APP_BACKEND_URL_2 + 's2_data')
-          .then(response2 => {
-              if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
-              return response2.json();
-          })
-          .then(allData2 => {
-              let newData2 = [...initialData];
-              for(let j = 0; j < allData2.stateData.length; j++) {
-                  let avgValue2 = parseFloat(allData2.stateData[j].value.avg);
-                  newData2[j + 1][2] = avgValue2;
-              }
-              setData(newData2);
-              console.log(newData2)
-
-              setDataHis(allData2.scoreData);
-          })
-          .catch(error2 => {
-              console.error('There has been a problem with your fetch operation from the second backend:', error2);
-              window.alert("Connection to the second backend is broken");
-          });
-      }
-  })
-  .catch(error => {
-      console.error('There has been a problem with your fetch operation:', error);
-      window.alert("Connection is broken");
-  });
+  const [data, setData] = useState(initialData);
+  const [data_hist, setDataHis] = useState([]);
+  
+  useEffect(() => {
+    fetch(process.env.REACT_APP_BACKEND_URL + 's2_data')
+    .then(response => {
+        if (!response.ok) { throw new Error('Network response was not ok') };
+        return response.json();
+    })
+    .then(fetchedData => {
+        if (fetchedData.state) {
+            // If state is true, fetch from the second URL
+            return fetch(process.env.REACT_APP_BACKEND_URL_2 + 's2_data')
+                .then(response2 => {
+                    if (!response2.ok) { throw new Error('Network response was not ok') };
+                    return response2.json();
+                })
+                .then(fetchedData2 => {
+                    // Now, we are working with the fetchedData2
+                    let newData = [...initialData];
+                    for(let i = 0; i < fetchedData2.result_1.length; i++) {
+                        let avgValue = parseFloat(fetchedData2.result_1[i].value.avg);
+                        newData[i + 1][2] = avgValue;
+                    }
+                    setData(newData);
+                    setDataHis(fetchedData2.result_2);
+                    console.log(newData);
+                })
+        } else {
+            // Handle the case when state is false
+            let newData = [...initialData];
+            for(let i = 0; i < fetchedData.result_1.length; i++) {
+                let avgValue = parseFloat(fetchedData.result_1[i].value.avg);
+                newData[i + 1][2] = avgValue;
+            }
+            setData(newData);
+            setDataHis(fetchedData.result_2);
+            console.log(newData);
+        }
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
+        // window.alert("Connection is broken");
+    });
 }, []);
 
-
-
-
+  
 
     const data_histg = data_hist.map(item => ({
         name: item.key,
         score: item.value.avg
     }));
+
+    console.log("2222222")
+    console.log(data_histg)
 
     const averageScore = mean(data_histg.map(item =>item.score))
 
@@ -409,7 +405,7 @@ useEffect(() => {
           Statistical Areas Level 4 (i.e. Greater Capital City Statistical Areas), and Non ABS Structures (i.e. Suburbs and Localities)
         </p >
         <h2>In this scenario, our study mainly focused on answering the following questions with the happiness scoring algorithm: </h2>
-        <li> <a href=" #s2_1">Scenario 2.1:</a > What's the average happiness score of Australia as a baseline?</li>
+        <li> <a href="#s2_1">Scenario 2.1:</a > What's the average happiness score of Australia as a baseline?</li>
         <li> <a href="#s2_2">Scenario 2.2:</a > What's the happiness score of each states?</li>
         <li> <a href="#s2_3">Scenario 2.3:</a > What's the happiness score of greater-capital-city-statistical-areas & the rest area?</li>
         <li> <a href="#s2_4">Scenario 2.4:</a > What's the happiness socre of suburbs and locations?</li>

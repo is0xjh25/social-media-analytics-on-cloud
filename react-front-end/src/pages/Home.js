@@ -94,8 +94,9 @@ function Home() {
 </div>
 
       <div id="grad1">
-        <section className="texts_1">
-          <h1 id="overview">Overview</h1>
+        <section className="texts_1" >
+        <h1 id="overview">Overview</h1>
+
           <p>This web application demonstrates the visualized analysis results of sentiment analysis on Twitter and Mastodon data. The main goal of this project is to analyze the "happiness" indicated from social media behaviors. To quantify the "happiness" of a text posted on social media, we used a happiness score algorithm referenced from (Dodds etal., 2011). In total, we analyzed the "happiness" of 1,807,963 geo located Twitter data.</p>
           <p>This website will tell the story of happiness followed by four scenarios:</p>
         </section>

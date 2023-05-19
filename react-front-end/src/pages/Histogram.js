@@ -21,16 +21,16 @@ ChartJs.register(
 
 /* 然后柱状图的是x是happiness score(0-9分) y是frequency */
 const data = [
-  // { score: "0", freq: 10 },
-  // { score: "1", freq: 5 },
-  // { score: "2", freq: 5 },
-  // { score: "3", freq: 10 },
-  // { score: "4", freq: 15 },
-  // { score: "5", freq: 3 },
-  // { score: "6", freq: 15 },
-  // { score: "7", freq: 17 },
-  // { score: "8", freq: 8 },
-  // { score: "9", freq: 12 },
+  { score: "0", freq: 10 },
+  { score: "1", freq: 5 },
+  { score: "2", freq: 5 },
+  { score: "3", freq: 10 },
+  { score: "4", freq: 15 },
+  { score: "5", freq: 3 },
+  { score: "6", freq: 15 },
+  { score: "7", freq: 17 },
+  { score: "8", freq: 8 },
+  { score: "9", freq: 12 },
 ];
 const totalDuration = 1500;
 const delayBetweenPoints = totalDuration / data.length;

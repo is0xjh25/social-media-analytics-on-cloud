@@ -210,6 +210,7 @@ transform-origin: 0 0;
 height: auto;
 width:100%;
 font-size: 20px;
+background: linear-gradient(rgba(255,0,0,0),#e9c57c);
 }
 
   

@@ -46,10 +46,6 @@ const Sidebar = () => {
     setScenario3ArrowDown(!scenario3ArrowDown);
   };
 
-  const toggleScenario4Subbuttons = () => {
-    setShowScenario4Subbuttons(!showScenario4Subbuttons);
-    setScenario4ArrowDown(!scenario4ArrowDown);
-  };
 
   return (
     <div className="sidebar">
@@ -62,8 +58,7 @@ const Sidebar = () => {
       </button>
       {showHomeSubbuttons && (
         <div>
-          <button className="sub-buttons">Overview</button>
-          <button className="sub-buttons">Report</button>
+          <button className="sub-buttons" >Overview</button>
           <Link to="/Scenario1">
           <button className="sub-buttons" >S1. Happiness & Time</button>
           </Link>
@@ -72,9 +67,6 @@ const Sidebar = () => {
           </Link>
           <Link to="/Scenario3">
           <button className="sub-buttons">S3. Discover Influential Factors</button>
-          </Link>
-          <Link to="/Scenario4">
-          <button className="sub-buttons">S4. Comparative Analysis</button>
           </Link>
         </div>
       )}
@@ -139,7 +131,7 @@ const Sidebar = () => {
     </div>
       )}
 
-      <button className={`btn btn-link ${showScenario4Subbuttons ? 'active' : ''}`} onClick={toggleScenario4Subbuttons}>
+      {/* <button className={`btn btn-link ${showScenario4Subbuttons ? 'active' : ''}`} onClick={toggleScenario4Subbuttons}>
         <span className={`rotate-arrow ${scenario4ArrowDown ? 'down' : ''}`}>▶</span> Scenario 4
       </button>
       {showScenario4Subbuttons && (
@@ -153,9 +145,9 @@ const Sidebar = () => {
       <Link to="/Scenario4#s4_3">
       <button className="sub-buttons" onClick={() => handleLinkClick('s4_3')}>Scenario 4.3</button>
       </Link>
-      {/* <button className="sub-buttons" onClick={() => handleLinkClick('s4.4')}>Scenario 4.4</button> */}
+      <button className="sub-buttons" onClick={() => handleLinkClick('s4.4')}>Scenario 4.4</button>
     </div>
-      )}
+      )} */}
     </div>
   );
 };

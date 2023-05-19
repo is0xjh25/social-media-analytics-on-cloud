@@ -20,7 +20,7 @@ import geopandas as gpd
 from flask_caching import Cache
 from flask_cors import CORS
 from flask_cors import cross_origin
-
+import threading
 
 
 
@@ -37,11 +37,34 @@ dname = os.path.dirname(abspath)
 os.chdir(dname)
 print(dname)
 
+request_counter = 0
+
+def reset_counter():
+    global request_counter
+    request_counter = 0
+    # 重新设置定时器
+    threading.Timer(60, reset_counter).start()
+
+
+reset_counter()
+
+@app.before_request
+def increment_request_counter():
+    global request_counter
+    request_counter += 1
+    print("Received request number:", request_counter)
+
 
 GLOBAL_STATE = False
 
 @app.route('/status')
 def status():
+    global request_counter
+    global GLOBAL_STATE
+    if request_counter >10:
+        GLOBAL_STATE = True
+    else:
+        GLOBAL_STATE = False
     return jsonify({'status': GLOBAL_STATE})
 
 
@@ -185,6 +208,7 @@ def first_test():
     result = [{'key': row.key, 'value': row.value} for row in view_result]
     return jsonify(result)
 
+
 @app.route('/gccWeekend')
 @cross_origin()
 def gccWeekend():
@@ -226,14 +250,10 @@ def gccCount_2():
 
 
 
-
-
-
 from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-# 全局变量
 GLOBAL_STATE = False
 
 @app.route('/s1_data')
@@ -249,7 +269,7 @@ def combinedData():
             db = couch['twitter']
 
             # 1st view result
-            view_result_1 = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
+            view_result_1 = db.view('_design/agg/_view/hour-view', reduce=True, group=True)
             result_1 = [{'key': row.key, 'value': row.value} for row in view_result_1]
 
             # 2nd view result
@@ -271,7 +291,7 @@ def combinedData():
 @cross_origin()
 def gcc_all_data():
     if GLOBAL_STATE:
-        return jsonify({'state': True, 'result_1': None, 'result_2': None, 'result_3': None})
+        return jsonify({'state': True, 'result_1': None, 'result_2': None})
     else:
         try:
             couch = couchdb.Server('http://admin:admin@localhost:5984')
@@ -281,12 +301,46 @@ def gcc_all_data():
             state_result_1 = [{'key': row.key, 'value': row.value} for row in state_view_result_1]
 
             score_view_result_2 = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
-            state_result_1 = [{'key': row.key, 'value': row.value} for row in score_view_result_2]
+            state_result_2 = [{'key': row.key, 'value': row.value} for row in score_view_result_2]
 
-            return jsonify({'state': False, 'result_1': state_result_1, 'result_2': state_result_1})
+            return jsonify({'state': False, 'result_1': state_result_1, 'result_2': state_result_2})
 
         except Exception as e:
             return make_response(jsonify(error=str(e)), 500)
+        
+
+
+@app.route('/mastodon')
+@cross_origin()
+def mastdon():
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['mastodon']
+    view_result = db.view('_design/happiness_doc/_view/score-hour-view', reduce=True, group=True)
+    print(view_result)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    return jsonify(result)
+
+
+@app.route('/mastodon_w')
+@cross_origin()
+def mastdon_week():
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['mastodon']
+    view_result = db.view('_design/happiness_doc/_view/score-dow-view', reduce=True, group=True)
+    print(view_result)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    return jsonify(result)
+
+
+@app.route('/mastodon_b')
+@cross_origin()
+def mastdon_b():
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db = couch['mastodon']
+    view_result = db.view('_design/happiness_doc/_view/behaviour-dow-view', reduce=True, group=True)
+    print(view_result)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    return jsonify(result)
 
 
 @app.route('/s1/#s1.2')
@@ -330,34 +384,6 @@ def s2():
     chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
 
 
-    # Convert figure to JSON-serializable format
-    # chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
-    # Render the template with the result
-    # def calculate_state_averages(json_data):
-    #     state_totals = {}
-    #     state_counts = {}
-    #     for row in json_data['rows']:
-    #         state_key = row['key'][0]
-    #         if state_key not in state_totals:
-    #             state_totals[state_key] = 0
-    #             state_counts[state_key] = 0
-    #         state_totals[state_key] += row['value']['total']
-    #         state_counts[state_key] += row['value']['count']
-    #     state_averages = {}
-    #     for state_key in state_totals:
-    #         state_averages[state_key] = state_totals[state_key] / state_counts[state_key]
-    #     return state_averages
-    # state_averages = calculate_state_averages(view_result)
-    # state_map = {'1': 'nsw', '2': 'vic', '3': 'qld', '4': 'sa', '5': 'wa', '6': 'tas', '7': 'nt', '8': 'act'}
-    # averages_by_state = {state_map[key]: value for key, value in state_averages.items()}
-    
-    
-    #gdf = gpd.read_file("../data/raw/GCCSA_2021_AUST_SHP_GDA2020/GCCSA_2021_AUST_GDA2020.shp")
-    # Simplify the geometry column
-    #gdf.geometry = gdf.geometry.simplify(tolerance=0.01, preserve_topology=True)
-    # Save the simplified GeoDataFrame to a new file
-
-    #gdf.to_file("../data/processed/simplified_GCCSA_2021_AUST_GDA2020.shp")
     gdf = gpd.read_file("../data/curated/GCCSA_2021_AUST_SHP_GDA2020/GCCSA_2021_AUST_GDA2020.shp")
     geoJSON = gpd.read_file("../data/curated/gcc_geojson.geojson")
     df = pd.DataFrame({"gcc":keys, "happiness_score":ave})
