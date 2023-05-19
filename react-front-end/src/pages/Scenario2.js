@@ -404,11 +404,10 @@ function Scenario2() {
             Australian Statistical Geography Standard (ASGS) was used for statistical areas reference. Among the statistical standards, we used 
           Statistical Areas Level 4 (i.e. Greater Capital City Statistical Areas), and Non ABS Structures (i.e. Suburbs and Localities)
         </p >
-        <h2>In this scenario, our study mainly focused on answering the following questions with the happiness scoring algorithm: </h2>
+        <h2>Analysis Goal</h2>
         <li> <a href="#s2_1">Scenario 2.1:</a > What's the average happiness score of Australia as a baseline?</li>
         <li> <a href="#s2_2">Scenario 2.2:</a > What's the happiness score of each states?</li>
-        <li> <a href="#s2_3">Scenario 2.3:</a > What's the happiness score of greater-capital-city-statistical-areas & the rest area?</li>
-        <li> <a href="#s2_4">Scenario 2.4:</a > What's the happiness socre of suburbs and locations?</li>
+        <li> <a href="#s2_3">Scenario 2.3:</a > What's the happiness score of GCC & SAL?</li>
     </section>
 
     <h1 id="s2_1">Scenario 2.1</h1>

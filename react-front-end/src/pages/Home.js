@@ -5,6 +5,7 @@ import logo4 from '../image/logo4.png';
 import logo6 from '../image/logo6.png';
 import logo7 from '../image/logo7.png';
 import logo8 from '../image/logo8.png';
+import study from '../image/study.png';
 
 function Home() {
   return (
@@ -93,26 +94,32 @@ function Home() {
 </div>
 </div>
 
-      <div id="grad1">
+      <div id= "oSection">
         <section className="texts_1" >
         <h1 id="overview">Overview</h1>
 
-          <p>This web application demonstrates the visualized analysis results of sentiment analysis on Twitter and Mastodon data. The main goal of this project is to analyze the "happiness" indicated from social media behaviors. To quantify the "happiness" of a text posted on social media, we used a happiness score algorithm referenced from (Dodds etal., 2011). In total, we analyzed the "happiness" of 1,807,963 geo located Twitter data.</p>
-          <p>This website will tell the story of happiness followed by four scenarios:</p>
+          <p>This web application demonstrates the visualised analysis results of sentiment analysis on Twitter and Mastodon data. The main goal of this project is to analyse the "happiness" indicated from social media behaviors. 
+            To quantify the "happiness" of a text posted on social media, we used a happiness score algorithm referenced from 
+            (Dodds etal., 2011). In total, we analyzed the "happiness" of 1,807,963 geo located Twitter data.</p>
+            
+          <p>This website will tell the story of happiness followed by 3 scenarios:</p>
         </section>
 
         <div class="container1_2">
         < img src={logo4} id="logo4"/>
         <div id="text_2">
-                <h1 id='overview'>Discovering Temporal Trends of Happiness in Australia</h1>
+                <h1 id='overview'>Happiness Trends by Time in Australia and Global Social Media</h1>
                 <li>Are people beaming with more happiness during specific months?</li>
                     <li>Does morning or night bring more joy?</li>
                     <li>Do weekends bring more happiness to people's lives?</li>
+                    <li>How does the happiness level of Australia's Tweets compare to the global average?</li>
+                    <li>Are there different temporal trends in happiness between Australia and the rest of the world?</li>
+
                     </div>
             </div>
         <div class="container1_2">
         <div id="text_2_2">
-                <h1 id='overview'>Unveiling Happiness Across Australia</h1>
+                <h1 id='overview'>Happiness Trends by Location Across Australia</h1>
                 <li>Which states in Australia are the happiest according to social media?</li>
                     <li>Unraveling the Secrets of Greater Capital Cities: Do They Hold the Key to Happiness?</li>
                     <li>Is there a significant difference in happiness between the eastern and western parts of Australia?</li>
@@ -130,17 +137,10 @@ function Home() {
                     </div>
             </div>
 
-            <div class="container1_2">
-        <div id="text_2_2">
-                <h1 id='overview'>Happiness - Australia vs the World</h1>
-                <li>How does the happiness level of Australia's Tweets compare to the global average?</li>
-                    <li>Are there different temporal trends in happiness between Australia and the rest of the world?</li>
-                    </div>
-                    < img src={logo8} id="logo8"/>
-            </div>
+        </div>
+
 
       </div>
-    </div>
   );
 }
 

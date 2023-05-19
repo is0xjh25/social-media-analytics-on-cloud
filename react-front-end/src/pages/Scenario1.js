@@ -732,16 +732,16 @@ useEffect(() => {
     <div class="container">
     <section class = "topic">
         <h1 id="head">Happiness & Time</h1> 
-        <h2><i>Temporal Analysis with Twitter Data</i></h2>
+        <h2><i>Temporal Analysis with Twitter & Mastodon Data</i></h2>
         
         <p>This scenario involves temporal analysis, as we investigated people's happiness score across different time period.</p >
-        <h2>In this scenario, our study mainly focused on answering the following questions: </h2>
+        <h2>Analysis Goal </h2>
         <li> <a href="#s1_1">Scenario 1.1:</a > What's the happiness trend from 2022.2 to 2022.8 in Australia?</li>
         <li> <a href="#s1_2">Scenario 1.2:</a > What's the happiness trend by hour of a day in Australia and globally?</li>
         <li> <a href="#s1_3">Scenario 1.3:</a > What's the happiness trend by day of week in Australia and globally?</li>
     </section>
 
-    <h1>Scenario 1.1</h1>
+    <h1 id="s1_1">Scenario 1.1</h1>
     <section class = "s1_1">
         <div id="s1_1">
           <h2>Unveiling the Rising Happiness in Australia< img id="up" src={up}/></h2>

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import "../style/SideBar.css";
 import logo from '../image/logo.png';
 
+
 const Sidebar = () => {
 
   const handleLinkClick = (targetId) => {
@@ -58,7 +59,10 @@ const Sidebar = () => {
       </button>
       {showHomeSubbuttons && (
         <div>
-          <button className="sub-buttons" >Overview</button>
+          <button className="sub-buttons"  onClick={() => handleLinkClick('oSection')} >Overview</button>
+          <Link to="/Aboutus">
+          <button className="sub-buttons" >About</button>
+          </Link>
           <Link to="/Scenario1">
           <button className="sub-buttons" >S1. Happiness & Time</button>
           </Link>
@@ -85,9 +89,6 @@ const Sidebar = () => {
         <Link to="/Scenario1#s1_3">
         <button className="sub-buttons" onClick={() => handleLinkClick('s1_3')}>Scenario 1.3</button>
         </Link>
-        <Link to="/Scenario1#s1_4">
-        <button className="sub-buttons" onClick={() => handleLinkClick('s1_4')}>Scenario 1.4</button>
-        </Link>
       </div>
       )}
 
@@ -104,9 +105,6 @@ const Sidebar = () => {
       </Link>
       <Link to="/Scenario2#s2_3">
       <button className="sub-buttons" onClick={() => handleLinkClick('s2_3')}>Scenario 2.3</button>
-      </Link>
-      <Link to="/Scenario2#s2_4">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s2_4')}>Scenario 2.4</button>
       </Link>
     </div>
       )}
@@ -125,29 +123,8 @@ const Sidebar = () => {
       <Link to="/Scenario3#s3_3">
       <button className="sub-buttons" onClick={() => handleLinkClick('s3_3')}>Scenario 3.3</button>
       </Link>
-      <Link to="/Scenario3#s3_4">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s3_4')}>Scenario 3.4</button>
-      </Link>
     </div>
       )}
-
-      {/* <button className={`btn btn-link ${showScenario4Subbuttons ? 'active' : ''}`} onClick={toggleScenario4Subbuttons}>
-        <span className={`rotate-arrow ${scenario4ArrowDown ? 'down' : ''}`}>▶</span> Scenario 4
-      </button>
-      {showScenario4Subbuttons && (
-      <div>
-      <Link to="/Scenario4#s4_1">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s4_1')}>Scenario 4.1</button>
-      </Link>
-      <Link to="/Scenario4#s4_2">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s4_2')}>Scenario 4.2</button>
-      </Link>
-      <Link to="/Scenario4#s4_3">
-      <button className="sub-buttons" onClick={() => handleLinkClick('s4_3')}>Scenario 4.3</button>
-      </Link>
-      <button className="sub-buttons" onClick={() => handleLinkClick('s4.4')}>Scenario 4.4</button>
-    </div>
-      )} */}
     </div>
   );
 };

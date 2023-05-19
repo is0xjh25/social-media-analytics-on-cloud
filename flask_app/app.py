@@ -405,6 +405,9 @@ def s2():
     )
     c.add_to(m)
 
+    m.save('../data/curated/gcc_map.html')
+    
+
     # -----------------------------------------------------
     view_result = db.view('_design/agg/_view/sal-score-view', reduce=True, group=True)
     result = [{'key': row.key, 'value': row.value} for row in view_result]
@@ -430,7 +433,6 @@ def s2():
         legend_name='happiness_score per sal',
     )
     c.add_to(m2)
-
     # -------------------------state-------------------------------------
 
     view_result = db.view('_design/agg/_view/state-view', reduce=True, group=True)

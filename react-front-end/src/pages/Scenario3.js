@@ -67,7 +67,7 @@ function Scenario3() {
       animation: {
         appear: {
           animation: 'path-in',
-          duration: 20000
+          duration:3000
         }
       }
     };
@@ -81,22 +81,29 @@ function Scenario3() {
         <h1 id="head">Discover Influential Factors</h1> 
         <h2><i>Correlation Analysis between Twitter Data & SUDO Data</i></h2>
         
-        <p>This scenario involves geo-related analysis, as we investigated people's happiness score across different locations in Australia. 
-          Australian Statistical Geography Standard (ASGS) was used for statistical areas reference. Among the statistical standards, we used 
-          Statistical Areas Level 4 (i.e.  Greater Capital City Statistical Areas), and 
-          Non ABS Structures (i.e.  Suburbs and Localities).
+        <p>This scenario involves correlation Analysis 
+        In the third scenario, a correlation analysis was performed to identify the social and economic factors significantly influencing happiness levels 
+        in different regions of Australia.
         </p >
-        <h2>In this scenario, our study mainly focused on answering the following questions with the happiness scoring algorithm: </h2>
+        <h2>Analysis Goal</h2>
         <li> <a href="#s3_1">Scenario 3.1:</a > What are the social factors potentially influencing happiness score?</li>
         <li> <a href="#s3_2">Scenario 3.2:</a > What are the economic factors potentially influencing happiness score?</li>
         <li> <a href="#s3_3">Scenario 3.3:</a > How can reasons for happiness be classified?</li>
     </section>
     
-
-
-    <h1 id="s3_1">Scenario 3.1 Social Factors</h1>
+    <h1 id="s3_1">Scenario 313 Classify Reasons for Happiness</h1>
     <section class = "s3_1">
-    <a name="s3_1"></a>
+          <h2>Use Logistic Regression Model to Label Reasons for Happiness</h2>
+          <p>Is happiness attributed to achievement, affection, bonding, enjoy-the-moment, exercise, leisure, or nature?</p>
+          <h3 id="key">Key Findings:</h3>
+          <p>Most Mastodon posts were tagged with "achievement" whilst least posts were tagged with "exercise"</p>
+          <Line {...config} />
+
+    </section>
+
+    <h1 id="s3_2">Scenario 3.2 Social Factors</h1>
+    <section class = "s3_2">
+    <a name="s3_2"></a>
             <h2>Exploring the Social Factors to Happiness</h2>
             <p>Do population, age, marriage, household size, and education impact our happiness?</p>
             <h3 id="key">Key Findings:</h3>
@@ -110,25 +117,17 @@ function Scenario3() {
     < img src={correlation}/>
 
 
-    <h1 id="s3_2">Scenario 3.2 Economic Factors</h1>
-    <section class = "s3_2">
+    <h1 id="s3_3">Scenario 3.3 Economic Factors</h1>
+    <section class = "s3_3">
           <h2>Exploring the Economic Factors to Happiness</h2>
           <p>How are unemployment rate, labor force participation, weekly rent, weekly income by family, and weekly income by individual connected to happiness?</p>
           <h3 id="key">Key Findings:</h3>
             <li>The unemployment rate is {""}
               <span id = "key_yellow">positively correlated  </span>
               with happiness.</li>
-            <li>However, labor force participation, weekly rent, weekly income by family, and weekly income by individual are negatively correlated  with happiness.</li>
+            <li>However, labor force participation, weekly rent, weekly income by family, and weekly income by individual are <span id = "key_normal">negatively correlated </span> with happiness.</li>
     </section>
 
-    <h1 id="s3_3">Scenario 3.3 Classify Reasons for Happiness</h1>
-    <section class = "s3_2">
-          <h2>Use Logistic Regression Model to Label Reasons for Happiness</h2>
-          <p>Is happiness attributed to achievement, affection, bonding, enjoy-the-moment, exercise, leisure, or nature?</p>
-          <h3 id="key">Key Findings:</h3>
-          <Line {...config} />
-
-    </section>
     </div>
 
   );
