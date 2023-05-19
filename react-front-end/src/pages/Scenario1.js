@@ -294,7 +294,7 @@ export const options_weekend = {
     },
     title: {
       display: true,
-      text: "Happiness Score by Hour (Twitter)",
+      text: "Happiness Score by Day of Week (Twitter)",
       font: {
         size: 24,
       },
@@ -313,7 +313,7 @@ export const options_weekend = {
     x: {
       title: {
         display: true,
-        text: "Hour",
+        text: "Day of Week",
         font: {
           size: 15,
         },
@@ -360,7 +360,7 @@ export const options_weekend_m = {
     },
     title: {
       display: true,
-      text: "Happiness Score by Hour (Mastodon)",
+      text: "Happiness Score by Day of Week (Mastodon)",
       font: {
         size: 24,
       },
@@ -379,7 +379,7 @@ export const options_weekend_m = {
     x: {
       title: {
         display: true,
-        text: "Hour",
+        text: "Day of Week",
         font: {
           size: 15,
         },
@@ -427,7 +427,7 @@ export const options_his_2 = {
     },
     title: {
       display: true,
-      text: "Happiness Score by day of week (Mastodon)",
+      text: "Happiness Score by hour (Mastodon)",
       font: {
         size: 24,
       },
@@ -446,7 +446,7 @@ export const options_his_2 = {
     x: {
       title: {
         display: true,
-        text: "Day of Week",
+        text: "Hour",
         font: {
           size: 15,
         },
@@ -494,7 +494,7 @@ export const options_his_twitter = {
     },
     title: {
       display: true,
-      text: "Happiness Score by day of week (Twitter)",
+      text: "Happiness Score by hour (Twitter)",
       font: {
         size: 24,
       },
@@ -513,7 +513,7 @@ export const options_his_twitter = {
     x: {
       title: {
         display: true,
-        text: "Day of Week",
+        text: "Hour",
         font: {
           size: 15,
         },

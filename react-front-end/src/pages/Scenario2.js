@@ -4,6 +4,7 @@ import { Chart } from "react-google-charts";
 import { mean } from "lodash"
 import au from '../image/australia.png';
 import { Bar } from "react-chartjs-2";
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -24,6 +25,7 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+
 
 
 const data_line = [
@@ -260,7 +262,7 @@ export const options_his = {
     },
     title: {
       display: true,
-      text: "Frequency of Happiness Score",
+      text: "Happiness Score by GCC",
       font: {
         size: 24,
       },
@@ -279,7 +281,7 @@ export const options_his = {
     x: {
       title: {
         display: true,
-        text: "Greact Capital Cites",
+        text: "Greater Capital Cites",
         font: {
           size: 15,
         },
@@ -382,8 +384,7 @@ function Scenario2() {
       fill: false, // don't fill under the line
     };
 
-
-
+    const [htmlContent, setHtmlContent] = useState('');
 
 
 
@@ -434,7 +435,11 @@ function Scenario2() {
           <p>{' '}
           <span>Queensland, </span>and {' '}<span>Western Australia </span>
           have below-average happiness scores.</p>
+                
+
           </section>
+
+
         <Chart
           options={{
             region: "AU",
@@ -490,6 +495,8 @@ function Scenario2() {
             <li>Places {""}
             <span id="key_yellow"> above </span>
               the Australia average happiness include: Greater Sydney, Rest of NSW, Greater Adelaide, Greater Hobart, Rest of Northern Territory, Australian Capital Territory.</li>
+
+        
         </div>
             </section>
           <div className="histogram">
