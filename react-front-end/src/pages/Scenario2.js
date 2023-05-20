@@ -5,6 +5,7 @@ import { mean } from "lodash"
 import au from '../image/australia.png';
 import { Bar } from "react-chartjs-2";
 import GeoPandasMap from '../components/MyMap';
+import GeoPandasMap2 from '../components/MyMap2';
 
 import {
   Chart as ChartJS,
@@ -365,7 +366,6 @@ function Scenario2() {
       name: item.key,
       score: item.value.avg
   }));
-
   const averageScore = mean(data_histg.map(item =>item.score))
 
   const belowAvgColor = "#fddbc7"
@@ -383,11 +383,14 @@ function Scenario2() {
   const [htmlContent, setHtmlContent] = useState('');
 
   return (
+
+
     <div class="container">
     <section class = "topic">
         <h1 id="head">Happiness & Location</h1> 
+        <p>Average Score: {averageScore}</p>
         <h2><i>Geo Analysis with Twitter Data</i></h2>
-        
+
         <p>This scenario involves geo-related analysis, as we investigated people's happiness score across different locations in Australia.
             Australian Statistical Geography Standard (ASGS) was used for statistical areas reference. Among the statistical standards, we used 
           Statistical Areas Level 4 (i.e. Greater Capital City Statistical Areas), and Non ABS Structures (i.e. Suburbs and Localities)
@@ -485,8 +488,9 @@ function Scenario2() {
             <div style={{ display: 'flex',  height: '100vh' }}><GeoPandasMap /></div>
           <div className="histogram">
           <div style={{ marginTop: '-300px' }}>
+          
           <Bar
-      options={options_his}
+      options={options_his}      
       data={{
         labels: data_histg.map((data_histg) => data_histg.name),
         datasets: [
@@ -500,7 +504,19 @@ function Scenario2() {
         ],
       }}
     />
-        </div></div>
+        </div>
+        </div>
+        <div>
+        <h1 id="s2_4">Scenario 2.4</h1>
+        <div className="s2_4">
+        <h2>Unveiling SAL's Happiness Across Australia</h2>
+        <p>What's the happiness score of Australian Suburbs and Localities?</p>
+        <h3 id="key">Key Findings:</h3>
+        <p>The <b>central region</b> of Australia and the <b>western part of Tasmania</b> exhibit <span id="key_yellow"> higher </span> levels of happiness.</p>
+        <div style={{ display: 'flex',  height: '100vh' }}><GeoPandasMap2 /></div>
+        </div>
+        </div>
+
     </div>
 
   );

@@ -66,7 +66,12 @@ span{
     text-align: center;
     margin-top: 2%
 }
-
+.s2_4{
+    background-color: #F6F6F6; 
+    padding: 20px; 
+    text-align: center;
+    margin-top: 2%
+}
 #key_yellow{
     color:orange
 }
