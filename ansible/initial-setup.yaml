@@ -21,24 +21,24 @@
 #     - role: cluster-setup
 
 # # Deploy mastodon harvester
-- hosts: mastodon
-  roles:
-    - role: deploy-mastodon-harvester
+# - hosts: mastodon
+#   roles:
+#     - role: deploy-mastodon-harvester
 
 # # Deploy twitter harvester
-- hosts: twitter
-  roles:
-    - role: deploy-twitter-harvester
+# - hosts: twitter
+#   roles:
+#     - role: deploy-twitter-harvester
 
 # Deploy web server for backend
-- hosts: web
-  roles:
-    - role: deploy-web-backend
+# - hosts: twitter
+#   roles:
+#     - role: deploy-backend
 
 # Deploy web server for frontend
 - hosts: web
   roles:
-    - role: deploy-web-frontend
+    - role: deploy-frontend
 
 # # Start monitoring
 # - hosts: mastodon
