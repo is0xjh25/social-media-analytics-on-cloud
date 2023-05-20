@@ -545,34 +545,33 @@ export const options_his_twitter = {
 };
 
 
-
-
-
-
-
-
-
-
 function Scenario1() {
+  const [data, setData] = useState([]);
+  const [data_weekend, setData_weekend] = useState([]);
+  const [data_month, setDataMoth] = useState([]);
+  const [data_mostdon, setDataMostodn] = useState([]);
+  const [data_mostdon_week, setDataMostodnWeek] = useState([]);
 
-const [data, setData] = useState([]);
-const [data_weekend, setData_weekend] = useState([]);
-const [data_month, setDataMoth] = useState([]);
-const [data_mostdon, setDataMostodn] = useState([]);
-const [data_mostdon_week, setDataMostodnWeek] = useState([]);
+  // const fetchData = () => {
+  //   // Perform your fetch request here
+  //   fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon')
+  //     .then(response => response.json())
+  //     .then(data => setData(data))
+  //     .catch(error => console.log(error));
+  // };
 
-useEffect(() => {
-  fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon')
-  .then(response => {
-    if (!response.ok) { throw new Error('Network response was not ok') };
-    return response.json();
-})
-  .then(data_mostdon => {
-    setDataMostodn(data_mostdon);
-});
-}, []);
-console.log(data_mostdon)
+  // useEffect(() => {
+  //   // Fetch data on component mount
+  //   fetchData();
+  // }, []);
 
+  // useEffect(() => {
+  //   // Check if data is null and refetch after 30 seconds
+  //   if (data === null) {
+  //     const timer = setTimeout(fetchData, 30000);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [data]);
 
 const weekDays = [null, null, 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -593,19 +592,6 @@ const averageLineDataset_M = {
   fill: false, // don't fill under the line
 };
 
-
-useEffect(() => {
-  fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_w')
-  .then(response => {
-    if (!response.ok) { throw new Error('Network response was not ok') };
-    return response.json();
-})
-  .then(data_mostdon_week => {
-    setDataMostodnWeek(data_mostdon_week);
-});
-}, []);
-console.log(data_mostdon_week)
-
 const weekDays_m = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const data_mostdon_week_a = data_mostdon_week.map(item => ({
@@ -623,12 +609,6 @@ const averageLineDataset_M_w = {
   borderWidth: 2, // line width
   fill: false, // don't fill under the line
 };
-
-
-
-
-
-
 
 useEffect(() => {
   fetch(process.env.REACT_APP_BACKEND_URL + 's1_data')
@@ -663,9 +643,6 @@ useEffect(() => {
       window.alert("Connection is broken");
   });
 }, []);
-
-
-
 
     const data_his = data.map(item => ({
         name: item.key,
@@ -720,13 +697,6 @@ useEffect(() => {
       score: item.value.avg
   }));
   console.log(data_mon);
-  
-    
-  
-  
-  
-
-    
       
   return (
     <div class="container">

@@ -317,83 +317,114 @@ function Scenario2() {
   const [data, setData] = useState(initialData);
   const [data_hist, setDataHis] = useState([]);
   
-  useEffect(() => {
+  const fetchData = () => {
     fetch(process.env.REACT_APP_BACKEND_URL + 's2_data')
-    .then(response => {
-        if (!response.ok) { throw new Error('Network response was not ok') };
-        return response.json();
-    })
-    .then(fetchedData => {
-        if (fetchedData.state) {
-            // If state is true, fetch from the second URL
-            return fetch(process.env.REACT_APP_BACKEND_URL_2 + 's2_data')
-                .then(response2 => {
-                    if (!response2.ok) { throw new Error('Network response was not ok') };
-                    return response2.json();
-                })
-                .then(fetchedData2 => {
-                    // Now, we are working with the fetchedData2
-                    let newData = [...initialData];
-                    for(let i = 0; i < fetchedData2.result_1.length; i++) {
-                        let avgValue = parseFloat(fetchedData2.result_1[i].value.avg);
-                        newData[i + 1][2] = avgValue;
-                    }
-                    setData(newData);
-                    setDataHis(fetchedData2.result_2);
-                    console.log(newData);
-                })
-        } else {
-            // Handle the case when state is false
+      .then(response => response.json())
+      .then(fetchedData => {
+        if (!fetchedData.state) { 
+          let newData = [...initialData];
+          for(let i = 0; i < fetchedData.result_1.length; i++) {
+              let avgValue = parseFloat(fetchedData.result_1[i].value.avg);
+              newData[i + 1][2] = avgValue;
+          }
+          setData(newData);
+          setDataHis(fetchedData.result_2);
+        } else {  
+          fetch(process.env.REACT_APP_BACKEND_URL_2 + 's2_data')
+          .then(response2 => {
+              if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
+              return response2.json();
+          })
+          .then(fetchedData2 => {
             let newData = [...initialData];
-            for(let i = 0; i < fetchedData.result_1.length; i++) {
-                let avgValue = parseFloat(fetchedData.result_1[i].value.avg);
+            for(let i = 0; i < fetchedData2.result_1.length; i++) {
+                let avgValue = parseFloat(fetchedData2.result_1[i].value.avg);
                 newData[i + 1][2] = avgValue;
             }
             setData(newData);
-            setDataHis(fetchedData.result_2);
-            console.log(newData);
+            setDataHis(fetchedData2.result_2);
+          })
+          .catch(error2 => {
+            const timer = setTimeout(fetchData, 30000);
+            return () => clearTimeout(timer);
+            console.error('There has been a problem with your fetch operation from the second backend:', error2);
+            // window.alert("Connection to the second backend is broken");
+          });
         }
-    })
-    .catch(error => {
+      })
+      .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
         // window.alert("Connection is broken");
-    });
-}, []);
-
+      });
+  };
   
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    const data_histg = data_hist.map(item => ({
-        name: item.key,
-        score: item.value.avg
-    }));
+  // useEffect(() => {
+  //   fetch(process.env.REACT_APP_BACKEND_URL + 's2_data')
+  //   .then(response => {
+  //       if (!response.ok) { throw new Error('Network response was not ok') };
+  //       return response.json();
+  //   })
+  //   .then(fetchedData => {
+  //       if (fetchedData.state) {
+  //           // If state is true, fetch from the second URL
+  //           return fetch(process.env.REACT_APP_BACKEND_URL_2 + 's2_data')
+  //               .then(response2 => {
+  //                   if (!response2.ok) { throw new Error('Network response was not ok') };
+  //                   return response2.json();
+  //               })
+  //               .then(fetchedData2 => {
+  //                   // Now, we are working with the fetchedData2
+  //                   let newData = [...initialData];
+  //                   for(let i = 0; i < fetchedData2.result_1.length; i++) {
+  //                       let avgValue = parseFloat(fetchedData2.result_1[i].value.avg);
+  //                       newData[i + 1][2] = avgValue;
+  //                   }
+  //                   setData(newData);
+  //                   setDataHis(fetchedData2.result_2);
+  //                   console.log(newData);
+  //               })
+  //       } else {
+  //           // Handle the case when state is false
+  //           let newData = [...initialData];
+  //           for(let i = 0; i < fetchedData.result_1.length; i++) {
+  //               let avgValue = parseFloat(fetchedData.result_1[i].value.avg);
+  //               newData[i + 1][2] = avgValue;
+  //           }
+  //           setData(newData);
+  //           setDataHis(fetchedData.result_2);
+  //           console.log(newData);
+  //       }
+  //   })
+  //   .catch(error => {
+  //       console.error('There has been a problem with your fetch operation:', error);
+  //       // window.alert("Connection is broken");
+  //   });
+  // }, []);
 
-    console.log("2222222")
-    console.log(data_histg)
+  const data_histg = data_hist.map(item => ({
+      name: item.key,
+      score: item.value.avg
+  }));
 
-    const averageScore = mean(data_histg.map(item =>item.score))
+  const averageScore = mean(data_histg.map(item =>item.score))
 
-    const belowAvgColor = "#fddbc7"
-    const aboveAvgColor = "#f4a582"
+  const belowAvgColor = "#fddbc7"
+  const aboveAvgColor = "#f4a582"
 
-    const averageLineDataset = {
-      label: "Average Score",
-      data: Array(data_histg.length).fill(averageScore), // an array of the same length as the original data, all filled with the average score
-      type: 'line', // this will be a line chart
-      borderColor: "#808080", // line color
-      borderWidth: 2, // line width
-      fill: false, // don't fill under the line
-    };
+  const averageLineDataset = {
+    label: "Average Score",
+    data: Array(data_histg.length).fill(averageScore), // an array of the same length as the original data, all filled with the average score
+    type: 'line', // this will be a line chart
+    borderColor: "#808080", // line color
+    borderWidth: 2, // line width
+    fill: false, // don't fill under the line
+  };
 
-    const [htmlContent, setHtmlContent] = useState('');
-
-
-
-
-
-
-
-
-
+  const [htmlContent, setHtmlContent] = useState('');
 
   return (
     <div class="container">

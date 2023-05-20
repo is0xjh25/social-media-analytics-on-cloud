@@ -7,37 +7,77 @@ import { LineConfig } from '@pansy/react-charts/es/line';
 function Scenario3() {
 
   const [data, setData] = useState([]);
-
-
-  useEffect(() => {
-    fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_b')
-    .then(response => {
-        if (!response.ok) { throw new Error('Network response was not ok') };
-        return response.json();
-    })
+  const fetchData = () => {
+  fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_b')
+    .then(response => response.json())
     .then(data => {
-        if (!data.state) { 
+      console.log(data)
+      if (!data.state) { 
+        setData(data);
+      } else {  
+        fetch(process.env.REACT_APP_BACKEND_URL_2 + 'mastodon_b')
+        .then(response2 => {
+            if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
+            return response2.json();
+        })
+        .then(data => {
             setData(data);
-        } else {  
-            fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_b')
-            .then(response2 => {
-                if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
-                return response2.json();
-            })
-            .then(data => {
-                setData(data);
-            })
-            .catch(error2 => {
-                console.error('There has been a problem with your fetch operation from the second backend:', error2);
-                // window.alert("Connection to the second backend is broken");
-            });
-        }
+        })
+        .catch(error2 => {
+          const timer = setTimeout(fetchData, 30000);
+          return () => clearTimeout(timer);
+          console.error('There has been a problem with your fetch operation from the second backend:', error2);
+          // window.alert("Connection to the second backend is broken");
+        });
+      }
     })
     .catch(error => {
-        console.error('There has been a problem with your fetch operation:', error);
-        // window.alert("Connection is broken");
+      console.error('There has been a problem with your fetch operation:', error);
+      // window.alert("Connection is broken");
     });
+  };
+
+  useEffect(() => {
+    fetchData();
   }, []);
+
+  // useEffect(() => {
+  //   // Check if data is null and refetch after 30 seconds
+  //   if (data === null) {
+  //     const timer = setTimeout(fetchData, 30000);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [data]);
+
+  // useEffect(() => {
+  //   fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_b')
+  //   .then(response => {
+  //       if (!response.ok) { throw new Error('Network response was not ok') };
+  //       return response.json();
+  //   })
+  //   .then(data => {
+  //       if (!data.state) { 
+  //           setData(data);
+  //       } else {  
+  //           fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_b')
+  //           .then(response2 => {
+  //               if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
+  //               return response2.json();
+  //           })
+  //           .then(data => {
+  //               setData(data);
+  //           })
+  //           .catch(error2 => {
+  //               console.error('There has been a problem with your fetch operation from the second backend:', error2);
+  //               // window.alert("Connection to the second backend is broken");
+  //           });
+  //       }
+  //   })
+  //   .catch(error => {
+  //       console.error('There has been a problem with your fetch operation:', error);
+  //       // window.alert("Connection is broken");
+  //   });
+  // }, []);
   const weekDays_m = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const data_used = data.map(item => ({
     name: item.key[1],
@@ -45,32 +85,29 @@ function Scenario3() {
     gdp: Math.log(item.value)
     // value: item.value
   }));
-  console.log("aaaaaaaaaaaaa")
-  console.log(data_used)
 
-
-    data_used.forEach((item, index) => {
-      if (typeof item.gdp !== 'number') {
-        console.error('Invalid gdp at index:', index, 'value:', item.gdp);
-      }
-    });
+  data_used.forEach((item, index) => {
+    if (typeof item.gdp !== 'number') {
+      console.error('Invalid gdp at index:', index, 'value:', item.gdp);
+    }
+  });
     
     
-    const config: LineConfig = {
-      data: data_used,
-      xField: 'year',
-      yField: 'gdp',
-      seriesField: 'name',
-      yAxis: { label: { formatter: (v) => `${v}` } },
-      legend: { position: 'top' },
-      smooth: true,
-      animation: {
-        appear: {
-          animation: 'path-in',
-          duration:3000
-        }
+  const config: LineConfig = {
+    data: data_used,
+    xField: 'year',
+    yField: 'gdp',
+    seriesField: 'name',
+    yAxis: { label: { formatter: (v) => `${v}` } },
+    legend: { position: 'top' },
+    smooth: true,
+    animation: {
+      appear: {
+        animation: 'path-in',
+        duration:3000
       }
-    };
+    }
+  };
     
 
 
