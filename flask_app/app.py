@@ -6,13 +6,22 @@ from flask_cors import CORS
 from flask_cors import cross_origin
 import threading
 import yaml
+import time
 
-with open("./data/flask-setting/api.yaml", encoding="UTF-8") as f:
-    cfg = yaml.load(f, Loader=yaml.FullLoader)
-    couch_password = cfg["COUCH_PASSWORD"]
-    master_node = cfg["MASTER_NODE"]
-    threshold = cfg["THRESHOLD"]
-    last_server = cfg["LAST_SERVER"]
+isRead = False
+while not isRead:
+    try:
+        with open("./data/flask-setting/api.yaml", encoding="UTF-8") as f:
+            cfg = yaml.load(f, Loader=yaml.FullLoader)
+            couch_password = cfg["COUCH_PASSWORD"]
+            master_node = cfg["MASTER_NODE"]
+            threshold = cfg["THRESHOLD"]
+            last_server = cfg["LAST_SERVER"]
+            isRead = True
+    except Exception as e:
+        print(e)
+        isRead = False
+        time.sleep(10)
 
 #Create an app object using the Flask class. 
 app = Flask(__name__)
