@@ -345,65 +345,20 @@ function Scenario2() {
             setDataHis(fetchedData2.result_2);
           })
           .catch(error2 => {
+            console.error('There has been a problem with your fetch operation from the second backend:', error2);
             const timer = setTimeout(fetchData, 30000);
             return () => clearTimeout(timer);
-            console.error('There has been a problem with your fetch operation from the second backend:', error2);
-            // window.alert("Connection to the second backend is broken");
           });
         }
       })
       .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
-        // window.alert("Connection is broken");
       });
   };
   
   useEffect(() => {
     fetchData();
   }, []);
-
-  // useEffect(() => {
-  //   fetch(process.env.REACT_APP_BACKEND_URL + 's2_data')
-  //   .then(response => {
-  //       if (!response.ok) { throw new Error('Network response was not ok') };
-  //       return response.json();
-  //   })
-  //   .then(fetchedData => {
-  //       if (fetchedData.state) {
-  //           // If state is true, fetch from the second URL
-  //           return fetch(process.env.REACT_APP_BACKEND_URL_2 + 's2_data')
-  //               .then(response2 => {
-  //                   if (!response2.ok) { throw new Error('Network response was not ok') };
-  //                   return response2.json();
-  //               })
-  //               .then(fetchedData2 => {
-  //                   // Now, we are working with the fetchedData2
-  //                   let newData = [...initialData];
-  //                   for(let i = 0; i < fetchedData2.result_1.length; i++) {
-  //                       let avgValue = parseFloat(fetchedData2.result_1[i].value.avg);
-  //                       newData[i + 1][2] = avgValue;
-  //                   }
-  //                   setData(newData);
-  //                   setDataHis(fetchedData2.result_2);
-  //                   console.log(newData);
-  //               })
-  //       } else {
-  //           // Handle the case when state is false
-  //           let newData = [...initialData];
-  //           for(let i = 0; i < fetchedData.result_1.length; i++) {
-  //               let avgValue = parseFloat(fetchedData.result_1[i].value.avg);
-  //               newData[i + 1][2] = avgValue;
-  //           }
-  //           setData(newData);
-  //           setDataHis(fetchedData.result_2);
-  //           console.log(newData);
-  //       }
-  //   })
-  //   .catch(error => {
-  //       console.error('There has been a problem with your fetch operation:', error);
-  //       // window.alert("Connection is broken");
-  //   });
-  // }, []);
 
   const data_histg = data_hist.map(item => ({
       name: item.key,
@@ -466,10 +421,7 @@ function Scenario2() {
           <p>{' '}
           <span>Queensland, </span>and {' '}<span>Western Australia </span>
           have below-average happiness scores.</p>
-                
-
           </section>
-
 
         <Chart
           options={{

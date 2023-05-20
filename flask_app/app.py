@@ -107,7 +107,6 @@ def gcc_all_data():
             couch = couchdb.Server(f'http://{couch_password}@{master_node}')
             db = couch['twitter']
             
-
             # state_view_result_1 = db.view('_design/happiness_doc/_view/score-state-view', reduce=True, group=True)
             # state_result_1 = [{'key': row.key, 'value': row.value} for row in state_view_result_1]
             state_result_1  = []
@@ -135,6 +134,3 @@ def mastdon_b():
 
 if __name__ == '__main__':
     app.run(debug=True)
-'''if __name__=="__main__":
-    app.run(host=os.getenv('IP', '0.0.0.0'), 
-            port=int(os.getenv('PORT', 4444)))'''

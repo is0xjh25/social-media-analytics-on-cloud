@@ -8,10 +8,9 @@ function Scenario3() {
 
   const [data, setData] = useState([]);
   const fetchData = () => {
-  fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_b')
+  	fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_b')
     .then(response => response.json())
     .then(data => {
-      console.log(data)
       if (!data.state) { 
         setData(data);
       } else {  
@@ -24,16 +23,14 @@ function Scenario3() {
             setData(data);
         })
         .catch(error2 => {
+          console.error('There has been a problem with your fetch operation from the second backend:', error2);
           const timer = setTimeout(fetchData, 30000);
           return () => clearTimeout(timer);
-          console.error('There has been a problem with your fetch operation from the second backend:', error2);
-          // window.alert("Connection to the second backend is broken");
         });
       }
     })
     .catch(error => {
       console.error('There has been a problem with your fetch operation:', error);
-      // window.alert("Connection is broken");
     });
   };
 
@@ -41,49 +38,11 @@ function Scenario3() {
     fetchData();
   }, []);
 
-  // useEffect(() => {
-  //   // Check if data is null and refetch after 30 seconds
-  //   if (data === null) {
-  //     const timer = setTimeout(fetchData, 30000);
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [data]);
-
-  // useEffect(() => {
-  //   fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_b')
-  //   .then(response => {
-  //       if (!response.ok) { throw new Error('Network response was not ok') };
-  //       return response.json();
-  //   })
-  //   .then(data => {
-  //       if (!data.state) { 
-  //           setData(data);
-  //       } else {  
-  //           fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_b')
-  //           .then(response2 => {
-  //               if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
-  //               return response2.json();
-  //           })
-  //           .then(data => {
-  //               setData(data);
-  //           })
-  //           .catch(error2 => {
-  //               console.error('There has been a problem with your fetch operation from the second backend:', error2);
-  //               // window.alert("Connection to the second backend is broken");
-  //           });
-  //       }
-  //   })
-  //   .catch(error => {
-  //       console.error('There has been a problem with your fetch operation:', error);
-  //       // window.alert("Connection is broken");
-  //   });
-  // }, []);
   const weekDays_m = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const data_used = data.map(item => ({
     name: item.key[1],
     year: weekDays_m[item.key[0]], 
     gdp: Math.log(item.value)
-    // value: item.value
   }));
 
   data_used.forEach((item, index) => {

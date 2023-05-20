@@ -30,8 +30,6 @@ ChartJS.register(
 );
 
 const data_line = []
-
-
 const totalDuration = 1500;
 const delayBetweenPoints = totalDuration / data_line.length;
 const previousY = (ctx) =>
@@ -552,114 +550,97 @@ function Scenario1() {
   const [data_mostdon, setDataMostodn] = useState([]);
   const [data_mostdon_week, setDataMostodnWeek] = useState([]);
 
-  // const fetchData = () => {
-  //   // Perform your fetch request here
-  //   fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon')
-  //     .then(response => response.json())
-  //     .then(data => setData(data))
-  //     .catch(error => console.log(error));
-  // };
+	const weekDays = [null, null, 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-  // useEffect(() => {
-  //   // Fetch data on component mount
-  //   fetchData();
-  // }, []);
+	const data_mostdonH = data_mostdon.map(item => ({
+		name: item.key,
+		score: item.value.avg
+	}));
 
-  // useEffect(() => {
-  //   // Check if data is null and refetch after 30 seconds
-  //   if (data === null) {
-  //     const timer = setTimeout(fetchData, 30000);
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [data]);
+	const averageScore_M = mean(data_mostdonH.map(item =>item.score))
 
-const weekDays = [null, null, 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+	const averageLineDataset_M = {
+		label: "Average Score from Mastodon",
+		data: Array(data_mostdonH.length).fill(averageScore_M), // an array of the same length as the original data, all filled with the average score
+		type: 'line', // this will be a line chart
+		borderColor: "#808080", // line color
+		borderWidth: 2, // line width
+		fill: false, // don't fill under the line
+	};
 
-const data_mostdonH = data_mostdon.map(item => ({
-  name: item.key,
-  score: item.value.avg
-}));
-console.log(data_mostdonH)
+	const weekDays_m = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-const averageScore_M = mean(data_mostdonH.map(item =>item.score))
+	const data_mostdon_week_a = data_mostdon_week.map(item => ({
+		name: weekDays_m[item.key],  
+		score: item.value.avg
+	}));
 
-const averageLineDataset_M = {
-  label: "Average Score from Mastodon",
-  data: Array(data_mostdonH.length).fill(averageScore_M), // an array of the same length as the original data, all filled with the average score
-  type: 'line', // this will be a line chart
-  borderColor: "#808080", // line color
-  borderWidth: 2, // line width
-  fill: false, // don't fill under the line
-};
+	const averageScore_M_w = mean(data_mostdon_week_a.map(item =>item.score))
 
-const weekDays_m = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+	const averageLineDataset_M_w = {
+		label: "Average Score from Mastodon",
+		data: Array(data_mostdonH.length).fill(averageScore_M_w), // an array of the same length as the original data, all filled with the average score
+		type: 'line', // this will be a line chart
+		borderColor: "#808080", // line color
+		borderWidth: 2, // line width
+		fill: false, // don't fill under the line
+	};
 
-const data_mostdon_week_a = data_mostdon_week.map(item => ({
-  name: weekDays_m[item.key],  
-  score: item.value.avg
-}));
+	const fetchData = () => {
+		fetch(process.env.REACT_APP_BACKEND_URL + 's1_data')
+		.then(response => response.json())
+		.then(data => {
 
-const averageScore_M_w = mean(data_mostdon_week_a.map(item =>item.score))
+			console.log(data.state)
+			if (!data.state) { 
+				setData(data.result_1);
+				setData_weekend(data.result_2);
+				setDataMoth(data.result_3);
+			} else {  
+				fetch(process.env.REACT_APP_BACKEND_URL_2 + 'mastodon_b')
+				.then(response2 => {
+						if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
+						return response2.json();
+				})
+				.then(data => {
+					console.log(data.result_1);
+					setData(data.result_1);
+          setData_weekend(data.result_3);
+          setDataMoth(data.result_2);
+					setDataMostodn(data.result_4);
+					setDataMostodnWeek(data.result_5);
+				})
+				.catch(error2 => {
+					console.error('There has been a problem with your fetch operation from the second backend:', error2);
+					const timer = setTimeout(fetchData, 30000);
+					return () => clearTimeout(timer);
+				});
+			}
+		})
+		.catch(error => {
+			console.error('There has been a problem with your fetch operation:', error);
+		});
+	};
 
-const averageLineDataset_M_w = {
-  label: "Average Score from Mastodon",
-  data: Array(data_mostdonH.length).fill(averageScore_M_w), // an array of the same length as the original data, all filled with the average score
-  type: 'line', // this will be a line chart
-  borderColor: "#808080", // line color
-  borderWidth: 2, // line width
-  fill: false, // don't fill under the line
-};
+	useEffect(() => {
+		fetchData();
+	}, []);
 
-useEffect(() => {
-  fetch(process.env.REACT_APP_BACKEND_URL + 's1_data')
-  .then(response => {
-      if (!response.ok) { throw new Error('Network response was not ok') };
-      return response.json();
-  })
-  .then(data => {
-      if (!data.state) { 
-          setData(data.result_1);
-          setData_weekend(data.result_2);
-          setDataMoth(data.result_3);
-      } else {  
-          fetch(process.env.REACT_APP_BACKEND_URL + 's1_data')
-          .then(response2 => {
-              if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
-              return response2.json();
-          })
-          .then(data2 => {
-              setData(data2.result_1);
-              setData_weekend(data2.result_2);
-              setDataMoth(data2.result_3);
-          })
-          .catch(error2 => {
-              console.error('There has been a problem with your fetch operation from the second backend:', error2);
-              window.alert("Connection to the second backend is broken");
-          });
-      }
-  })
-  .catch(error => {
-      console.error('There has been a problem with your fetch operation:', error);
-      window.alert("Connection is broken");
-  });
-}, []);
+	const data_his = data.map(item => ({
+			name: item.key,
+			score: item.value.avg
+	}));
 
-    const data_his = data.map(item => ({
-        name: item.key,
-        score: item.value.avg
-    }));
-    console.log(data_his)
+	const averageScore_1 = mean(data_his.map(item =>item.score))
 
-    const averageScore_1 = mean(data_his.map(item =>item.score))
+	const belowAvgColor = "#fddbc7"
+	const aboveAvgColor = "#f4a582"
 
-    const belowAvgColor = "#fddbc7"
-    const aboveAvgColor = "#f4a582"
+	const aboveAvgColor_m = "#34a8f7"
+	const belowAvgColor_m = "#7bbdeb"
 
-    const aboveAvgColor_m = "#34a8f7"
-    const belowAvgColor_m = "#7bbdeb"
-
-    // create a new dataset for the average line
-    const averageLineDataset_1 = {
+  // create a new dataset for the average line
+  const averageLineDataset_1 = {
     label: "Average Score",
     data: Array(data_his.length).fill(averageScore_1), // an array of the same length as the original data, all filled with the average score
     type: 'line', // this will be a line chart
@@ -668,27 +649,22 @@ useEffect(() => {
     fill: false, // don't fill under the line
   };
 
-
-
   const data_week = data_weekend.map(item => ({
       name: weekDays[item.key],  
       score: item.value.avg
   }));
-  console.log(data_week);
 
   const averageScoreWeek = mean(data_week.map(item =>item.score))
   
-
-    // create a new dataset for the average line
-    const averageLineDatasetWeek = {
-    label: "Average Score",
-    data: Array(data_weekend.length).fill(averageScoreWeek), // an array of the same length as the original data, all filled with the average score
-    type: 'line', // this will be a line chart
-    borderColor: "#808080", // line color
-    borderWidth: 2, // line width
-    fill: false, // don't fill under the line
+	// create a new dataset for the average line
+	const averageLineDatasetWeek = {
+		label: "Average Score",
+		data: Array(data_weekend.length).fill(averageScoreWeek), // an array of the same length as the original data, all filled with the average score
+		type: 'line', // this will be a line chart
+		borderColor: "#808080", // line color
+		borderWidth: 2, // line width
+		fill: false, // don't fill under the line
   };
-
 
   const months = ['February', 'March', 'April', 'May', 'June', 'July', 'August'];
 
@@ -696,7 +672,6 @@ useEffect(() => {
       name: months[item.key],  
       score: item.value.avg
   }));
-  console.log(data_mon);
       
   return (
     <div class="container">
@@ -781,7 +756,7 @@ useEffect(() => {
       }}
     />
 
-<h1 id="s1_3">Scenario 1.3</h1>
+	<h1 id="s1_3">Scenario 1.3</h1>
     <section class = "s1_3">
         <div>
           <h2>Weekend Bliss: Higher Happiness Scores < img id="week" src={week}/></h2>
@@ -803,7 +778,7 @@ useEffect(() => {
         ],
       }}
     />
-<Bar
+		<Bar
       options={options_weekend_m}
       data={{
         labels: data_mostdon_week_a.map((data_mostdon_week_a) => data_mostdon_week_a.name),
