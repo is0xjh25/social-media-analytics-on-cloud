@@ -1,8 +1,10 @@
 .container1{
   display: 'flex';
+  height: 250px;
 }
 .container2{
   display: 'flex';
+  height: 320px;
 }
 .col-4 {
   background-color: #F7DBA7;
@@ -24,6 +26,7 @@ header {
   padding-right: 1em;
   padding-bottom: 1em;
 }
+
 
 
 .container{
@@ -192,7 +195,6 @@ padding-right: 2em;
 padding-bottom: 2em;
 overflow: hidden;
 }
-
 .ml11 .letter {
 display: inline-block;
 line-height: 1em;
@@ -207,7 +209,8 @@ transform-origin: 0 0;
 #grad1 {
 height: auto;
 width:100%;
-background: linear-gradient(rgba(255,0,0,0),antiquewhite);
+font-size: 20px;
+background: linear-gradient(rgba(255,0,0,0),#e9c57c);
 }
 
   
@@ -242,6 +245,16 @@ hr.dotted {
 .texts a:hover {
   background-color:gainsboro;
 }
+
+li{
+  padding-top: 1%;
+}
+
+.letter_2{
+  padding-top: 20%;
+}
+
+
 
 
 .shadow {
@@ -336,9 +349,67 @@ hr.dotted {
 .root-container {
   
   width: 100%;
-  height: 1100px;
+  height: auto;
   margin: 0 auto; 
   font-size: 100%;
   margin-left: 15%; 
-  overflow: hidden; 
+}
+
+.texts_1 {
+  position: relative;
+  padding-top: 2em;
+  padding-left: 4em;
+  padding-right: 15em;
+  padding-bottom: 1em;
+}
+
+#overview{
+  font-family: 'Arial Black', 
+  
+  sans-serif; 
+  font-size: 24px; 
+  color: #c57b57;
+}
+
+.container1_2{
+  background-color: #F6F6F6; 
+  padding: 20px; 
+  margin-top: 2%;
+  display:flex;
+}
+
+#text_2_2{
+  margin-left: 5%;
+}
+
+#logo4{
+  width: 300px;
+  height: 300px;
+  padding-right: 5%;
+}
+.text_2{
+  display: flex;
+}
+
+#logo5{
+  width: 200px;
+  height: 200px;
+  padding-right: 5%;
+}
+
+#logo6{
+  width: 300px;
+  height: 300px;
+  margin-left: 30%;
+}
+
+#logo7{
+  width: 300px;
+  height: 300px;
+  padding-right: 5%;
+}
+#logo8{
+  width: 300px;
+  height: 300px;
+  margin-left: 30%;
 }
