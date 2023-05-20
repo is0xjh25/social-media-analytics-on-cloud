@@ -8,19 +8,19 @@ function Scenario3() {
 
   const [data, setData] = useState([]);
   const fetchData = () => {
-  	fetch(process.env.REACT_APP_BACKEND_URL + 'mastodon_b')
+  	fetch(process.env.REACT_APP_BACKEND_URL + 's3_data')
     .then(response => response.json())
     .then(data => {
-      if (!data.state) { 
-        setData(data);
+      if (!data.forwarding) { 
+        setData(data.result);
       } else {  
-        fetch(process.env.REACT_APP_BACKEND_URL_2 + 'mastodon_b')
+        fetch(process.env.REACT_APP_BACKEND_URL_2 + 's3_data')
         .then(response2 => {
             if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
             return response2.json();
         })
         .then(data => {
-            setData(data);
+            setData(data.result);
         })
         .catch(error2 => {
           console.error('There has been a problem with your fetch operation from the second backend:', error2);

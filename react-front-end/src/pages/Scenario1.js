@@ -71,16 +71,6 @@ const animation_line = {
 export const options_line = {
   responsive: true,
   animation_line,
-  // animation: {
-  //   x: {
-  //     duration: 5000,
-  //     from: 0,
-  //   },
-  //   y: {
-  //     duration: 3000,
-  //     from: 500,
-  //   },
-  // },
 
   plugins: {
     legend: {
@@ -145,15 +135,6 @@ export const options_line = {
       hoverRadius: 10, // to make it bigger when user hovers put larger number than radius.
     },
   },
-  // graph layout
-  // layout: {
-  //   padding: {
-  //     top: 5,
-  //     left: 15,
-  //     right: 15,
-  //     bottom: 15,
-  //   },
-  // },
 };
 
 const data_his=[]
@@ -576,20 +557,19 @@ function Scenario1() {
 		fetch(process.env.REACT_APP_BACKEND_URL + 's1_data')
 		.then(response => response.json())
 		.then(data => {
-
-			console.log(data.state)
-			if (!data.state) { 
+			if (!data.forwarding) { 
 				setData(data.result_1);
-				setData_weekend(data.result_2);
-				setDataMoth(data.result_3);
+				setData_weekend(data.result_3);
+				setDataMoth(data.result_2);
+				setDataMostodn(data.result_4);
+				setDataMostodnWeek(data.result_5);
 			} else {  
-				fetch(process.env.REACT_APP_BACKEND_URL_2 + 'mastodon_b')
+				fetch(process.env.REACT_APP_BACKEND_URL_2 + 's1_data')
 				.then(response2 => {
 						if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
 						return response2.json();
 				})
 				.then(data => {
-					console.log(data.result_1);
 					setData(data.result_1);
           setData_weekend(data.result_3);
           setDataMoth(data.result_2);
