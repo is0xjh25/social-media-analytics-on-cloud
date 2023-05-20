@@ -49,18 +49,7 @@ const GeoPandasMap = () => {
       fillOpacity: 0.7,
     };
   };
-  const onEachFeature = (feature, layer) => {
-    const gccCode = feature.properties.GCC_CODE21;
-    const happinessScore = happinessData.find((data) => data.GCC_CODE21 === gccCode)?.happiness_score;
-  
-    layer.on("mouseover", () => {
-      layer.bindPopup(`GCC Code: ${gccCode}<br/>Happiness Score: ${happinessScore}`).openPopup();
-    });
-  
-    layer.on("mouseout", () => {
-      layer.closePopup();
-    });
-  };
+
 
   return (
     <MapContainer center={[-25.2744, 133.7751]} zoom={4} style={{ height: '60vh', width: '115vh' }}>
@@ -68,7 +57,11 @@ const GeoPandasMap = () => {
       <GeoJSON
         data={geoJSON}
         style={style}
-        onEachFeature={onEachFeature}
+        onEachFeature={(feature, layer) => {
+          const gccCode = feature.properties.GCC_CODE21;
+          const happinessScore = happinessData.find((data) => data.GCC_CODE21 === gccCode)?.happiness_score;
+          layer.bindPopup(`GCC Code: ${gccCode}<br/>Happiness Score: ${happinessScore}`);
+        }}
       />
     </MapContainer>
   );
