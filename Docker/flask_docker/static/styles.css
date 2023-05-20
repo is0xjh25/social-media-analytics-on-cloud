@@ -1,0 +1,240 @@
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.b-example-divider {
+  width: 100%;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 100vh;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.nav-scroller {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  height: 2.75rem;
+  overflow-y: hidden;
+
+}
+
+.nav-scroller .nav {
+
+  position: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--bd-violet-bg);
+  --bs-btn-border-color: var(--bd-violet-bg);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #6528e0;
+  --bs-btn-hover-border-color: #6528e0;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #5a23c8;
+  --bs-btn-active-border-color: #5a23c8;
+}
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.ml3{
+  position: relative;
+  font-weight: 900;
+  font-size: 2em;
+padding-top: 2em;
+padding-left: 2em;
+padding-right: 2em;
+padding-bottom: 2em;}
+
+.ml6 {
+position: relative;
+font-weight: 900;
+font-size: 2em;
+}
+.ml6 .text-wrapper {
+position: relative;
+display: inline-block;
+padding-top: 2em;
+padding-left: 2em;
+padding-right: 2em;
+padding-bottom: 2em;
+overflow: hidden;
+}
+.ml6 .letter {
+display: inline-block;
+line-height: 1em;
+}
+.ml7 {
+position: relative;
+font-weight: 900;
+font-size: 2em;
+justify-content: center;
+}
+.ml7 .text-wrapper {
+position: relative;
+display: inline-block;
+padding-top: 2em;
+padding-left: 2em;
+padding-right: 2em;
+padding-bottom: 2em;
+overflow: hidden;
+}
+.ml7 .letter {
+transform-origin: 0 100%;
+display: inline-block;
+line-height: 1em;
+}
+.ml10 {
+position: relative;
+font-weight: 900;
+font-size: 2em;
+justify-content: center;
+}
+
+.ml10 .text-wrapper {
+position: relative;
+display: inline-block;
+padding-top: 2em;
+padding-left: 2em;
+padding-right: 2em;
+padding-bottom: 2em;
+overflow: hidden;
+}
+
+.ml10 .letter {
+display: inline-block;
+line-height: 1em;
+transform-origin: 0 0;
+}
+.ml11 {
+position: relative;
+font-weight: 900;
+font-size: 2em;
+justify-content: center;
+}
+
+.ml11 .text-wrapper {
+position: relative;
+display: inline-block;
+padding-top: 2em;
+padding-left: 2em;
+padding-right: 2em;
+padding-bottom: 2em;
+overflow: hidden;
+}
+
+.ml11 .letter {
+display: inline-block;
+line-height: 1em;
+transform-origin: 0 0;
+}
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#grad1 {
+height: auto;
+width:100%;
+background: linear-gradient(rgba(255,0,0,0),antiquewhite);
+}
+
+  
+
+.texts {
+position: relative;
+padding-top: 2em;
+padding-left: 2em;
+padding-right: 2em;
+padding-bottom: 1em}
+
+.header {
+position: relative;
+padding-top: 2em;
+padding-left: 2em;
+padding-right: 2em;
+padding-bottom: 2em}
+
+hr.dotted {
+  border-top: 3px dotted #bbb;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.texts a {
+  font-style: italic;
+  color:black;
+  text-decoration: none;
+}
+
+.texts a:hover {
+  text-decoration: underline;
+}
+
+
+.shadow {
+  -webkit-box-shadow:0px 1px 1px #de1dde;
+  -moz-box-shadow:0px 1px 1px #de1dde;
+  box-shadow:0px 1px 1px #de1dde;
+  font-size: medium;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid-item {
+  background-color: #eee;
+  padding: 20px;
+}
+
+
+
+
+.nav-colored { background-color:#000; }
+.nav-transparent { background-color:transparent;}

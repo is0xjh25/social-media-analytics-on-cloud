@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Template</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  </head>
+  <body>
+    <h1>My Chart</h1>
+    <div id="chart"></div>
+    <h1>My Result</h1>
+    <ul>
+      {% for row in result %}
+        <li>{{ row.key }}: {{ row.value.avg }}</li>
+      {% endfor %}
+    </ul>
+    <script>
+      var chart_data = {{ chart_data|safe }};
+      Plotly.plot('chart', chart_data);
+    </script>
+  </body>
+</html>

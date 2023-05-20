@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.111.3">
+    <title>Sidebars · Bootstrap v5.3</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+
+    
+
+    
+<link href="{{ url_for('static', filename='bootstrap.min.css')}}" rel="stylesheet" />
+<link href="{{ url_for('static', filename='styles.css')}}" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+    <!-- Custom styles for this template -->
+
+    <link href="{{ url_for('static', filename='sidebars.css')}}" rel="stylesheet" />
+  </head>
+  <body>
+
+
+    <main class="d-flex flex-nowrap">
+  
+
+  
+      <div class="flex-shrink-0 p-3" style="width: 280px;">
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+          <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+          <span class="fs-5 fw-semibold">    <img src="{{ url_for('static', filename='logo.png')}}" alt="" width = 100% >
+          </span>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+              Home
+            </button>
+            <div class="collapse show" id="home-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="/" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+                <li><a href="/db/" class="link-body-emphasis d-inline-flex text-decoration-none rounded">CouchDB</a></li>
+                <li><a href="/s1" class="link-body-emphasis d-inline-flex text-decoration-none rounded">S1. Happiness & Time </a></li>
+                <li><a href="/s2" class="link-body-emphasis d-inline-flex text-decoration-none rounded">S2. Happiness & Location </a></li>
+                <li><a href="/s3" class="link-body-emphasis d-inline-flex text-decoration-none rounded">S3. Discover Influential Factors</a></li>
+                <li><a href="/s4" class="link-body-emphasis d-inline-flex text-decoration-none rounded">S4. Comparative Analysis </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+              Scenario 1
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="/s1" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+                <li><a href="/s1/#s1.1" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Scenario 1.1</a></li>
+                <li><a href="/s1/#s1.2" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Scenario 1.2</a></li>
+                <li><a href="/s1/#s1.3" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Scenario 1.3</a></li>
+                <li><a href="/s1/#s1.4" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Scenario 1.4</a></li>
+              </ul>
+            </div>
+
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+              Scenario 2
+            </button>
+            <div class="collapse" id="orders-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="/s2" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
+                <li><a href="/s2/#s2.1" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Scenario 2.1</a></li>
+                <li><a href="/s2/#s2.2" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Scenario 2.2</a></li>
+                <li><a href="/s2/#s2.3" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Scenario 2.3</a></li>
+                <li><a href="/s2/#s2.4" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Scenario 2.4</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+              Scenario 3
+            </button>
+            <div class="collapse" id="account-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="/s3" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+                <li><a href="/s3/#s3.1" class="link-dark d-inline-flex text-decoration-none rounded">Scenario 3.1</a></li>
+                <li><a href="/s3/#s3.2" class="link-dark d-inline-flex text-decoration-none rounded">Scenario 3.2</a></li>
+                <li><a href="/s3/#s3.3" class="link-dark d-inline-flex text-decoration-none rounded">Scenario 3.3</a></li>
+                <li><a href="/s3/#s3.4" class="link-dark d-inline-flex text-decoration-none rounded">Scenario 3.4</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#s4-collapse" aria-expanded="false">
+              Scenario 4
+            </button>
+            <div class="collapse" id="s4-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="/s4" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
+                <li><a href="/s4/#s4.1" class="link-dark d-inline-flex text-decoration-none rounded">Scenario 4.1</a></li>
+                <li><a href="/s4/#s4.2" class="link-dark d-inline-flex text-decoration-none rounded">Scenario 4.2</a></li>
+                <li><a href="/s4/#s4.3" class="link-dark d-inline-flex text-decoration-none rounded">Scenario 4.3</a></li>
+                <li><a href="/s4/#s4.4" class="link-dark d-inline-flex text-decoration-none rounded">Scenario 4.4</a></li>
+    
+              </ul>
+            </div>
+          </li>
+        </ul>
+        
+      </div>
+
+
+  <div class="container" style="overflow:scroll;">
+
+      <section class = "texts">
+        <br>
+        <h1>Happiness & Time</h1> 
+        <h4><i>Temporal Analysis with Twitter Data</i></h4>
+        
+        <p>This scenario involves non-geo-related analysis, as we investigated people's happiness score across different time period.
+          <br>In this scenario, our study mainly focused on answering the following questions: <br>
+          <li> <a href="#s1.1">Scenario 1.1:</a> What's the happiness trend from 2022.2 to 2022.8?</li>
+          <li> <a href="#s1.2">Scenario 1.2:</a> What's the happiness trend by hour of a day?</li>
+          <li> <a href="#s1.3">Scenario 1.3:</a> What's the happiness trend by day of week?</li>
+          <li> <a href="#s1.4">Scenario 1.4:</a> What's the most frequent words related to happiness?</li>
+
+        </p>
+      </section>
+
+      <hr class="dotted"> <!--------------------------s1.1------------------------------------------------>
+
+      <section class = "texts">
+        <a name="s1.1"></a>
+          <h1>Scenario 1.1</h1>
+        </a>
+        <div style="background-color: #F6F6F6; padding: 20px; text-align: center;">
+          <h2 style="font-family: 'Arial Black', sans-serif; font-size: 24px; color: #c57b57; margin-bottom: 10px;">Unveiling the Rising Happiness in Australia           <img src="{{ url_for('static', filename='upward_arrow.png')}}" style="width: 50px; height: 50px; margin-bottom: 20px;"></p>
+          </h2>
+          <p style="font-size: 18px; margin-bottom: 20px; color: #333333;">From March 2022 to June 2022, the happiness score of Australia exhibited an <span style="color: orange;"><b>increasing</b></span> trend.
+        </div>
+        <div id="chart">
+          <script>
+            var chart_data = {{ chart_data|safe }};
+            Plotly.newPlot('chart', chart_data);
+          </script>
+        <p>.</p>
+      </section>
+
+      <hr class="dotted"> <!---------------------------s1.1------------------------------------------------>
+      
+      <section class = "texts">
+        <a name="s1.2"></a>
+        <h1>Scenario 1.2</h1>
+        <div style="background-color: #F6F6F6; padding: 20px; text-align: center;">
+          <h2 style="font-family: 'Arial Black', sans-serif; font-size: 24px; color: #c57b57; margin-bottom: 10px;">Journey of Happiness Throughout the Day
+            <img src="{{ url_for('static', filename="sunrise_sunset_sunny_morning_hot_weather_icon_194376.png")}}"  style="width: 100px; height: 100px">
+            <img src="{{ url_for('static', filename="sunset_sunrise_beach_sun_sea_weather_icon_194359.png")}}"  style="width: 100px; height: 100px">
+          </h2>
+          <p style="font-size: 18px; margin-bottom: 20px; color: #333333;">The happiness score peaked in the early morning and gradually <span style="color: green;"><b>decreased</b></span> during the day.
+            <br>However, at around 6 PM, the happiness <span style="color: orange;"><b>rose</b></span> again, reaching a small peak.
+
+          </p>
+          </div>
+        
+        </h4>
+        <div id="chart2">
+          <script>
+            var chart_data2 = {{ chart_data2|safe }};
+            Plotly.plot('chart2', chart_data2);
+          </script>
+        </div>
+        <p>.</p>
+      </section>
+
+      <hr class="dotted"> <!---------------------------s1.3------------------------------------------------>
+      
+      <section class = "texts"> 
+        <a name="s1.3"></a>
+        <h1>Scenario 1.3</h1>
+        <div style="background-color: #F6F6F6; padding: 20px; text-align: center;">
+          <h2 style="font-family: 'Arial Black', sans-serif; font-size: 24px; color: #c57b57; margin-bottom: 10px;">Weekend Bliss: Higher Happiness Scores
+            <img src="{{ url_for('static', filename="weekend.png")}}" style="width: 100px; height: 100px; ">
+
+          </h2>
+          <p style="font-size: 18px; margin-bottom: 20px; color: #333333;">During the weekends, the happiness scores reach higher levels, creating a blissful experience.</p>
+        </div>
+        
+        <div id="chart3">
+          <script>
+            var chart_data3 = {{ chart_data3|safe }};
+            Plotly.plot('chart3', chart_data3);
+          </script>
+        </div>
+        <p>.</p>
+      </section>
+
+      <hr class="dotted"> <!---------------------------s1.4------------------------------------------------>
+
+      <section class = "texts">
+        <a name="s1.4"></a>
+        <h1>Scenario 1.4</h1>
+        <p>.</p>
+      </section>
+    </div>
+
+  </div>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='bootstrap.bundle.min.js')}}"></script>
+
+<script src="{{ url_for('static', filename='moving_text.js')}}"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="sidebars.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
