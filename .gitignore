@@ -1,6 +1,5 @@
 .DS_Store
 *.env
-*.yaml
 
 # CCC Project
 
@@ -168,4 +167,7 @@ cython_debug/
 
 .DS_Store
 *.txt
+.DS_Store
+.DS_Store
+data/.DS_Store
 .DS_Store

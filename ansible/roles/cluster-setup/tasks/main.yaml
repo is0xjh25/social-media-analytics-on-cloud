@@ -1,0 +1,6 @@
+- name: Build CouchDB Cluster
+  script: ./cluster-setup.sh '{{ hostvars[ 'couchdb' ].ansible_default_ipv4.address }}' '{{ hostvars[ 'mastodon' ].ansible_default_ipv4.address }}' '{{ hostvars[ 'twitter' ].ansible_default_ipv4.address }}'
+  register: outCouchDB
+- debug: var=outCouchDB.stdout_lines
+
+# {{ hostvars[ 'mastodon' ].ansible_default_ipv4.address }} {{ hostvars[ 'twitter' ].ansible_default_ipv4.address }}

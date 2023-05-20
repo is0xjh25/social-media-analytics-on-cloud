@@ -1,0 +1,4 @@
+- name: Deploy Frontend
+  script: ./deploy-forntend.sh
+  register: outFrontend
+- debug: var=outFrontend.stdout_lines

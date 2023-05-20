@@ -1,0 +1,5 @@
+---
+- name: Deploy Mastodon Harvester
+  script: ./deploy-mastodon-harvester.sh
+  register: outMastodon
+- debug: var=outMastodon.stdout_lines

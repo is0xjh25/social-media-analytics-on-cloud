@@ -1,0 +1,4 @@
+- name: Deploy Twitter Harvester
+  script: ./deploy-twitter-harvester.sh
+  register: outTwitter
+- debug: var=outTwitter.stdout_lines
