@@ -112,16 +112,6 @@ const animation_line = {
 export const options_line = {
   responsive: true,
   animation_line,
-  // animation: {
-  //   x: {
-  //     duration: 5000,
-  //     from: 0,
-  //   },
-  //   y: {
-  //     duration: 3000,
-  //     from: 500,
-  //   },
-  // },
 
   plugins: {
     legend: {
@@ -186,30 +176,8 @@ export const options_line = {
       hoverRadius: 10, // to make it bigger when user hovers put larger number than radius.
     },
   },
-  // graph layout
-  // layout: {
-  //   padding: {
-  //     top: 5,
-  //     left: 15,
-  //     right: 15,
-  //     bottom: 15,
-  //   },
-  // },
 };
 
-
-// const data_his = [
-//   { score: "0", freq: 10 },
-//   { score: "1", freq: 5 },
-//   { score: "2", freq: 5 },
-//   { score: "3", freq: 10 },
-//   { score: "4", freq: 15 },
-//   { score: "5", freq: 3 },
-//   { score: "6", freq: 15 },
-//   { score: "7", freq: 17 },
-//   { score: "8", freq: 8 },
-//   { score: "9", freq: 12 },
-// ];
 const totalDuration_his = 1500;
 const delayBetweenPoints_his = totalDuration_his / data_his.length;
 const previousY_his = (ctx) =>
@@ -323,7 +291,7 @@ function Scenario2() {
     fetch(process.env.REACT_APP_BACKEND_URL + 's2_data')
       .then(response => response.json())
       .then(fetchedData => {
-        if (!fetchedData.state) { 
+        if (!fetchedData.forwarding) { 
           let newData = [...initialData];
           for(let i = 0; i < fetchedData.result_1.length; i++) {
               let avgValue = parseFloat(fetchedData.result_1[i].value.avg);
