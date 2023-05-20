@@ -4,6 +4,7 @@ import { Chart } from "react-google-charts";
 import { mean } from "lodash"
 import au from '../image/australia.png';
 import { Bar } from "react-chartjs-2";
+import GeoPandasMap from '../components/MyMap';
 
 import {
   Chart as ChartJS,
@@ -473,16 +474,17 @@ function Scenario2() {
              are 
              <span id="key_yellow"> happier </span>
              than the 
-             <span>Rest Areas</span>
+             <span> Rest Areas</span>
              .</li>
             <li>Places {""}
             <span id="key_yellow"> above </span>
               the Australia average happiness include: Greater Sydney, Rest of NSW, Greater Adelaide, Greater Hobart, Rest of Northern Territory, Australian Capital Territory.</li>
-
-        
-        </div>
+              </div>
             </section>
+
+            <div style={{ display: 'flex',  height: '100vh' }}><GeoPandasMap /></div>
           <div className="histogram">
+          <div style={{ marginTop: '-300px' }}>
           <Bar
       options={options_his}
       data={{
@@ -498,7 +500,7 @@ function Scenario2() {
         ],
       }}
     />
-        </div>
+        </div></div>
     </div>
 
   );

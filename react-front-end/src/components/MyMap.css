@@ -1,0 +1,9 @@
+.MyMapContainer {
+    background-color: white;
+  }
+.MyTileLayer {
+  /* Add your custom styles here */
+  /* For example, change the opacity and border */
+  opacity: 0.8;
+  border: 1px solid black;
+}

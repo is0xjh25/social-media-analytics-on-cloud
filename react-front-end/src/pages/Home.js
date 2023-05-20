@@ -6,6 +6,7 @@ import logo6 from '../image/logo6.png';
 import logo7 from '../image/logo7.png';
 import logo8 from '../image/logo8.png';
 import study from '../image/study.png';
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -16,7 +17,7 @@ function Home() {
           <h1 className="ml11">
             <span className="text-wrapper" style={{ overflow: 'hidden', width: '100%', overflowWrap: 'break-word'}}>
           <Typed
-            strings={["I was so happy"]}
+            strings={["I came to my office at right time."]}
             typeSpeed={200}
             loop
           />
@@ -34,7 +35,7 @@ function Home() {
           <h1 className="ml7">
             <span className="text-wrapper" style={{ overflow: 'hidden', width: '100%' ,overflowWrap: 'break-word' }} >
                 <Typed
-              strings = {["Having a Great Day!"]}     
+              strings = {["Taking my dog for a walk and having a conversation with a stranger."]}     
                 typeSpeed={150} 
                 loop
                />
@@ -106,15 +107,18 @@ function Home() {
         </section>
 
         <div class="container1_2">
-        < img src={logo4} id="logo4"/>
-        <div id="text_2">
+        <Link to="/Scenario1">
+          <img src={logo4} id="logo4" alt="Logo" />
+        </Link>
+        <div id="text_2" >
+        <div style = {{margin: "30px"}}>
                 <h1 id='overview'>Happiness Trends by Time in Australia and Global Social Media</h1>
                 <li>Are people beaming with more happiness during specific months?</li>
                     <li>Does morning or night bring more joy?</li>
                     <li>Do weekends bring more happiness to people's lives?</li>
                     <li>How does the happiness level of Australia's Tweets compare to the global average?</li>
                     <li>Are there different temporal trends in happiness between Australia and the rest of the world?</li>
-
+                    </div>
                     </div>
             </div>
         <div class="container1_2">
@@ -124,16 +128,25 @@ function Home() {
                     <li>Unraveling the Secrets of Greater Capital Cities: Do They Hold the Key to Happiness?</li>
                     <li>Is there a significant difference in happiness between the eastern and western parts of Australia?</li>
                     </div>
+                    <Link to="/Scenario2">
                     < img src={logo6} id="logo6"/>
+                    </Link>
+                    
             </div>
             <div class="container1_2">
-        < img src={logo7} id="logo7"/>
+            <Link to="/Scenario3">
+            < img src={logo7} id="logo7"/>
+            </Link>
+        
         <div id="text_2">
+        <div style = {{margin: "30px"}}>
                 <h1 id='overview'>Secrets for Happiness</h1>
-                <li>Is happiness found in the absence of marriage?</li>
+               <li>Is happiness found in the absence of marriage?</li>
                     <li>Does unemployment bring unexpected happiness?</li>
                     <li>How does higher education influence happiness?</li>
                     <li>What types of joyful moments are people most inclined to share on social media?</li>
+
+                </div>
                     </div>
             </div>
 

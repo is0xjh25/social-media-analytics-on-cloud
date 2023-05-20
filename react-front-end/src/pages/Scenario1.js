@@ -665,7 +665,7 @@ function Scenario1() {
         <h1 id="head">Happiness & Time</h1> 
         <h2><i>Temporal Analysis with Twitter & Mastodon Data</i></h2>
         
-        <p>This scenario involves temporal analysis, as we investigated people's happiness score across different time period.</p >
+        <p>This scenario involves temporal analysis, investigating happiness expressed on social media across different time period.</p >
         <h2>Analysis Goal </h2>
         <li> <a href="#s1_1">Scenario 1.1:</a > What's the happiness trend from 2022.2 to 2022.8 in Australia?</li>
         <li> <a href="#s1_2">Scenario 1.2:</a > What's the happiness trend by hour of a day in Australia and globally?</li>
