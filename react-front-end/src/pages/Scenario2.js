@@ -6,6 +6,7 @@ import au from '../image/australia.png';
 import { Bar } from "react-chartjs-2";
 import GeoPandasMap from '../components/MyMap';
 import GeoPandasMap2 from '../components/MyMap2';
+import Footer from '../components/footer'; 
 
 import {
   Chart as ChartJS,
@@ -536,7 +537,7 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
         <div style={{ display: 'flex',  height: '100vh' }}><GeoPandasMap2 /></div>
         
         </div>
-
+        <Footer />
     </div>
 
   );

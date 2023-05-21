@@ -3,6 +3,7 @@ import "../style/Scenario3.css";
 import correlation from '../image/correlation.png';
 import { Line } from '@pansy/react-charts';
 import { LineConfig } from '@pansy/react-charts/es/line';
+import Footer from '../components/footer'; 
 
 function Scenario3() {
 
@@ -124,7 +125,7 @@ function Scenario3() {
               with happiness.</li>
             <li>However, labor force participation, weekly rent, weekly income by family, and weekly income by individual are <span id = "key_normal">negatively correlated </span> with happiness.</li>
     </section>
-
+    <Footer />
     </div>
 
   );

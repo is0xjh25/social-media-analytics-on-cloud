@@ -106,6 +106,9 @@ const Sidebar = () => {
       <Link to="/Scenario2#s2_3">
       <button className="sub-buttons" onClick={() => handleLinkClick('s2_3')}>Scenario 2.3</button>
       </Link>
+      <Link to="/Scenario2#s2_4">
+      <button className="sub-buttons" onClick={() => handleLinkClick('s2_4')}>Scenario 2.4</button>
+      </Link>
     </div>
       )}
 
@@ -123,6 +126,7 @@ const Sidebar = () => {
       <Link to="/Scenario3#s3_3">
       <button className="sub-buttons" onClick={() => handleLinkClick('s3_3')}>Scenario 3.3</button>
       </Link>
+      
     </div>
       )}
     </div>

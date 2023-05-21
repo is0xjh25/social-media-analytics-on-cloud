@@ -7,6 +7,7 @@ import logo7 from '../image/logo7.png';
 import logo8 from '../image/logo8.png';
 import study from '../image/study.png';
 import { Link } from 'react-router-dom';
+import Footer from '../components/footer'; 
 
 function Home() {
   return (
@@ -151,7 +152,7 @@ function Home() {
             </div>
 
         </div>
-
+        <Footer />
 
       </div>
   );

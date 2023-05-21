@@ -1,0 +1,92 @@
+.footer {
+    margin-top: 40px;
+    padding-top: 40px;
+    background-color: white;
+    padding-bottom: 0px;
+
+  }
+  
+  .divider {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  
+  .divider img {
+    padding-top: 40px;
+    padding-bottom: 0px;
+    width: 100%; /* Adjust the width as per your preference */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .footer-header {
+    text-align: center;
+    font-weight:bold;
+    color: #F1AB86; /* Set the text color */
+  }
+  
+  .project-name {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .project-details {
+    font-size: 16px;
+    color: #F1AB86; /* Set link text color to white */
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: #c57b57
+  }
+  
+  .footer-column {
+    flex: 1;
+    margin-right: 40px;
+  }
+  
+  .footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-column ul li a {
+    color:  #c57b57;
+    text-decoration: none;
+  }
+  
+  .footer-column ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  
+  .footer-links {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  
+  .footer-links li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+
+  
+  .footer-links li a:hover {
+    text-decoration: underline;
+  }

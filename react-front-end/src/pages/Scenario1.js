@@ -7,6 +7,7 @@ import upSun from '../image/sunup.png';
 import downSun from '../image/sundown.png';
 import week from '../image/weekend.png';
 import { Bar } from 'react-chartjs-2';
+import Footer from '../components/footer'; 
 
 import {
   Chart as ChartJS,
@@ -782,6 +783,7 @@ function Scenario1() {
         ],
       }}
     />
+      <Footer />
     </div>
   );
 }

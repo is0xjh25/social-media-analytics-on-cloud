@@ -1,17 +1,18 @@
 import algorithm from '../image/algorithm.png';
 import happydb from '../image/happydb.png';
 import score from '../image/score.png';
+import Footer from '../components/footer'; 
 const Aboutus = () => {
 
   return (
-    <div class="container">
+    <div class="container" style={{width: "90%"}}>
         <h1>About Us</h1>
-        <p>This project is developed by Yun-Chi Hsiao, Jiahe Liu, Benjamin Murdoch, Jongho Park, Yongli Qin. We are Master students @Unimelb</p>
+        <p>This project is developed by Yun-Chi Hsiao, Jiahe Liu, Benjamin Murdoch, Jongho Park, Yongli Qin. We are Master students @Unimelb.</p>
         <h2>Our Roles</h2>
         Aesthetic Full-stack Developer: Yongli<br></br>
         Docker Master & Linux Master: Jongho<br></br>
         ProAnsible Player & 101% Introvert: Yun-Chi<br></br>
-        The King of MRC & Linux Master: Benjamin Murdoch<br></br>
+        The King of MRC & Linux Master: Benjamin<br></br>
         Amazing Data Analyst: Jiahe
 
         <h1>Happiness Score</h1>
@@ -63,7 +64,9 @@ const Aboutus = () => {
             </div>
           </div>
         </p>
+      <Footer/>
     </div>
+
   );
 };
 
