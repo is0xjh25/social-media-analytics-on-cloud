@@ -1,5 +1,6 @@
 #!/bin/bash
 # Monitoring
-ansible-playbook -i ./hosts.ini monitoring.yaml
+ansible-playbook -i /home/ubuntu/ansible/hosts.ini /home/ubuntu/ansible/monitoring.yaml
 
-echo `date` >> /home/ubuntu/ansible/roles/start-monitoring/monitoring-log.txt
+echo $(date) >> /home/ubuntu/ansible/roles/start-monitoring/monitoring-log.txt
+echo $(date) >> /home/ubuntu/ansible/roles/start-monitoring/hi.txt

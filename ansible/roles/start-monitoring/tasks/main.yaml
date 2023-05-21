@@ -1,2 +1,2 @@
 - name: Start Monitoring
-  script: ./start-monitoring.sh
+  ansible.builtin.command: sudo cp /home/ubuntu/ansible/roles/start-monitoring/crontab /etc/crontab

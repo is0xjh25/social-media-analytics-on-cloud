@@ -3,4 +3,3 @@
 - hosts: mastodon
   roles:
     - role: fetch-status
-  ignore_errors: true

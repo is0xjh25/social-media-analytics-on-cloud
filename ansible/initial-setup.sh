@@ -1,3 +1,3 @@
 #!/bin/bash
 # Initial setup
-. ./openstack.sh; ansible-playbook -i ./hosts.ini --ask-become-pass initial-setup.yaml
+ansible-playbook -i ./hosts.ini initial-setup.yaml

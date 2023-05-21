@@ -16,10 +16,10 @@ SHELL=/bin/sh
 # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 # |  |  |  |  |
 # *  *  *  *  * user-name command to be executed
-17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
-25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
-47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
-52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
-# This is our script that runs the monitoring ansible script 
-*/2 * * * * root . /home/ubuntu/ansible/monitoring.sh
-#
+# 17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+# 25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+# 47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+# 52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+# This is our script that runs the monitoring ansible script
+# * * * * * root . /home/ubuntu/ansible/monitoring.sh
+* * * * * root /home/ubuntu/ansible/monitoring.sh
