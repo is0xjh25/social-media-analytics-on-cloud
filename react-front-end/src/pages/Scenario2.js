@@ -71,6 +71,10 @@ let initialData = [
 
 const data_his=[]
 
+const full_name = ["Greater Sydney","Rest of NSW","Greater Melbourne","Rest of VIC","Greater Brisbane","Rest of QLD",
+                    "Greater Adelaide","Rest of SAU","Greater Perth","Rest of WAU","Greater Hobart","Rest of TAS",
+                  "Greater Darwin","Rest of Northern Territory","Australian Capital Territory"]
+
 const totalDuration = 1500;
 const delayBetweenPoints = totalDuration / data_line.length;
 const previousY = (ctx) =>
@@ -330,11 +334,48 @@ function Scenario2() {
     fetchData();
   }, []);
 
+
+
   const data_histg = data_hist.map(item => ({
       name: item.key,
       score: item.value.avg
   }));
   const averageScore = mean(data_histg.map(item =>item.score))
+
+  const processedData = data.slice(1).map(item => ({
+    Code: item[0],
+    Name: item[1],
+    Score: item[2]
+  }));
+
+  const minScoreItem = processedData.reduce((prev, curr) => (prev.Score < curr.Score) ? prev : curr);
+
+  
+  const belowAverageItems = processedData.filter(item => item.Score < averageScore && item.Score > minScoreItem.Score);
+  
+  const belowAverageNames = belowAverageItems.map(item => item.Name);
+  const maxScoreItem = processedData.reduce((prev, curr) => (prev.Score > curr.Score) ? prev : curr);
+
+  const maxScoreName = maxScoreItem.Name;
+
+
+
+
+  const minScoreName = minScoreItem.Name;
+  const full_name_data = data_histg.map((item, index) => {
+    return {
+      key: full_name[index],
+      score: item.score
+    };
+  });
+
+const aboveAverageItems_all = full_name_data.filter(item => item.score > averageScore);
+
+const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
+
+
+
+
 
   const belowAvgColor = "#fddbc7"
   const aboveAvgColor = "#f4a582"
@@ -348,7 +389,7 @@ function Scenario2() {
     fill: false, // don't fill under the line
   };
 
-  const [htmlContent, setHtmlContent] = useState('');
+
 
   return (
 
@@ -356,7 +397,7 @@ function Scenario2() {
     <div class="container">
     <section class = "topic">
         <h1 id="head">Happiness & Location</h1> 
-        <p>Average Score: {averageScore}</p>
+        {/* <p>Average Score: {averageScore}</p> */}
         <h2><i>Geo Analysis with Twitter Data</i></h2>
 
         <p>This scenario involves geo-related analysis, as we investigated people's happiness score across different locations in Australia.
@@ -374,7 +415,7 @@ function Scenario2() {
       <h2 id="s2_1head">Unlocking the Australian Happiness: Average Score</h2>
       <h4>
       The average happiness score of Australia is{' '}
-      <span id="key_yellow">5.91526</span>
+      <span id="key_yellow">{averageScore}</span>
     </h4>
     < img id="au" src={au}/>
       <div className="Line">
@@ -387,11 +428,15 @@ function Scenario2() {
         <h2>Unveiling State's Happiness Across Australia</h2>
         <p>What's the happiness score of each states?</p>
           <h3 id="key">Key Findings:</h3>
-          <p>Tasmania is the happiest state, while WA is {' '} 
-          <span>the least happy state.</span>
+          <p><span>{maxScoreName}</span> is the happiest state, while <span>{minScoreName}</span> is  
+          the least happy state.
           </p>
-          <p>{' '}
-          <span>Queensland, </span>and {' '}<span>Western Australia </span>
+          <p>
+          {belowAverageNames.map((name, index) => (
+          <React.Fragment key={index}>
+            <span>{name}, </span>
+          </React.Fragment>
+        ))}
           have below-average happiness scores.</p>
           </section>
 
@@ -449,7 +494,12 @@ function Scenario2() {
              .</li>
             <li>Places {""}
             <span id="key_yellow"> above </span>
-              the Australia average happiness include: Greater Sydney, Rest of NSW, Greater Adelaide, Greater Hobart, Rest of Northern Territory, Australian Capital Territory.</li>
+              the Australia average happiness include: 
+              {aboveAverageNames_all.map((name, index) => (
+                <React.Fragment key={index}>
+                  <span>{name}, </span>
+                </React.Fragment>
+              ))}</li>
               </div>
             </section>
 
@@ -477,12 +527,14 @@ function Scenario2() {
         <div>
         <h1 id="s2_4">Scenario 2.4</h1>
         <div className="s2_4">
+          
         <h2>Unveiling SAL's Happiness Across Australia</h2>
         <p>What's the happiness score of Australian Suburbs and Localities?</p>
         <h3 id="key">Key Findings:</h3>
         <p>The <b>central region</b> of Australia and the <b>western part of Tasmania</b> exhibit <span id="key_yellow"> higher </span> levels of happiness.</p>
-        <div style={{ display: 'flex',  height: '100vh' }}><GeoPandasMap2 /></div>
         </div>
+        <div style={{ display: 'flex',  height: '100vh' }}><GeoPandasMap2 /></div>
+        
         </div>
 
     </div>

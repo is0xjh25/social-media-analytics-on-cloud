@@ -7,3 +7,12 @@
   opacity: 0.8;
   border: 1px solid black;
 }
+
+.legend-label-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .legend-label {
+    margin: 0 10px;
+  }

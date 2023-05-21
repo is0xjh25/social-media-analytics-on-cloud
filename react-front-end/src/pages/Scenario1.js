@@ -498,7 +498,7 @@ export const options_his_twitter = {
           size: 15,
         },
       },
-      min:5.85,
+      min:5.7,
       max:6,
       ticks: {
         font: {
@@ -523,6 +523,7 @@ function Scenario1() {
 		name: item.key,
 		score: item.value.avg
 	}));
+  
 
 	const averageScore_M = mean(data_mostdonH.map(item =>item.score))
 
@@ -558,11 +559,17 @@ function Scenario1() {
 		.then(response => response.json())
 		.then(data => {
 			if (!data.forwarding) { 
+        let result_1 = data.result_1.length > 0 ? data.result_1 : [];
+        let result_2 = data.result_2.length > 0 ? data.result_2 : [];
+        let result_3 = data.result_3.length > 0 ? data.result_3 : [];
+        let result_4 = data.result_4.length > 0 ? data.result_4 : [];
+        let result_5 = data.result_5.length > 0 ? data.result_5 : [];
 				setData(data.result_1);
 				setData_weekend(data.result_3);
 				setDataMoth(data.result_2);
 				setDataMostodn(data.result_4);
 				setDataMostodnWeek(data.result_5);
+        
 			} else {  
 				fetch(process.env.REACT_APP_BACKEND_URL_2 + 's1_data')
 				.then(response2 => {
@@ -585,13 +592,15 @@ function Scenario1() {
 		})
 		.catch(error => {
 			console.error('There has been a problem with your fetch operation:', error);
+      alert("The connection is broken")
 		});
 	};
+
+
 
 	useEffect(() => {
 		fetchData();
 	}, []);
-
 	const data_his = data.map(item => ({
 			name: item.key,
 			score: item.value.avg
@@ -638,6 +647,19 @@ function Scenario1() {
       name: months[item.key],  
       score: item.value.avg
   }));
+  console.log("ahhahaha")
+  console.log(data_mon)
+  // const config: LineConfig_line = {
+  //   data_mon,
+  //   xField: 'name',
+  //   yField: 'score',
+  //   smooth: true,
+  //   meta: {
+  //     value: {
+  //       max: 6
+  //     }
+  //   }
+  // };
       
   return (
     <div class="container">
@@ -662,6 +684,7 @@ function Scenario1() {
         </div>
         </section>
       <div className="Line">
+        {/* return <Line {...config} />; */}
       <Line
           options={options_line}
           data={{

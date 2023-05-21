@@ -33,7 +33,8 @@ function Scenario3() {
       console.error('There has been a problem with your fetch operation:', error);
     });
   };
-
+  console.log("s3 data")
+  console.log(data)
   useEffect(() => {
     fetchData();
   }, []);

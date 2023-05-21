@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { useEffect, useState } from "react";
 import { MapContainer, GeoJSON,TileLayer} from "react-leaflet";
 import geoJSON from "./../data/gcc_geojson.json";
 import "leaflet/dist/leaflet.css";
@@ -23,11 +24,60 @@ const happinessData = [
 { GCC_CODE21: '8ACTE', happiness_score: 5.936749 },
 // Add more happiness score data here
 ];
+
+
 const GeoPandasMap = () => {
 
+    const [data_hist, setDataHis] = useState([]);
+
+    const fetchData = () => {
+        fetch(process.env.REACT_APP_BACKEND_URL + 's2_data')
+          .then(response => response.json())
+          .then(fetchedData => {
+            if (!fetchedData.forwarding) { 
+              setDataHis(fetchedData.result_2);
+            } else {  
+              fetch(process.env.REACT_APP_BACKEND_URL_2 + 's2_data')
+              .then(response2 => {
+                  if (!response2.ok) { throw new Error('Network response from second backend was not ok') };
+                  return response2.json();
+              })
+              .then(fetchedData2 => {
+                setDataHis(fetchedData2.result_2);
+              })
+              .catch(error2 => {
+                console.error('There has been a problem with your fetch operation from the second backend:', error2);
+                const timer = setTimeout(fetchData, 30000);
+                return () => clearTimeout(timer);
+              });
+            }
+          })
+          .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+          });
+      };
+      
+      useEffect(() => {
+        fetchData();
+      }, []);
+      console.log("data_lst")
+      console.log(data_hist)
+      
+      const happinessData2 = data_hist.map(item => {
+        return {
+            SAL_CODE21: item.key.toUpperCase(),
+            happiness_score: item.value.avg.toFixed(6)
+        };
+        });
+        console.log("happinessData")
+        console.log(happinessData)
+        
+      
+    
   const minScore = Math.min(...happinessData.map((item) => item.happiness_score));
   const maxScore = Math.max(...happinessData.map((item) => item.happiness_score));
-  
+  console.log(minScore)
+  console.log(maxScore)
   // Determine the color based on the happiness score
   const colorScale = scaleLinear().domain([minScore, maxScore]).range([0, 3]);
 
@@ -39,6 +89,7 @@ const GeoPandasMap = () => {
   const style = (feature) => {
     const gccCode = feature.properties.GCC_CODE21;
     const happinessScore = happinessData.find((data) => data.GCC_CODE21 === gccCode)?.happiness_score;
+    console.log(happinessData)
     const color = happinessScore ? getColor(happinessScore) : 'gray';
 
     return {
