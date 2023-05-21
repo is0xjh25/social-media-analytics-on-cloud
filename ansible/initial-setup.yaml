@@ -1,6 +1,6 @@
 ---
-# # Attach volumes to every vm
-# - hosts: all
+# Attach volumes to every vm
+# - hosts: database
 #   roles:
 #     - role: volume-setup
 
@@ -10,37 +10,32 @@
 #     - role: couchdb-remove
 #   ignore_errors: true
 
-# # Preparing couchdb container
+# Preparing couchdb container
 # - hosts: database
 #   roles:
 #     - role: couchdb-setup
 
-# # Set up each couchdb cluster
+# Set up each couchdb cluster
 # - hosts: couchdb
 #   roles:
 #     - role: cluster-setup
 
-# # Deploy mastodon harvester
+# Deploy mastodon harvester
 # - hosts: mastodon
 #   roles:
 #     - role: deploy-mastodon-harvester
 
-# # Deploy twitter harvester
+# Deploy twitter harvester
 # - hosts: twitter
 #   roles:
 #     - role: deploy-twitter-harvester
 
 # Deploy web server for backend
-# - hosts: twitter
+# - hosts: web
 #   roles:
 #     - role: deploy-backend
 
 # Deploy web server for frontend
-- hosts: web
-  roles:
-    - role: deploy-frontend
-
-# # Start monitoring
-# - hosts: mastodon
+# - hosts: web
 #   roles:
-#     - role: start-monitoring
+#     - role: deploy-frontend

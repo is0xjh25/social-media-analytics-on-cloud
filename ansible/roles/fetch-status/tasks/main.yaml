@@ -1,0 +1,25 @@
+---
+- name: Get the request from backend server
+  uri:
+    url: http://172.26.134.134:5000/status
+    method: GET
+    return_content: yes
+  register: results
+  ignore_errors: true
+- debug: var=results.json
+
+- name: Scaling up
+  delegate_to: twitter
+  script: ../deploy-backend/deploy-backend.sh
+  register: outScalingUP
+  when: results.json.status == true
+  ignore_errors: true
+- debug: var=outScalingUP.stdout_lines
+
+- name: Scaling down
+  delegate_to: twitter
+  script: ../remove-backend/remove-backend.sh
+  register: outScalingDown
+  when: results.json.status == false
+  ignore_errors: true
+- debug: var=outScalingDown.stdout_lines

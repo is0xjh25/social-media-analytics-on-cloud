@@ -1,1 +1,3 @@
-. ./openstack.sh; ansible-playbook -i ./hosts.ini --ask-become-pass monitoring.yaml
+#!/bin/bash
+# Monitoring
+ansible-playbook -i ./hosts.ini monitoring.yaml

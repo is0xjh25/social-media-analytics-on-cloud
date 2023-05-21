@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker stop backend;docker rm backend
+docker stop backend || true && docker rm backend || true

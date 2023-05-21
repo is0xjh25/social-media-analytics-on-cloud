@@ -1,37 +1,6 @@
 ---
-- hosts: master
-  tasks:
-  - name: Get the request from backend server
-    uri:
-      url: http://172.26.131.83:5000/status
-      method: GET
-      return_content: yes
-    register: results.json
-  - debug:
-      var: results.json
- 
-# Scaling up
-# - hosts: twitter
-#   roles:
-#     - role: deploy-frontend
-#   rules:
-#     - if: '${return-from-front-end} == "TRUE"'
-
-# - hosts: couchdb
-#   roles:
-#     - role: deploy-backend
-#   rules:
-#     - if: '${return-from-front-end} == "TRUE"'
-
-# # Scaling down
-# - hosts: twitter
-#   roles:
-#     - role: remove-backend
-#   rules:
-#     - if: '${return-from-front-end} == "FALSE"'
-
-# - hosts: twitter
-#   roles:
-#     - role: remove-backend
-#   rules:
-#     - if: '${return-from-front-end} == "FALSE"'
+# Start monitoring
+- hosts: mastodon
+  roles:
+    - role: fetch-status
+  ignore_errors: true
