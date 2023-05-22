@@ -89,7 +89,7 @@ function Scenario3() {
         <li> <a href="#s3_3">Scenario 3.3:</a > How can reasons for happiness be classified?</li>
     </section>
     
-    <h1 id="s3_1">Scenario 313 Classify Reasons for Happiness</h1>
+    <h1 id="s3_1">Scenario 3.1 Classify Reasons for Happiness</h1>
     <section class = "s3_1">
           <h2>Use Logistic Regression Model to Label Reasons for Happiness</h2>
           <p>Is happiness attributed to achievement, affection, bonding, enjoy-the-moment, exercise, leisure, or nature?</p>
