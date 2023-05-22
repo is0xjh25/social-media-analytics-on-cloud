@@ -19,6 +19,7 @@ import json
 import geopandas as gpd
 from flask_caching import Cache
 from flask_cors import CORS
+import math
 
 
 
@@ -36,33 +37,14 @@ dname = os.path.dirname(abspath)
 os.chdir(dname)
 print(dname)
 
-@app.route('/db/',methods=['GET'])
-def my_view_function():
-    # Connect to CouchDB
-    couch = couchdb.Server('http://admin:admin@localhost:5984')
-    db = couch['twitter']
-    # Query the view
-    view_result = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
-    result = [{'key': row.key, 'value': row.value} for row in view_result]
-    keys = [row['key'] for row in result]
-    keys = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug']
-
-    ave = [row['value']['avg'] for row in result]
-
-    fig = go.Figure([go.Bar(x=keys, y=ave)])
-    fig.update_layout(yaxis_range=[5.6, 6.1])
-    chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
-    # Convert figure to JSON-serializable format
-    # chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
-    # Render the template with the result
-    return render_template('my_template.html', result = result, chart_data=chart_data)
-
 
 @app.route('/')
 def home():
     return render_template('index2.html')
 
-
+@app.route('/about')
+def about():
+    return render_template('about.html')
 #---------------------------s1--------------------------
 
 @app.route('/s1/',methods=['GET'])
@@ -94,6 +76,60 @@ def s1():
     # chart_data = json.dumps(fig, cls=PlotlyJSONEncoder)
     # Render the template with the result
 
+#---------------------------------------mastodon-----------------------------------------------------
+    db2 = couch['mastodon']
+    view_result = db2.view('_design/happiness_doc/_view/score-hour-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    keys = [row['key'] for row in result]
+    ave = [row['value']['avg'] for row in result]
+
+    morning = range(6, 12)
+    afternoon = range(12, 18)
+    evening = range(18, 22)
+    late_night = list(range(22, 24)) + list(range(0, 6))
+
+    colors = []
+    for hour in keys:
+        if hour in morning:
+            colors.append('#fddbc7')  # orange
+        elif hour in afternoon:
+            colors.append('#f4a582')  # green
+        elif hour in evening:
+            colors.append('#92c5de')  # blue
+        else:
+            colors.append('#2166ac')  # purple
+
+    fig = go.Figure(data=[go.Bar(x=keys, y=ave, marker_color=colors)])
+    fig.add_vrect(x0="6", x1="11", 
+        annotation_text="incline",  annotation_position="top left",
+        fillcolor="red", opacity=0.1, line_width=0)
+    fig.add_vrect(x0="12", x1="16", 
+            annotation_text="decline", annotation_position="top left",
+            fillcolor="grey", opacity=0.25, line_width=0)
+    fig.add_vrect(x0="17", x1="21", 
+    annotation_text="incline",  annotation_position="top left",
+    fillcolor="red", opacity=0.1, line_width=0)
+
+
+    fig.update_layout(
+        yaxis_range=[5.4, 6.00],
+        xaxis=dict(
+            tickmode='linear',
+            dtick=1,
+            tickvals=keys,
+            ticktext=['{}:00'.format(h) for h in keys]),
+        xaxis_title='Hour',
+        yaxis_title='Happiness Score',
+        yaxis_gridcolor='lightgrey',
+        plot_bgcolor='white')
+    fig.add_hline(y=6,line_color='lightgrey')
+    fig.add_hline(y=5.7094996974937, line_dash="dot",
+                annotation_text="Global baseline (5.70949)", 
+                annotation_position="top left")
+    
+    
+    chart_data2_m = json.dumps(fig, cls=PlotlyJSONEncoder)
+
     # ---------------------------------------------------------------------------
     view_result = db.view('_design/agg/_view/hour-view', reduce=True, group=True)
     result = [{'key': row.key, 'value': row.value} for row in view_result]
@@ -123,6 +159,9 @@ def s1():
     fig.add_vrect(x0="13", x1="18", 
         annotation_text="incline", annotation_position="top left",
         fillcolor="red", opacity=0.1, line_width=0)
+    fig.add_vrect(x0="19", x1="23", 
+        annotation_text="decline", annotation_position="top left",
+        fillcolor="grey", opacity=0.25, line_width=0)
     fig.update_layout(
         yaxis_range=[5.8, 6.00],
         xaxis=dict(
@@ -141,14 +180,14 @@ def s1():
     
     
     chart_data2 = json.dumps(fig, cls=PlotlyJSONEncoder)
-    # ---------------------------------------------------------------------------
+    # -------------------------twitter--------------------------------------------------
     view_result = db.view('_design/agg/_view/dow-view', reduce=True, group=True)
     result = [{'key': row.key, 'value': row.value} for row in view_result]
     keys = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     ave = [row['value']['avg'] for row in result]
     colors = ['#fddbc7','#fddbc7','#fddbc7','#fddbc7','#fddbc7','#f4a582','#f4a582']
-    fig = go.Figure([go.Bar(x=keys, y=ave, marker_color=colors)])
-    fig.update_layout(yaxis_range=[5.8, 6],
+    fig = go.Figure([go.Bar(x=keys, y=ave, marker_color=colors,name='twitter')])
+    fig.update_layout(yaxis_range=[5.4, 6],
                       xaxis_title='Day of Week',
                       yaxis_title='Happiness Score',
                       yaxis_gridcolor='lightgrey',
@@ -157,23 +196,32 @@ def s1():
     fig.add_hline(y=5.91526, line_dash="dot",
                 annotation_text="AU baseline (5.91526)", 
                 annotation_position="bottom right")
+    fig.add_hline(y=5.70949, line_dash="dot",
+                annotation_text="Global baseline (5.70949)", 
+                annotation_position="bottom right")
     chart_data3 = json.dumps(fig, cls=PlotlyJSONEncoder)
+    # ----------------------------mastodon-----------------------------------------------
+    view_result = db2.view('_design/happiness_doc/_view/score-dow-view', reduce=True, group=True)
+    result = [{'key': row.key, 'value': row.value} for row in view_result]
+    keys = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    ave = [row['value']['avg'] for row in result]
+    colors = ['#26619c','#26619c','#74b3ce','#74b3ce','#74b3ce','#26619c','#26619c']
+    fig = go.Figure([go.Bar(x=keys, y=ave, marker_color=colors,name='mastodon')])
+    fig.update_layout(yaxis_range=[5.2, 6],
+                      xaxis_title='Day of Week',
+                      yaxis_title='Happiness Score',
+                      yaxis_gridcolor='lightgrey',
+                      plot_bgcolor='white')
+    fig.add_hline(y=6,line_color='lightgrey')
 
-    return render_template('s1.html', chart_data=chart_data, chart_data2=chart_data2, chart_data3 = chart_data3)
+    chart_data3_m = json.dumps(fig, cls=PlotlyJSONEncoder)
+
+    return render_template('s1.html', chart_data=chart_data, chart_data2=chart_data2,chart_data2_m = chart_data2_m, chart_data3 = chart_data3, chart_data3_m = chart_data3_m)
 
 @app.route('/s1/#s1.1')
 def s1_1():
     return render_template('s1.html')
 
-
-# test
-@app.route('/test1')
-def first_test():
-    couch = couchdb.Server('http://admin:admin@localhost:5984')
-    db = couch['twitter']
-    view_result = db.view('_design/agg/_view/gcc-score-view', reduce=True, group=True)
-    result = [{'key': row.key, 'value': row.value} for row in view_result]
-    return jsonify(result)
 
     
 
@@ -316,7 +364,39 @@ def s2_4():
 #---------------------------s3--------------------------
 @app.route('/s3/')
 def s3():
-    return render_template('s3.html')
+    couch = couchdb.Server('http://admin:admin@localhost:5984')
+    db2 = couch['mastodon']
+    view_result = db2.view('_design/happiness_doc/_view/behaviour-dow-view', reduce=True, group=True)
+    x = [row['key'][0] for row in view_result['rows']]
+    y = [math.log(row['value']) for row in view_result['rows']]
+    behaviors = [row['key'][1] for row in view_result['rows']]
+
+    fig = go.Figure()
+
+    for behavior in set(behaviors):
+        x_behavior = [xi for xi, b in zip(x, behaviors) if b == behavior]
+        y_behavior = [yi for yi, b in zip(y, behaviors) if b == behavior]
+        fig.add_trace(go.Scatter(x=x_behavior, y=y_behavior, name=behavior, mode='lines+markers'))
+
+    fig.update_layout(
+        xaxis=dict(
+            tickmode='array',
+            tickvals=list(range(7)),
+            ticktext=['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+        ),
+        yaxis=dict(
+            type='log',
+            title='Count (log scale)'
+        ),
+        title='Count of Activities by Day of Week and Behavior',
+        showlegend=True,
+        hovermode='closest',
+        plot_bgcolor='white'
+    )
+
+    chart_data_behave = fig.to_json()
+    return render_template('s3.html', chart_data_behave=chart_data_behave)
+
 @app.route('/s3/#s3.1')
 def s3_1():
     return render_template('s3.html')
@@ -332,9 +412,7 @@ def s3_4():
     return render_template('s3.html')
 
 #---------------------------s4--------------------------
-@app.route('/s4/')
-def s4():
-    return render_template('s4.html')
+
 
 
 if __name__ == '__main__':
