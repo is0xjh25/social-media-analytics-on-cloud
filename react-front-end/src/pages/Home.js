@@ -102,7 +102,7 @@ function Home() {
 
           <p>This web application demonstrates the visualised analysis results of sentiment analysis on Twitter and Mastodon data. The main goal of this project is to analyse the "happiness" indicated from social media behaviors. 
             To quantify the "happiness" of a text posted on social media, we used a happiness score algorithm referenced from 
-            (Dodds etal., 2011). In total, we analyzed the "happiness" of 1,807,963 geo located Twitter data.</p>
+            (Dodds etal., 2011). In total, we analysed the "happiness" of 1,807,963 Australian-based geo-located Twitter data and approximately 300,000 global Mastodon data.</p>
             
           <p>This website will tell the story of happiness followed by 3 scenarios:</p>
         </section>
