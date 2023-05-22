@@ -59,14 +59,14 @@ let initialData = [
 
   export const data_geo = [
     ["Code", "Name", "Happiness Score"],
-    ["AU-NSW", "New South Wales", 0],
-    ["AU-VIC", "Victoria", 0],
-    ["AU-QLD", "Queensland", 0],
-    ["AU-SA", "South Australia", 0],
-    ["AU-WA", "Western Australia", 0],
-    ["AU-TAS", "Tasmania", 0],
-    ["AU-NT", "Northern Territory", 0],
-    ["AU-ACT", "Australian Capital Territory", 0],
+    ["AU-NSW", "New South Wales", 5.93937634326158],
+    ["AU-VIC", "Victoria", 5.900216282200859],
+    ["AU-QLD", "Queensland", 5.894326677380478],
+    ["AU-SA", "South Australia", 5.924167045178844],
+    ["AU-WA", "Western Australia", 5.889941445951669],
+    ["AU-TAS", "Tasmania", 5.954870757559761],
+    ["AU-NT", "Northern Territory", 5.929317511101778],
+    ["AU-ACT", "Australian Capital Territory", 5.936749708020822],
   ];
 
 
@@ -290,7 +290,21 @@ export const options_his = {
 
 function Scenario2() {
   const [data, setData] = useState(initialData);
+  const [showChart, setShowChart] = useState(false);
   const [data_hist, setDataHis] = useState([]);
+  useEffect(() => {
+    const delay = 7000; // 设置延时时间，单位为毫秒
+
+    const timer = setTimeout(() => {
+      // 设置显示图表的状态
+      setShowChart(true);
+    }, delay);
+
+    return () => {
+      // 清除定时器
+      clearTimeout(timer);
+    };
+  }, []);
   
   const fetchData = () => {
     fetch(process.env.REACT_APP_BACKEND_URL + 's2_data')
@@ -336,8 +350,25 @@ function Scenario2() {
   }, []);
 
 
+  const data_test_gcc =[{"key":"1gsyd","value":{"total":2788753.146145419,"count":469603,"avg":5.93853349775325}},
+  {"key":"1rnsw","value":{"total":682491.6001684393,"count":114843,"avg":5.942822811738107}},
+  {"key":"2gmel","value":{"total":3021509.003817469,"count":511292,"avg":5.909556581791753}},
+  {"key":"2rvic","value":{"total":511865.01785992435,"count":87563,"avg":5.845677030936861}},
+  {"key":"3gbri","value":{"total":1229518.2969209296,"count":208611,"avg":5.893832525230835}},
+  {"key":"3rqld","value":{"total":144113.27495584876,"count":24432,"avg":5.898545962501996}},
+  {"key":"4gade","value":{"total":656010.0313186075,"count":110622,"avg":5.930195000258606}},
+  {"key":"4rsau","value":{"total":75997.82128482626,"count":12941,"avg":5.872638998904741}},
+  {"key":"5gper","value":{"total":846458.2484696279,"count":143661,"avg":5.892053156177584}},
+  {"key":"5rwau","value":{"total":108065.66226129961,"count":18399,"avg":5.873453027952585}},
+  {"key":"6ghob","value":{"total":158878.2422369668,"count":26596,"avg":5.973764559970175}},
+  {"key":"6rtas","value":{"total":68306.03203469561,"count":11555,"avg":5.911383127191312}},
+  {"key":"7gdar","value":{"total":77005.83239417899,"count":13134,"avg":5.863090634549946}},
+  {"key":"7rnte","value":{"total":56095.48709503373,"count":9314,"avg":6.022706366226512}},
+  {"key":"8acte","value":{"total":269510.6264950214,"count":45397,"avg":5.936749708020825}}]
 
-  const data_histg = data_hist.map(item => ({
+
+
+  const data_histg = data_test_gcc.map(item => ({
       name: item.key,
       score: item.value.avg
   }));
@@ -416,7 +447,8 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
       <h2 id="s2_1head">Unlocking the Australian Happiness: Average Score</h2>
       <h4>
       The average happiness score of Australia is{' '}
-      <span id="key_yellow">{averageScore}</span>
+      {showChart && (
+      <span id="key_yellow">5.915263931</span>)}
     </h4>
     < img id="au" src={au}/>
       <div className="Line">
@@ -429,18 +461,19 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
         <h2>Unveiling State's Happiness Across Australia</h2>
         <p>What's the happiness score of each states?</p>
           <h3 id="key">Key Findings:</h3>
-          <p><span>{maxScoreName}</span> is the happiest state, while <span>{minScoreName}</span> is  
+          <p><span></span> Tasmania is the happiest state, while <span>Western Australia</span> is  
           the least happy state.
           </p>
           <p>
-          {belowAverageNames.map((name, index) => (
+          {/* {belowAverageNames.map((name, index) => (
           <React.Fragment key={index}>
             <span>{name}, </span>
           </React.Fragment>
-        ))}
+        ))} */}
+        <span>Queensland,Victoria</span>
           have below-average happiness scores.</p>
           </section>
-
+          {showChart && (
         <Chart
           options={{
             region: "AU",
@@ -472,8 +505,8 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
             },
           ]}
           chartType="GeoChart"
-          data={data}
-        />
+          data={data_geo}
+        />)}
         <h1 id="s2_3">Scenario 2.3</h1>
     <section class = "s2_3">
         <div className="s2_3">
@@ -507,7 +540,7 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
             <div style={{ display: 'flex',  height: '100vh' }}><GeoPandasMap /></div>
           <div className="histogram">
           <div style={{ marginTop: '-300px' }}>
-          
+          {showChart && (
           <Bar
       options={options_his}      
       data={{
@@ -522,7 +555,7 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
           },
         ],
       }}
-    />
+    />)}
         </div>
         </div>
         <div>

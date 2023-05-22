@@ -6,6 +6,20 @@ import { LineConfig } from '@pansy/react-charts/es/line';
 import Footer from '../components/footer'; 
 
 function Scenario3() {
+  const [showChart, setShowChart] = useState(false);
+  useEffect(() => {
+    const delay = 3000; // 设置延时时间，单位为毫秒
+
+    const timer = setTimeout(() => {
+      // 设置显示图表的状态
+      setShowChart(true);
+    }, delay);
+
+    return () => {
+      // 清除定时器
+      clearTimeout(timer);
+    };
+  }, []);
 
   const [data, setData] = useState([]);
   const fetchData = () => {
@@ -40,8 +54,58 @@ function Scenario3() {
     fetchData();
   }, []);
 
+  const data_test_be = [{"key":[0,"achievement"],"value":5039},
+  {"key":[0,"affection"],"value":280},
+  {"key":[0,"bonding"],"value":39},
+  {"key":[0,"enjoy_the_moment"],"value":355},
+  {"key":[0,"exercise"],"value":1},
+  {"key":[0,"leisure"],"value":39},
+  {"key":[0,"nature"],"value":10},
+  {"key":[1,"achievement"],"value":22152},
+  {"key":[1,"affection"],"value":1323},
+  {"key":[1,"bonding"],"value":163},
+  {"key":[1,"enjoy_the_moment"],"value":1595},
+  {"key":[1,"exercise"],"value":8},
+  {"key":[1,"leisure"],"value":196},
+  {"key":[1,"nature"],"value":28},
+  {"key":[2,"achievement"],"value":33469},
+  {"key":[2,"affection"],"value":1726},
+  {"key":[2,"bonding"],"value":238},
+  {"key":[2,"enjoy_the_moment"],"value":2134},
+  {"key":[2,"exercise"],"value":12},
+  {"key":[2,"leisure"],"value":271},
+  {"key":[2,"nature"],"value":61},
+  {"key":[3,"achievement"],"value":84858},
+  {"key":[3,"affection"],"value":4326},
+  {"key":[3,"bonding"],"value":528},
+  {"key":[3,"enjoy_the_moment"],"value":5038},
+  {"key":[3,"exercise"],"value":19},
+  {"key":[3,"leisure"],"value":625},
+  {"key":[3,"nature"],"value":113},
+  {"key":[4,"achievement"],"value":57695},
+  {"key":[4,"affection"],"value":3128},
+  {"key":[4,"bonding"],"value":404},
+  {"key":[4,"enjoy_the_moment"],"value":3750},
+  {"key":[4,"exercise"],"value":8},
+  {"key":[4,"leisure"],"value":457},
+  {"key":[4,"nature"],"value":63},
+  {"key":[5,"achievement"],"value":22621},
+  {"key":[5,"affection"],"value":1199},
+  {"key":[5,"bonding"],"value":166},
+  {"key":[5,"enjoy_the_moment"],"value":1656},
+  {"key":[5,"exercise"],"value":9},
+  {"key":[5,"leisure"],"value":176},
+  {"key":[5,"nature"],"value":37},
+  {"key":[6,"achievement"],"value":11041},
+  {"key":[6,"affection"],"value":657},
+  {"key":[6,"bonding"],"value":95},
+  {"key":[6,"enjoy_the_moment"],"value":919},
+  {"key":[6,"exercise"],"value":2},
+  {"key":[6,"leisure"],"value":103},
+  {"key":[6,"nature"],"value":22}]
+
   const weekDays_m = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-  const data_used = data.map(item => ({
+  const data_used = data_test_be.map(item => ({
     name: item.key[1],
     year: weekDays_m[item.key[0]], 
     gdp: Math.log(item.value)
@@ -65,7 +129,7 @@ function Scenario3() {
     animation: {
       appear: {
         animation: 'path-in',
-        duration:3000
+        duration:6000
       }
     }
   };
