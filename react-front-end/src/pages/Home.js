@@ -16,7 +16,7 @@ function Home() {
       <div className="container1" style={{ display: 'flex' ,flex:"1"}}>
         <div className="col-4" style={{ backgroundColor: '#F7DBA7', flex: '1' }}>
           <h1 className="ml11">
-            <span className="text-wrapper" style={{ overflow: 'hidden', width: '100%', overflowWrap: 'break-word'}}>
+            <span className="text-wrapper" style={{ overflow: 'hidden', width: '80%', overflowWrap: 'break-word'}}>
           <Typed
             strings={["I came to my office at right time."]}
             typeSpeed={200}
@@ -34,7 +34,7 @@ function Home() {
         </div>
         <div className="col-4" style={{ backgroundColor: '#c57b57', flex: '1' }}>
           <h1 className="ml7">
-            <span className="text-wrapper" style={{ overflow: 'hidden', width: '100%' ,overflowWrap: 'break-word' }} >
+            <span className="text-wrapper" style={{ overflow: 'hidden', width: '80%' ,overflowWrap: 'break-word' }} >
                 <Typed
               strings = {["Taking my dog for a walk and having a conversation with a stranger."]}     
                 typeSpeed={150} 

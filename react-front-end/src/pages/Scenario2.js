@@ -482,10 +482,10 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
           <h3 id="key">Key Findings:</h3>
             <li>{''}
             <span> Northern </span>
-            West part of Australia is {" "} 
+            East part of Australia is {" "} 
             <span id="key_yellow"> happier </span> 
             than the{" "} 
-            <span> Southern East </span>part.</li>
+            <span> Southern West </span>part.</li>
             <li>Apart from Greater Darwin, for each state, the {" "}
             <span>Greater Capital Cities </span> 
              are 
