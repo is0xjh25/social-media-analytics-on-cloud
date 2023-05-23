@@ -461,7 +461,11 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
         <h2>Unveiling State's Happiness Across Australia</h2>
         <p>What's the happiness score of each states?</p>
           <h3 id="key">Key Findings:</h3>
-          <p><span></span> Tasmania is the happiest state, while <span>Western Australia</span> is  
+          <p>
+          {showChart && (
+            <span>Tasmania</span> )} is the happiest state, while 
+            {showChart && (<span>Western Australia</span> )}
+            is  
           the least happy state.
           </p>
           <p>
@@ -470,7 +474,8 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
             <span>{name}, </span>
           </React.Fragment>
         ))} */}
-        <span>Queensland,Victoria</span>
+        {showChart && (
+        <span>Queensland,Victoria</span>)}
           have below-average happiness scores.</p>
           </section>
           {showChart && (
@@ -514,15 +519,22 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
           <p>What's the happiness score of Greater Capital City Statistical Areas and the rest of the areas?</p>
           <h3 id="key">Key Findings:</h3>
             <li>{''}
-            <span> Northern </span>
+            {showChart && (
+            <span> Northern </span>)}
             East part of Australia is {" "} 
             <span id="key_yellow"> happier </span> 
             than the{" "} 
-            <span> Southern West </span>part.</li>
-            <li>Apart from Greater Darwin, for each state, the {" "}
+            {showChart && (
+            <span> Southern West </span>)}
+            part.</li>
+            <li>Apart from 
+            {showChart && (
+            <span>Greater Darwin,</span>)}
+               for each state, the {" "}
             <span>Greater Capital Cities </span> 
              are 
-             <span id="key_yellow"> happier </span>
+             {showChart && (
+             <span id="key_yellow"> happier </span>)}
              than the 
              <span> Rest Areas</span>
              .</li>
@@ -533,7 +545,8 @@ const aboveAverageNames_all = aboveAverageItems_all.map(item => item.key);
                 <React.Fragment key={index}>
                   <span>{name}, </span>
                 </React.Fragment>
-              ))}</li>
+              ))}
+              </li>
               </div>
             </section>
 

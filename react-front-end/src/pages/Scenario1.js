@@ -797,7 +797,8 @@ function Scenario1() {
         <div id="s1_1">
           <h2>Unveiling the Rising Happiness in Australia< img id="up" src={up}/></h2>
           <p>From March 2022 to June 2022, the happiness score of Australia exhibited an {""}
-          <span id="key_yellow"> increasing </span>
+          {showChart && (
+          <span id="key_yellow"> increasing </span>)}
           trend. </p>
         </div>
         </section>
