@@ -1,4 +1,3 @@
----
 # Start monitoring
 - hosts: mastodon
   roles:

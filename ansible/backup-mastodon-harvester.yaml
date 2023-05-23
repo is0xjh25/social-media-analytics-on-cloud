@@ -1,0 +1,4 @@
+# Start monitoring
+- hosts: couchdb
+  roles:
+    - role: deploy-mastodon-harvester

@@ -1,4 +1,3 @@
----
 - name: Deploy Mastodon Harvester
   script: ./deploy-mastodon-harvester.sh
   register: outMastodon

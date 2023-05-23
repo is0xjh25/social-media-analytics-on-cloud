@@ -1,0 +1,8 @@
+# Remove backup mastodon harvester
+- hosts: couchdb
+  tasks:
+    - name: Remove Backup Mastodon Harvester
+      shell:
+        "docker stop mastodon || true && docker rm mastodon || true"
+      register: outMastodon
+    - debug: var=outMastodon.stdout_lines

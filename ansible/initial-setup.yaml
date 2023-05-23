@@ -1,5 +1,4 @@
----
-# Attach volumes to every vm
+# # Attach volumes to every virtual machine
 # - hosts: database
 #   roles:
 #     - role: volume-setup
@@ -40,7 +39,7 @@
 #   roles:
 #     - role: deploy-frontend
 
-# Start Monitoring
+# Start monitoring
 - hosts: mastodon
   roles:
     - role: start-monitoring

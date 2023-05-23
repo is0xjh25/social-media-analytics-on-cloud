@@ -1,22 +1,21 @@
-- name: Append line to file
+- name: Append Line To File
   copy:
-    dest: /home/ubuntu/ansible/roles/start-monitoring/hi.txt
-    content: "{{ lookup('file', '/home/ubuntu/ansible/roles/start-monitoring/hi.txt') }}\nI'm sending requests"
+    dest: /home/ubuntu/ansible/roles/start-monitoring/monitoring-result.txt
+    content: "{{ lookup('file', '/home/ubuntu/ansible/roles/start-monitoring/monitoring-result.txt') }}\nI'm sending requests"
 
-- name: Send GET request to backend server
+- name: Send GET Request To Backend Server
   uri:
     url: http://172.26.134.134:5000/status
-    # url: 'http://{{ ansible_default_ipv4.address }}:5000/status'
     method: GET
     return_content: yes
   register: results
 
-- name: Append line to file
+- name: Append Line To File
   copy:
-    dest: /home/ubuntu/ansible/roles/start-monitoring/hi.txt
-    content: "{{ lookup('file', '/home/ubuntu/ansible/roles/start-monitoring/hi.txt') }}\n{{results.json}}   "
+    dest: /home/ubuntu/ansible/roles/start-monitoring/monitoring-result.txt
+    content: "{{ lookup('file', '/home/ubuntu/ansible/roles/start-monitoring/monitoring-result.txt') }}\n{{results.json}}   "
 
-- name: Scaling up
+- name: Scaling Up
   delegate_to: twitter
   script: ../deploy-backend/deploy-backend.sh
   register: outScalingUP
@@ -24,7 +23,7 @@
   ignore_errors: true
 - debug: var=outScalingUP.stdout_lines
 
-- name: Scaling down
+- name: Scaling Down
   delegate_to: twitter
   script: ../remove-backend/remove-backend.sh
   register: outScalingDown
