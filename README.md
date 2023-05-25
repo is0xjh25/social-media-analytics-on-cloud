@@ -17,7 +17,7 @@ and and influential factors for happiness expressed on social media. Machine lea
 developed to classify potential reason.
 
 <sup><sub>*In this README, it would focus on the user guide and the system design.</sub></sup><br>
-<sup><sub>*To gain more details about the data analysis of Australian happiness, please read the attached report.</sub></sup>
+<sup><sub>*To gain more details about the data analysis of Australian happiness, please read the attached [report](https://github.com/is0xjh25/social-media-analytics-on-cloud/blob/main/Report.pdf).</sub></sup>
 
 ## User Guide
 In this section, we detail how our project was deployed to the Melbourne Research Cloud (MRC) in a manner that allows for scalablility.
@@ -94,4 +94,4 @@ The fourth instance in our system is the website instance. When our initial setu
 - [Yun-Chi Hsiao (1074004)](https://is0xjh25.github.io)<br>
 
 ***
-_more details in project specification and report!_
+_more details in [project specification](https://github.com/is0xjh25/social-media-analytics-on-cloud/blob/main/Assignment2.pdf) and [report](https://github.com/is0xjh25/social-media-analytics-on-cloud/blob/main/Report.pdf)._
