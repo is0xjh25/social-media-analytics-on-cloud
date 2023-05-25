@@ -57,12 +57,12 @@ Similar to the process of deploying back-end server, the front-end server would 
 ## System Architecture and Design
 ### System Architecture
 <p align="center">
-  <img alt="System Architecture" src="images/system-design" width="1000">
+  <img alt="System Architecture" src="images/system-design.png" width="1000">
 </p>
 
 ### System Design Considerations
 <p align="center">
-  <img alt="System Design Considerations" src="images/system-design-considerations" width="1000">
+  <img alt="System Design Considerations" src="images/system-design-considerations.png" width="1000">
 </p>
 
 ### Allocated Resources
@@ -86,11 +86,12 @@ Our third instance’s primary responsibility is to be the CouchDB master node. 
 The fourth instance in our system is the website instance. When our initial setup script is run, the second last thing it does before running monitoring is deploying the web server. This means setting up the back-end which is coded with Flask, and deploying the front-end which is written with React.
 
 ## Developed By
-[Jiahe Liu (1214235)](https://github.com/gracelovesyah)<br>
-[Jongho Park (1152505)](https://github.com/JP5635)<br>
-[Benjamin Murdoch (1434075)](https://www.linkedin.com/in/benjamin-murdoch-6256a91b1/)<br>
-[YongLi Qin (1174036)](https://github.com/YongLi-Qin)<br>
-[Yun-Chi Hsiao (1074004)](https://is0xjh25.github.io)<br>
+**TEAM 67 :**<br>
+- [Jiahe Liu (1214235)](https://github.com/gracelovesyah)<br>
+- [Jongho Park (1152505)](https://github.com/JP5635)<br>
+- [Benjamin Murdoch (1434075)](https://www.linkedin.com/in/benjamin-murdoch-6256a91b1/)<br>
+- [YongLi Qin (1174036)](https://github.com/YongLi-Qin)<br>
+- [Yun-Chi Hsiao (1074004)](https://is0xjh25.github.io)<br>
 
 ***
 _more details in project specification and report!_
