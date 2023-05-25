@@ -1,4 +1,4 @@
-Launch Flask
+### Launch Flask
 
 (on Local machine)
 
@@ -85,7 +85,7 @@ http://172.26.131.83:5000
 
 
 
-Launch React
+### Launch React
 
 put react project without ‘node_modules’ folder (npm install will create this folder)
 
@@ -169,4 +169,4 @@ docker push myusername/docker-whale             # use :1.0.0 for pushing specifi
 
 Download folder from VM
 
-sudo scp -i "/Users/jonghopark/jongho_mrc.pem" -r ubuntu@172.26.134.50:volume/pipeline_mastodon_docker .
+sudo scp -i "/Users/yourscretkey.pem" -r ubuntu@youripaddress:volume/pipeline_mastodon_docker .
