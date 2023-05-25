@@ -94,4 +94,4 @@ The fourth instance in our system is the website instance. When our initial setu
 - [Yun-Chi Hsiao (1074004)](https://is0xjh25.github.io)<br>
 
 ***
-_more details in [project specification](https://github.com/is0xjh25/social-media-analytics-on-cloud/blob/main/Assignment2.pdf) and [report](https://github.com/is0xjh25/social-media-analytics-on-cloud/blob/main/Report.pdf)._
+*_more details in [project specification](https://github.com/is0xjh25/social-media-analytics-on-cloud/blob/main/Assignment2.pdf) and [report](https://github.com/is0xjh25/social-media-analytics-on-cloud/blob/main/Report.pdf)._
