@@ -13,7 +13,10 @@ def read_config():
         couch_password = cfg["COUCH_PASSWORD"]
         master_node = cfg["MASTER_NODE"]
         url_couch = f"http://{couch_password}@{master_node}"
+
         db_name = "mastodon"
+        if "DB_NAME" in cfg:
+            db_name = cfg["DB_NAME"]
         config = {
             "MASTODON_ACCESS_TOKEN": cfg["MASTODON_ACCESS_TOKEN"],
             "URL": cfg["URL"],
@@ -39,7 +42,7 @@ while True:
     try:
         config = read_config()
         m = Mastodon(
-            api_base_url=f"https://mastodon.au",
+            api_base_url=config["URL"],
             access_token=config["MASTODON_ACCESS_TOKEN"],
         )
         m.stream_public(mh.HappinessListener(config))
