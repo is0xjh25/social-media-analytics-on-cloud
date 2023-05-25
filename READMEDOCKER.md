@@ -1,4 +1,4 @@
-### Launch Flask
+## Launch Flask
 
 (on Local machine)
 
@@ -79,29 +79,25 @@ docker ps
 
 11. Check the website
 
-http://172.26.131.83:5000
+http://youripadrdess
 
 
 
-### Launch React
+## Launch React
 
 put react project without ‘node_modules’ folder (npm install will create this folder)
 
 2. create Dockerfile
 
-# syntax=docker/dockerfile:1.4
 
-# 1. For build React app
+1. For build React app
 FROM node:latest AS development
 
-# Set working directory
 WORKDIR /app
 
-# 
 COPY package.json /app/package.json
 COPY package-lock.json /app/package-lock.json
 
-# Same as npm install
 RUN npm install --legacy-peer-deps
 
 COPY . /app
@@ -165,6 +161,6 @@ docker push myusername/docker-whale             # use :1.0.0 for pushing specifi
 
 
 
-Download folder from VM
+## Download folder from VM
 
 sudo scp -i "/Users/yourscretkey.pem" -r ubuntu@youripaddress:volume/pipeline_mastodon_docker .
