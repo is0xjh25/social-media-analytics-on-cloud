@@ -89,7 +89,7 @@ The fourth instance in our system is the website instance. When our initial setu
 **TEAM 67 :**<br>
 - [Jiahe Liu (1214235)](https://github.com/gracelovesyah)<br>
 - [Jongho Park (1152505)](https://github.com/JP5635)<br>
-- [Benjamin Murdoch (1434075)](https://www.linkedin.com/in/benjamin-murdoch-6256a91b1/)<br>
+- [Benjamin Murdoch (1434075)](https://github.com/BennyMdoch)<br>
 - [YongLi Qin (1174036)](https://github.com/YongLi-Qin)<br>
 - [Yun-Chi Hsiao (1074004)](https://is0xjh25.github.io)<br>
 
